@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/ico" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/meanmenu.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="js/libs/modernizr.custom.js"></script>
+    <title>Typography</title>
+</head>
+<body>
+<div class="main-wrapper page">
+    <!--Begin header ưrapper-->
+    <div class="header-wrapper">
+        <header id="header" class="container-header type1">
+            <div class="top-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="top-left col-sm-6 hidden-xs">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="mailto:alumni@sayidan.edu">
+                                        <span class="icon mail-icon"></span>
+                                        <span class="text">alumni@sayidan.edu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="icon phone-icon"></span>
+                                        <span class="text">+1 087 222 9</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="top-right col-sm-6 col-xs-12">
+                            <ul class="list-inline">
+                                <li class="top-search">
+                                    <form class="navbar-form search no-margin no-padding">
+                                        <input type="text" name="q" class="form-control input-search" placeholder="search..." autocomplete="off">
+                                        <button type="submit" class="lnr lnr-magnifier"></button>
+                                    </form>
+                                </li>
+                                <li class="login">
+                                    <a href="./login-page.html">Log In</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle">
+                <div class="container">
+                    <div class="logo hidden-sm hidden-xs">
+                        <a href="./homepage-1.html"> <img src="images/logo.png" alt="logo"></a>
+                    </div>
+                    <div class="menu">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="./about-us.html">ABOUT US</a>
+                                </li>
+                                <li>
+                                    <a href="./programs-events.html">PROGRAM &amp; EVENTS</a>
+                                </li>
+
+                                <li>
+                                    <a href="./alumni-story.html">ALUMNI STORY</a>
+                                </li>
+                                <li class="current">
+                                    <a href="./career-opportunity.html">CAREER OPPORTUNITY</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="area-mobile-content visible-sm visible-xs">
+                        <div class="logo-mobile">
+                            <a href="./homepage-1.html"> <img src="images/logo-small.png" alt="logo"></a>
+                        </div>
+                        <div class="mobile-menu ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!--End header wrapper-->
+
+    <!--Begin content wrapper-->
+    <div class="content-wrapper">
+        <div class="typography text-regular">
+            <div class="container">
+                <div class="divider divider--lg"></div>
+                <div class="title-page text-center">
+                    <h4 class="font21">Typography</h4>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4 class="title text-uppercase font20">HEADINGS</h4>
+                        <h1 class="h1">H1. Heading. Lorem Ipsum Dolor</h1>
+                        <h2 class="h2">H2. Heading. Lorem Ipsum Dolor</h2>
+                        <h3 class="h3">H3. Heading. Lorem Ipsum Dolor</h3>
+                        <h4 class="h4">H4. Heading. Lorem Ipsum Dolor</h4>
+                        <h5 class="h5">H5. Heading. Lorem Ipsum Dolor</h5>
+                        <h6 class="h6">H6. Heading. Lorem Ipsum Dolor</h6>
+                    </div>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="row paragraphs">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4 class="title text-uppercase font20">PARAGRAPHS</h4>
+                        <div class="divider divider--sm"></div>
+                        <p>
+                            Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.
+                        </p>
+                        <br />
+                        <p>
+                            Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.
+                        </p>
+                    </div>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4 class="title text-uppercase font20">BLOCKQUOTES</h4>
+                        <div class="divider divider--sm"></div>
+                    </div>
+                    <div class="blockquotes border-blockquotes col-sm-6 col-xs-12">
+                        <p class="text-light line20 font17"><strong class="text-uppercase text-bold">Nunc ultricies turpis. Nulla at tristique orci</strong>
+                            Vivamus rutrum a ligula nec porta. Quisque maximus
+                            commodo justo, ut dictum ipsum tincidunt eu.</p>
+                    </div>
+                    <div class="blockquotes col-sm-6 col-xs-12">
+                        <p class="text-light line20 font20 text-center">
+                            “You never accomplish anything alone, I was feeling the absence of the people who were most influential in getting me to this point. I wished they could be here too.”
+                        </p>
+                    </div>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="row highlighter">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4 class="title text-uppercase font20">HIGHLIGHTER</h4>
+                        <div class="divider divider--md"></div>
+                        <p class="text-light line15 font14">
+                            Qui sequitur mutationem consuetudium lectorum. <span class="bg-gray"> Mirum est notare quam littera gothica quam nunc putamus parum claram,</span> anteposuerit litterarum formas humanitatis. Claritas est <span class="bg-black color-white">etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum</span>. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Processus dynamicus, qui sequitur mutationem consuetudium lectorum. <span class="bg-yellow">Mirum est notare quam littera gothica quam nunc putamus parum claram</span>, anteposuerit litterarum.
+                        </p>
+                    </div>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="row listing">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4 class="title text-uppercase font20">STANDARD LISTING</h4>
+                        <div class="divider divider--sm"></div>
+                    </div>
+                    <div class="simple-list col-sm-6 col-xs-12">
+                        <ul>
+                            <li>Dynamicus, qui sequitur mutationem consuetudium lectorum</li>
+                            <li>Qui sequitur mutationem consuetudium lectorum</li>
+                            <li>Sequitur mutationem consuetudium lectorum consuetudium</li>
+                        </ul>
+                    </div>
+                    <div class="decimal-list col-sm-6 col-xs-12">
+                        <ul>
+                            <li>Dynamicus, qui sequitur mutationem consuetudium lectorum</li>
+                            <li>Qui sequitur mutationem consuetudium lectorum</li>
+                            <li>Sequitur mutationem consuetudium lectorum consuetudium</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="row alignment">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4 class="title text-uppercase font20">ALIGNMENT</h4>
+                        <div class="divider divider--md"></div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="row text-left">
+                            <div class="col-sm-12 col-xs-12">
+                                <h4 class="text-regular line20 font17">Align Left</h4>
+                                <p class="text-light line20 font14">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>
+                            </div>
+                        </div>
+                        <div class="divider divider--md"></div>
+                        <div class="row text-right">
+                            <div class="col-sm-12 col-xs-12">
+                                <h4 class="text-regular line20 font17">Align Right</h4>
+                                <p class="text-light line20 font14">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>
+                            </div>
+                        </div>
+                        <div class="divider divider--md"></div>
+                        <div class="row text-center">
+                            <div class="col-sm-12 col-xs-12">
+                                <h4 class="text-regular line20 font17">Align Center</h4>
+                                <p class="text-light line20 font14">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider divider--lg"></div>
+                <div class="divider divider--sm"></div>
+            </div>
+        </div>
+        <!--begin newsletter-->
+        <div class="newsletter parallax-window newsletter-parallax">
+            <div class="container">
+                <div class="newsletter-wrapper text-center">
+                    <div class="newsletter-title">
+                        <h2 class="heading-light">Be The First to Get Job Offer</h2>
+                        <p class="text-white">Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>
+                    </div>
+                    <form name="subscribe-form" target="_blank" class="form-inline">
+                        <input type="text" class="form-control text-center form-text-light" name="EMAIL" value="" placeholder="E-mail Address" >
+                        <button type="submit" class="button bnt-theme">subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--end newsletter-->
+
+    </div>
+    <!--End content wrapper-->
+    <!--Begin footer wrapper-->
+    <div class="footer-wrapper type2">
+        <footer class="foooter-container">
+            <div class="container">
+                <div class="footer-middle">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12 animated footer-col">
+                            <div class="contact-footer">
+                                <div class="logo-footer">
+                                    <a href="./homepage-1.html"><img src="images/logo-footer.png" alt=""></a>
+                                </div>
+                                <div class="contact-desc">
+                                    <p class="text-light">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare.</p>
+                                </div>
+                                <div class="contact-phone-email">
+                                    <span class="contact-phone"><a href="#">+10872229</a> | <a href="#">+10872228 </a> </span>
+                                    <span class="contact-email"><a href="#">alumni@sayidan.edu</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-12  col-xs-12 animated footer-col">
+                            <div class="links-footer">
+                                <div class="row">
+                                    <div class="col-sm-4 col-xs-12">
+                                        <h6 class="heading-bold">DASHBOARD</h6>
+                                        <ul class="list-unstyled no-margin">
+                                            <li><a href="./register-page.html">REGISTER</a></li>
+                                            <li><a href="./career-opportunity.html">CAREER</a></li>
+                                            <li><a href="./alumni-story.html">STORY</a></li>
+                                            <li><a href="./alumni-directory.html">DIRECTORY</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-sm-4 col-xs-12">
+                                        <h6 class="heading-bold">ABOUT US</h6>
+                                        <ul class="list-unstyled no-margin">
+                                            <li><a href="./event-single.html">EVENTS</a></li>
+                                            <li><a href="./galery.html">GALLERY</a></li>
+                                            <li><a href="./homepage-1.html">HOMEPAGE V1</a></li>
+                                            <li><a href="./homepage-2.html">HOMEPAGE V2</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-sm-4 col-xs-12">
+                                        <h6 class="heading-bold">SUPPORT</h6>
+                                        <ul class="list-unstyled no-margin">
+                                            <li><a href="./job-detail.html">FAQ</a></li>
+                                            <li><a href="./about-us.html#contacts">CONTACT US</a></li>
+                                            <li><a href="./blog.html">ORGANIZER</a></li>
+                                            <li><a href="./blog-single-fullwith.html">SOCIAL</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 col-xs-12 animated footer-col">
+                            <div class="links-social">
+                                <div class="login-dashboard">
+                                    <a href="./login-page.html" class="bg-color-theme text-center text-regular">Login Dashboard</a>
+                                </div>
+                                <ul class="list-inline text-center">
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom text-center">
+                    <p class="copyright text-light">©2016 Alumni Association of the University of Sayidan</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--End footer wrapper-->
+</div>
+
+<script src="js/libs/jquery-2.2.4.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+<script src="js/libs/owl.carousel.min.js"></script>
+<script src="js/libs/jquery.meanmenu.js"></script>
+<script src="js/libs/parallax.min.js"></script>
+<script src="js/libs/jquery.waypoints.min.js"></script>
+<script src="js/custom/main.js"></script>
+</body>
+</html>
