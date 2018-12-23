@@ -8,14 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
    <link rel="icon" href="favicon.ico" type="image/ico" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/meanmenu.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
-    <title> Register Page </title>
+    <title> Profile | User </title>
 </head>
 <body>
 <div class="main-wrapper page">
@@ -50,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </form>
                                 </li>
                                 <li class="login">
-                                    <a href="#">Log In</a>
+                                    <a href="./login-page.html">Log In</a>
                                 </li>
                             </ul>
                         </div>
@@ -60,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="header-middle">
                 <div class="container">
                     <div class="logo hidden-sm hidden-xs">
-                        <a href="./homepage-1.html"> <img src="<?php echo base_url(); ?>static/images/logo.jpg" alt="logo"></a>
+                        <a href="<?php echo base_url(); ?>"> <img src="<?php echo base_url(); ?>static/images/logo.jpg" alt="logo"></a>
                     </div>
                     <div class="menu">
                         <nav>
@@ -83,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="area-mobile-content visible-sm visible-xs">
                         <div class="logo-mobile">
-                            <a href="./homepage-1.html"> <img src="<?php echo base_url(); ?>static/images/logo-small.png" alt="logo"></a>
+                            <a href="/"> <img src="<?php echo base_url(); ?>static/images/logo-small.png" alt="logo"></a>
                         </div>
                         <div class="mobile-menu ">
                         </div>
@@ -96,60 +95,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!--Begin content wrapper-->
     <div class="content-wrapper">
-        <div class="account-page register text-center">
+        <div class="account-page login text-center">
             <div class="container">
                 <div class="account-title">
-                    <h4 class="heading-light">REGISTER INTO ALUMNI DASHBOARD</h4>
+                    <h4 class="heading-light">LOG IN INTO ALUMNI DASHBOARD</h4>
                 </div>
                 <div class="account-content">
                     <form action="#">
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Full Name">
-                        </div>
-                        <div class="input-box number">
-                            <input type="text" placeholder="Roll Number">
-                        </div>
-                        <div class="input-box number">
-                            <input type="text" placeholder="Batch">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Blood Group">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Birthdate">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Address">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="City">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Country">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Phone">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Profession">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Designation">
-                        </div>
-                        <div class="input-box fullname">
-                            <input type="text" placeholder="Company Name">
-                        </div>
                         <div class="input-box email">
                             <input type="text" placeholder="Email Address">
                         </div>
                         <div class="input-box password">
                             <input type="text" placeholder="Password">
                         </div>
-                        <div class="input-box very-password">
-                            <input type="text" placeholder="Verify Password">
-                        </div>
                         <div class="buttons-set">
-                            <a href="#"  title="REGISTER" class="bnt bnt-theme text-regular text-uppercase">REGISTER</a>
+                            <a href="./access-denied.html"  title="Log In" class="bnt bnt-theme text-regular text-uppercase">Log In</a>
                         </div>
                     </form>
                 </div>
