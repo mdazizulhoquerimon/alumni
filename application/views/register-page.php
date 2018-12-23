@@ -107,7 +107,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="text" placeholder="Full Name">
                         </div>
                         <div class="input-box number">
-                            <input type="text" placeholder="College Number">
+                            <input type="text" placeholder="Roll Number">
+                        </div>
+                        <div class="input-box number">
+                            <input type="text" placeholder="Batch">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Blood Group">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Birthdate">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Address">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="City">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Country">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Phone">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Profession">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Designation">
+                        </div>
+                        <div class="input-box fullname">
+                            <input type="text" placeholder="Company Name">
                         </div>
                         <div class="input-box email">
                             <input type="text" placeholder="Email Address">
@@ -118,7 +148,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="input-box very-password">
                             <input type="text" placeholder="Verify Password">
                         </div>
-
                         <div class="buttons-set">
                             <a href="#"  title="REGISTER" class="bnt bnt-theme text-regular text-uppercase">REGISTER</a>
                         </div>
