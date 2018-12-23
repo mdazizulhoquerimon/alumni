@@ -75,9 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li>
                                    <a href="./alumni-story.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ALUMNI CORNER<span class="caret"></span></a>
                                    <ul class="dropdown-menu">
-                                      <li><a href="#">ALUUMNI LOGIN</a></li>
+                                      <li><a href="login/userlogin">ALUUMNI LOGIN</a></li>
                                       <li><a href="#">ALUMNI PROFILE</a></li>
-                                      <li><a href="#">ALUMNI REGISTER</a></li>
+                                      <li><a href="register/alumniregister">ALUMNI REGISTER</a></li>
                                       <li><a href="#">ALUMNI STORIES</a></li>
                                       <li><a href="#">EXECUTIVE MEMBER</a></li>
                                       <li><a href="#">GENERAL MEMBER</a></li>
