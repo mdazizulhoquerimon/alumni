@@ -15,8 +15,144 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/dashboard.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>   
     <title> Profile | User </title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300);
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+        body,
+        html,
+        .wrapper {
+        height: 100%;
+        width: 100%;
+        }
+        body {
+        font-family: 'Open Sans', sans-serif;
+        color: #404040;
+        }
+        .wrapper {
+        background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #62075c), color-stop(1, #c30eb8));
+        background: -webkit-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
+        background: -moz-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
+        background: -o-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
+        background: -ms-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
+        background: linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
+        position: relative;
+        z-index: 1;
+        }
+        .wrapper:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url("http://remtsoy.com/experiments/user_card/img/food.png");
+        z-index: 2;
+        opacity: 0.3;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30);
+        }
+        .wrapper-inner {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        }
+        .box-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        margin-top: 40px;
+        z-index: 1;
+        }
+        .box {
+        position: relative;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 4px 1px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 1px rgba(0,0,0,0.1);
+        width: 380px;
+        background: #fff;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-top: 65px;
+        }
+        .box-inner {
+        padding: 30px;
+        }
+        .avatar {
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 0 3px #c30eb8 , 0 0 0 8px #fff;
+        box-shadow: 0 0 0 3px #c30eb8 , 0 0 0 8px #fff;
+        top: -75px;
+        margin-left: -75px;
+        left: 50%;
+        position: absolute;
+        }
+        .avatar img {
+        width: 150px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        margin-top: 0;
+        margin-bottom: 15px;
+        }
+        .name,
+        .followers-title {
+        font-size: 38px;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 2px;
+        color: #3a3a3a;
+        }
+        .occupation {
+        font-size: 18px;
+        font-style: italic;
+        color: #707070;
+        margin-bottom: 2px;
+        }
+        .location {
+        color: #b3b3b3;
+        font-size: 14px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #f2f2f2;
+        }
+        .location .fa {
+        color: #c6c6c6;
+        margin-right: 4px;
+        }
+
+        .sidebar{
+            will-change: min-height;
+        }
+
+        .sidebar__inner{
+            transform: translate(0, 0); /* For browsers don't support translate3d. */
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+    </style>
+
 </head>
 <body>
 <div class="main-wrapper page">
@@ -100,8 +236,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="content-wrapper">
         <div class="account-page login text-center">
             <div class="container">
-                <p> hello hello </p>
-
+                <div class="main-content">
+                    <div class="sidebar">
+                        <div class="sidebar__inner">
+                        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Edit Acccount Info
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Payment Status
+            </a>
+          </li>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+                <div class="content">
+                    <div class="wrapper">
+                            <div class="wrapper-inner">
+                                <div class="box-wrapper">
+                                    <div class="box">
+                                        <div class="avatar">
+                                            <img src="http://remtsoy.com/experiments/user_card/img/avatar.jpg">
+                                        </div>
+                                        <div class="box-inner">
+                                            <h3 class="name">Christina W. Turner</h3>
+                                            <h4 class="occupation">interaction designer</h4>
+                                            <p class="location"><i class="fa fa-map-marker"></i>Austin, Texas</p>
+                                            <h4 style="position:left">ID: xxxxxxx</h4>
+                                            <h4 class="occupation">Demo Text: </h4>
+                                            <h4 class="occupation">Demo Text: </h4>
+                                            <h4 class="occupation">Demo Text: </h4>
+                                            <h4 class="occupation">Demo Text: </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -197,5 +384,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>static/js/libs/jquery.waypoints.min.js"></script>
 <script src="<?php echo base_url(); ?>static/js/custom/main.js"></script>
 <script src="<?php echo base_url(); ?>static/js/custom/dashboard.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>static/js/custom/sticky-sidebar.js"></script>
+
+<script type="text/javascript">
+  var sidebar = new StickySidebar('.sidebar', {
+    topSpacing: 50,
+    bottomSpacing: 20,
+    containerSelector: '.main-content',
+    innerWrapperSelector: '.sidebar__inner',
+    minWidth:300
+  });
+</script>
 </body>
 </html>
