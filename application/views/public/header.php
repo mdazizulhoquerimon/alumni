@@ -18,6 +18,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
     <title>CUELSA</title>
 </head>
+<style>
+
+.profile-teaser-left {
+    float: left; width: 20%; margin-right: 1%;
+}
+.profile-img img {
+    width: 100%; height: auto;
+    border-radius:50%;
+}
+
+.profile-teaser-main {
+    float: left; width: 79%;
+}
+
+.info { display: inline-block; margin-right: 10px; color: #777; }
+.info span { font-weight: bold; }
+</style>
 <body>
 <div class="main-wrapper">
     <!--Begin header ưrapper-->
@@ -79,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                       <li><a href="<?=base_url('users/login');?>">ALUUMNI LOGIN</a></li>
                                       <li><a href="<?= base_url('users/profile');?>">ALUMNI PROFILE</a></li>
                                       <li><a href="<?= base_url('users/register');?>">ALUMNI REGISTER</a></li>
-                                      <li><a href="#">EXECUTIVE MEMBER</a></li>
+                                      <li><a href="<?=base_url('common/executive_member');?>">EXECUTIVE MEMBER</a></li>
                                       <li><a href="<?=base_url('common/general_member');?>">GENERAL MEMBER</a></li>
                                     </ul>
                                 </li>

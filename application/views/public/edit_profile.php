@@ -116,6 +116,12 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="col-md-3 control-label">About Yourself:</label>
+            <div class="col-md-8">
+              <textarea class="form-control" rows="5" value="Write something about yourself...."></textarea>
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-md-3 control-label">Change Profile Picture:</label>
             <div class="col-md-8">
                 <input type="file" class="form-control">

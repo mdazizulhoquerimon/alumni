@@ -5,17 +5,19 @@
             <div class="alumni-directory">
                <div class="top-section">
                    <div class="container">
-                       <div class="ti<?php include('header.php')?>tle-page text-center">
+                       <div class="title-page text-center" style="margin-top:60px;">
                            <h4 class="text-regular"> Alumni Directory</h4>
+                           <hr>
                        </div>
                    </div>
                    <div class="row">
                        <div class="account-content">
                            <form >
-
-                               <input style="width: 25%; height: 4%; padding:15px; font-size: 15px; border-top: 1px solid #9f9f9f; border-right: 1px solid #9f9f9f;border-left: 1px solid #9f9f9f; border-bottom: 1px solid #9f9f9f;" type="text" name="q" class="form-control input-search" placeholder="Keywords" autocomplete="off">
-
-                               <select style=" width:25%;  padding:15px; font-size: 15px; border-top: 1px solid #9f9f9f; border-right: 1px solid #9f9f9f;border-left: 1px solid #9f9f9f; border-bottom: 1px solid #9f9f9f;">
+                           <label for="company" style="width:40%;">
+                             <input style="font-size: 15px; border-top: 1px solid #9f9f9f; border-right: 1px solid #9f9f9f;border-left: 1px solid #9f9f9f; border-bottom: 1px solid #9f9f9f;" type="text" name="q" class="form-control input-search" placeholder="Keywords" autocomplete="off">
+                            </label>
+                            <label for="contact" style="width:30%;">
+                                <select style=" width:25%;  padding:15px; font-size: 15px; border-top: 1px solid #9f9f9f; border-right: 1px solid #9f9f9f;border-left: 1px solid #9f9f9f; border-bottom: 1px solid #9f9f9f;">
                                    <option style="font-size: 15px;" value="" disabled selected>Batch No. </option>
                                    <option style="font-size: 15px;" value="">Batch 01</option>
                                    <option style="font-size: 15px;" value="">Batch 02</option>
@@ -24,9 +26,9 @@
                                    <option style="font-size: 15px;" value="">Batch 05</option>
                                    <option style="font-size: 15px;" value="">Batch 06</option>
                                </select>
-
-
+                               
                                <button type="submit" class=" bg-color-theme text-center text-regular">Search</button>
+                            </label>
                            </form>
                        </div>
                    </div>

@@ -13,6 +13,11 @@ class Common extends CI_Controller {
 		$this->load->view('public/general_member');
 	}
 
+	public function executive_member()
+	{
+		$this->load->view('public/executive_member');
+	}
+	
 	public function news()
 	{
 		$this->load->view('public/news');

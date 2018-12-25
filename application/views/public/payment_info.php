@@ -18,7 +18,7 @@
                 </li>
                 <li>
                     <a href="inbox">
-                    Inbox <span class="badge">3</span></a>
+                    Inbox <span class="badge badge-primary badge-pill">3</span></a>
                     
                 </li>
                 <li class="active">
