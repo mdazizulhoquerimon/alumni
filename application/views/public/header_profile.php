@@ -378,7 +378,7 @@ a, button, code, div, input, label, li, p, pre, select, span, svg, table, td, te
 
 
         .features_table h1{
-    font-size:25px !important;
+    font-size:20px !important;
 	
 }
 li{
@@ -392,7 +392,7 @@ h1{
     border-bottom: 2px solid #e5a253;
     color: #f1f1f1;
     font-size: 14px;
-    padding: 15px 24px;
+    padding: 10px 10px;
 }
 .features-table li:hover{
 	background:  #e5a253;
@@ -405,7 +405,7 @@ h1{
     background: #efefef none repeat scroll 0 0;
     border-bottom: 2px solid #d4d4d4;
 	text-align:center;
-    padding: 12.5px 19px;
+    padding: 7.5px 14px;
 	cursor:pointer;
 }
 .features-table-free h1, .features-table-paid h1 {
@@ -425,7 +425,7 @@ h1{
     color: #fff;
     font-weight: 600;
     margin: 0;
-    padding: 19px 21px;
+    padding: 10px 21px;
     text-transform: uppercase;
 }
 .features-table h1 {

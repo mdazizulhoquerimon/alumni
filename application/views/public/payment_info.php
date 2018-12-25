@@ -45,7 +45,7 @@
             </div>
             <section class="features_table">
         <div class="container ">
-        	<div class="col-sm-8 col-8 col-xs-9 no-padding">
+        	<div class="col-sm-4 col-4 col-xs-5 no-padding">
             	<div class="features-table">
                 	<ul>
                     	<h1>Month</h1>
