@@ -11,5 +11,11 @@ class Users extends CI_Controller {
 	{
 		$this->load->view('public/register-page');
 	}
+	public function profile()
+	{
+		$this->load->view('public/header_profile');
+		$this->load->view('public/profile');
+		$this->load->view('public/footer_profile');
+	}
 
 }
