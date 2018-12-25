@@ -53,13 +53,42 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
+              <input class="form-control" type="text" value="Doe">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Company:</label>
             <div class="col-lg-8">
               <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Designation:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Company Location:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Blood Group:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="A+">A</option>
+                  <option value="A-">A-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-" selected="selected">AB-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="form-group">
@@ -73,12 +102,12 @@
             <div class="col-lg-8">
               <div class="ui-select">
                 <select id="user_time_zone" class="form-control">
-                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Dhaka" selected="selected">(GMT +06:00) Astana, Dhaka</option>
                   <option value="Alaska">(GMT-09:00) Alaska</option>
                   <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
                   <option value="Arizona">(GMT-07:00) Arizona</option>
                   <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)</option>
                   <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
                   <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
                 </select>
