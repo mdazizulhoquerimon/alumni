@@ -19,7 +19,7 @@
                         <li>
 							<a href="inbox">
                             <span class="glyphicon glyphicon-envelope"></span>
-							Inbox</a>
+							Inbox <span class="badge">3</span></a>
 						</li>
 						<li>
 							<a href="paymentinfo">
