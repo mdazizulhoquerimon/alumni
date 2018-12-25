@@ -94,7 +94,7 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="text" value="janedoe@gmail.com">
             </div>
           </div>
           <div class="form-group">

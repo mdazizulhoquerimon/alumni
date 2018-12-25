@@ -10,23 +10,28 @@
         <div class="panel-body">
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="profile">
-                            <span class="glyphicon glyphicon-envelope"></span>
-							Account Overview </a>
-						</li>
-						<li>
-							<a href="editprofile">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
-						</li>
-						<li>
-							<a href="paymentinfo">
-							<i class="glyphicon glyphicon-ok"></i>
-							Payment Info </a>
-						</li>
-					</ul>
+                <ul class="nav">
+                <li class="active">
+                    <a href="profile">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    Account Overview </a>
+                </li>
+                <li>
+                    <a href="inbox">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    Inbox</a>
+                </li>
+                <li>
+                    <a href="paymentinfo">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    Payment Info </a>
+                </li>
+                <li >
+                    <a href="editprofile">
+                    <i class="glyphicon glyphicon-user"></i>
+                    Account Settings </a>
+                </li>
+            </ul>
 				</div>
 				<!-- END MENU -->
             </div>
