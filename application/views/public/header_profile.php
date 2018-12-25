@@ -249,10 +249,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 
-a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
+a, button, code, div, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
     -webkit-border-radius: 0!important;
     -moz-border-radius: 0!important;
-    border-radius: 0!important;
+    border-radius: 5!important;
 }
 .dashboard-stat, .portlet {
     -webkit-border-radius: 4px;
