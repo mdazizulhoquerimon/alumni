@@ -375,6 +375,134 @@ a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, t
         }
 
 
+
+
+        .features_table h1{
+    font-size:25px !important;
+	
+}
+li{
+    list-style:none;
+    }
+h1{
+     font-size:20px !important;
+    }    
+.features-table li {
+    background: #da9748 none repeat scroll 0 0;
+    border-bottom: 2px solid #e5a253;
+    color: #f1f1f1;
+    font-size: 14px;
+    padding: 15px 24px;
+}
+.features-table li:hover{
+	background:  #e5a253;
+	cursor:pointer;
+	-webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+.features-table-free li, .features-table-paid li {
+    background: #efefef none repeat scroll 0 0;
+    border-bottom: 2px solid #d4d4d4;
+	text-align:center;
+    padding: 12.5px 19px;
+	cursor:pointer;
+}
+.features-table-free h1, .features-table-paid h1 {
+    text-align: center;
+}
+.features-table-free li:hover, .features-table-paid li:hover {
+    background: #dedede none repeat scroll 0 0;
+	-webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+.features_table h1 {
+    font-size: 23px !important;
+}
+.features-table h1, .features-table-free h1, .features-table-paid h1 {
+    background: #6b6b6b none repeat scroll 0 0;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    padding: 19px 21px;
+    text-transform: uppercase;
+}
+.features-table h1 {
+    border-top-left-radius: 20px;
+	text-align:center;
+}
+.features-table-paid h1 {
+    border-top-right-radius: 20px;
+}
+.features-table-free li {
+    border-right: 2px solid #d4d4d4;
+}
+
+.fa.fa-check {
+    color: #2cc14f;
+}
+.fa.fa-times {
+    color: #BA5340;
+}
+.fa{
+	font-size:30px;
+}
+.no-padding{
+	padding:0;
+}
+ul{
+	padding:0;
+}
+
+body {
+  counter-reset: section;                   /* Set the section counter to 0 */
+}
+.features-table li::before {
+  counter-increment: section;               /* Increment the section counter*/
+  content: "" counter(section) ": "; /* Display the counter */
+}
+
+
+
+
+
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
+
+
     </style>
 
 </head>

@@ -17,5 +17,17 @@ class Users extends CI_Controller {
 		$this->load->view('public/profile');
 		$this->load->view('public/footer_profile');
 	}
+	public function paymentinfo()
+	{
+		$this->load->view('public/header_profile');
+		$this->load->view('public/payment_info');
+		$this->load->view('public/footer_profile');
+	}
+	public function editprofile()
+	{
+		$this->load->view('public/header_profile');
+		$this->load->view('public/edit_profile');
+		$this->load->view('public/footer_profile');
+	}
 
 }
