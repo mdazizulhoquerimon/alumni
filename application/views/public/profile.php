@@ -6,16 +6,19 @@
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
+            <div class="panel panel-default">
+    <div class="panel-heading"><b>My Account</b></div>
+        <div class="panel-body">
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
 						<li class="active">
 							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
+                            <span class="glyphicon glyphicon-envelope"></span>
 							Account Overview </a>
 						</li>
 						<li>
-							<a href="https://codepen.io/jasondavis/pen/jVRwaG?editors=1000">
+							<a href="editprofile">
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>
 						</li>
@@ -27,12 +30,103 @@
 					</ul>
 				</div>
 				<!-- END MENU -->
- 
-			</div>
-		</div>
+            </div>
+        </div>
+	</div>
+</div>
 		<div class="col-md-9">
-            <div class="profile-content">
-            <div class="wrapper">
+            <div>
+                <h3 class="text-left"><b>My Dashboard</b></h3>
+            </div>
+            <div class="card">
+
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                                <div class="image-container">
+                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">Md. Samiul Hasan</a></h2>
+                                    <h6 class="d-block"><b> Senior Adv. </b></h6>
+                                    <h6 class="d-block"><b> United Nations </b></h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Full Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Md. Samiul Hasan
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Birth Date</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                March 22, 1994.
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+		</div>
+	</div>
+</div>
+            </div>
+        </div>
+    </div>
+<!--End content wrapper-->
+
+
+
+
+<!-- profile old 
+
+<div class="profile-content">
+                <div class="wrapper">
                             <div class="wrapper-inner">
                                 <div class="box-wrapper">
                                     <div class="box">
@@ -58,10 +152,5 @@
 
 
             </div>
-		</div>
-	</div>
-</div>
-            </div>
-        </div>
-    </div>
-<!--End content wrapper-->
+
+end profile old-->
