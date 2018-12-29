@@ -77,7 +77,7 @@
         $('#time').syotimer({
             year: 2018,
             month: 12,
-            day: 23,
+            day: 31,
             hour: 7,
             minute: 7,
         });

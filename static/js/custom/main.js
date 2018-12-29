@@ -32,11 +32,12 @@
   ------------------------------ */
  $(".columns1").owlCarousel({
   loop:true,
-  autoPlay: true,
+  autoplay: true,
   items : 1,
   margin:0,
   singleItem: true,
-  autoplayTimeout:500
+  autoplayTimeout:2000,
+  autoplayHoverPause:true
  });
 
  //mobile menu
