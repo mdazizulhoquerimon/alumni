@@ -68,6 +68,7 @@ class Users extends CI_Controller {
 				$data['verificationkey'] = $verificationkey;
 				$data['password'] = md5($temppassword);
 				$data['idcreatedate'] = date('Y-m-d');
+				$data['isverified'] = 0;
 				unset($data['password2']);
 				$emailaddr = $data['email'];
 				//echo "<br><br><br><br><br><br><br><br><br><br><br>found";
@@ -161,7 +162,7 @@ class Users extends CI_Controller {
 		$htmlContent = '<h1>Please verify your email addressr</h1>';
 		$htmlContent .= '<h2>From CUELSA</h2>';
 		$htmlContent .= '<p>This email has sent from CUELSA website. You have been registered as a user.</p>';
-		$htmlContent .= '<p>Please click this <a href="'.base_url().'users/verifyemail/'.$verificationkey.'">link</a>.</p>';
+		$htmlContent .= '<p>Please click this <a href="localhost/alumni/users/verifyemail/'.$verificationkey.'">link</a>.</p>';
 		$htmlContent .= '<br><br><p>After you click this link, your account will be activated.</p>';
 		$htmlContent .= '<br><br><p>If you did not intend to receive this mail, please ignore and delete this mail.</p>';
 		$htmlContent .= '<br><br><p>Thank you<br>CUELSA</p>';
@@ -174,6 +175,25 @@ class Users extends CI_Controller {
 		//Send email
 		if($this->email->send()) return TRUE;
 		else return FALSE;
+	}
+
+	public function verifyemail()
+	{
+		if($this->uri->segment(3))
+		{
+			$verificationkey = $this->uri->segment(3);
+			$this->load->model('Auth');
+			if($this->Auth->verify_email($verificationkey) == TRUE)
+			{
+				$this->session->set_flashdata("success", "Your Email has been successfully verified. Please LOGIN now to the Dashboard.");
+				redirect('users/login','refresh');
+			}
+			else
+			{
+				$this->session->set_flashdata("error", "Invalid Activation Link. Please try again.");
+				redirect('users/login', 'refresh');
+			}
+		}
 	}
 
 }
