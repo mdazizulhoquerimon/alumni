@@ -40,7 +40,6 @@ class Users extends CI_Controller {
 			// }
 		}
 
-
 		$this->load->view('public/userlogin');
 	}
 
@@ -65,21 +64,32 @@ class Users extends CI_Controller {
 			{
 				$data = $this->input->post();
 				$temppassword = $data['password'];
+				$verificationkey = md5(rand());
+				$data['verificationkey'] = $verificationkey;
 				$data['password'] = md5($temppassword);
 				$data['idcreatedate'] = date('Y-m-d');
 				unset($data['password2']);
+				$emailaddr = $data['email'];
 				//echo "<br><br><br><br><br><br><br><br><br><br><br>found";
 				//print_r($data);
 				$id = $this->Auth->registeruser($data);
 				if($id > 0)
 				{
-					$this->session->set_flashdata('success','Your account has been registered. Please verify your email to LOG IN now');
-					redirect('users/register','refresh');
+					if($this->sendemail($verificationkey,$emailaddr))
+					{
+						$this->session->set_flashdata('success','Your account has been registered. Please verify your email to LOG IN now');
+						redirect('users/register','refresh');
+					}
+					else
+					{
+						$this->session->set_flashdata("error", "An error occurred. Please try again");
+						redirect('users/register','refresh');
+					}
 				}
 				else
 				{
 					$this->session->set_flashdata("error", "An error occurred. Please try again");
-					redirect('users/login','refresh');
+					redirect('users/register','refresh');
 				}
 				
 			}
@@ -125,6 +135,45 @@ class Users extends CI_Controller {
 		$this->load->view('public/header_profile');
 		$this->load->view('public/edit_profile');
 		$this->load->view('public/footer_profile');
+	}
+
+	public function sendemail($verificationkey,$emailaddr)
+	{
+		//Load email library
+		$this->load->library('email');
+		//$this->load->library('encrypt');
+
+		//SMTP & mail configuration
+		$config = array(
+			'protocol'  => 'smtp',
+			'smtp_host' => 'in-v3.mailjet.com',
+			'smtp_port' => 587,
+			'smtp_user' => 'a08541261509eac47932f82efdf46e2f',
+			'smtp_pass' => '763cd3e5676038ecf10b7501acb0bd66',
+			'mailtype'  => 'html',
+			'charset'   => 'utf-8'
+		);
+		$this->email->initialize($config);
+		$this->email->set_mailtype("html");
+		$this->email->set_newline("\r\n");
+
+		//Email content
+		$htmlContent = '<h1>Please verify your email addressr</h1>';
+		$htmlContent .= '<h2>From CUELSA</h2>';
+		$htmlContent .= '<p>This email has sent from CUELSA website. You have been registered as a user.</p>';
+		$htmlContent .= '<p>Please click this <a href="'.base_url().'users/verifyemail/'.$verificationkey.'">link</a>.</p>';
+		$htmlContent .= '<br><br><p>After you click this link, your account will be activated.</p>';
+		$htmlContent .= '<br><br><p>If you did not intend to receive this mail, please ignore and delete this mail.</p>';
+		$htmlContent .= '<br><br><p>Thank you<br>CUELSA</p>';
+
+		$this->email->to($emailaddr);
+		$this->email->from('u1403097@student.cuet.ac.bd','CUELSA');
+		$this->email->subject('CUELSA Account Verification');
+		$this->email->message($htmlContent);
+
+		//Send email
+		if($this->email->send()) return TRUE;
+		else return FALSE;
 	}
 
 }
