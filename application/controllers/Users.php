@@ -7,7 +7,7 @@ class Users extends CI_Controller {
 	{
 		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
-			$this->form_validation->set_rules('email','Email','required');
+			$this->form_validation->set_rules('email','Email','required|trim|valid_email');
 			$this->form_validation->set_rules('password','Password','required|min_length[6]');
 
 			if($this->form_validation->run() == TRUE)
@@ -49,10 +49,15 @@ class Users extends CI_Controller {
 		//if(isset($_POST['registerbtn']))
 		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
+			$this->load->model('Auth');
 			$this->form_validation->set_rules('fullname','Full Name','required');
 			$this->form_validation->set_rules('batch','Batch Name','required');
-			$this->form_validation->set_rules('studentid','Student Id','required');
-			$this->form_validation->set_rules('email','Email','required');
+			$this->form_validation->set_rules('studentid','Student Id','required|is_unique[registeredalumni.studentid]', array(
+																			'required'      => 'You have not provided %s.',
+																			'is_unique'     => 'This %s already exists. Please try with another one'));
+			$this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[registeredalumni.email]', array(
+																			'required'      => 'You have not provided %s.',
+																			'is_unique'     => 'This %s already exists. Please try with another one'));
 			$this->form_validation->set_rules('password','Password','required|min_length[6]');
 			$this->form_validation->set_rules('password2','Confirm Password','required|min_length[6]|matches[password]');
 
@@ -65,9 +70,18 @@ class Users extends CI_Controller {
 				unset($data['password2']);
 				//echo "<br><br><br><br><br><br><br><br><br><br><br>found";
 				//print_r($data);
-				$this->db->insert('registeredalumni',$data);
-				$this->session->set_flashdata('success','Your account has been registered. Please verify your email to LOG IN now');
-				redirect('users/register','refresh');
+				$id = $this->Auth->registeruser($data);
+				if($id > 0)
+				{
+					$this->session->set_flashdata('success','Your account has been registered. Please verify your email to LOG IN now');
+					redirect('users/register','refresh');
+				}
+				else
+				{
+					$this->session->set_flashdata("error", "An error occurred. Please try again");
+					redirect('users/login','refresh');
+				}
+				
 			}
 		}
 

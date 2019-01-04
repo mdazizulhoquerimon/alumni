@@ -25,6 +25,7 @@ class Auth extends CI_Model {
 
         public function registeruser($data)
         {
-            
+            $this->db->insert('registeredalumni',$data);
+            return $this->db->insert_id();
         }
 }
