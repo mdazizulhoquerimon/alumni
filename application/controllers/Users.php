@@ -24,20 +24,26 @@ class Users extends CI_Controller {
 
 					$_SESSION['user_logged'] = TRUE;
 					$_SESSION['email'] = $email;
+					
 					redirect('users/profile', 'refresh');
-
 				}
 				else
 				{
 					$this->session->set_flashdata("error", "No such email/password found");
-					redirect("users/login");
+					redirect("users/login", 'refresh');
 				}
 			}
+			// else
+			// {
+			// 	//$this->session->set_flashdata("error", "No such email/password found");
+			// 	redirect("users/login", 'refresh');
+			// }
 		}
 
 
 		$this->load->view('public/userlogin');
 	}
+
 	public function register()
 	{
 		//if(isset($_POST['registerbtn']))
@@ -68,18 +74,38 @@ class Users extends CI_Controller {
 		
 		$this->load->view('public/register-page');
 	}
+
+	public function logout()
+	{
+		$_SESSION['user_logged'] = FALSE;
+		$_SESSION['email'] = '';
+		$this->session->set_flashdata('success','Your have been logged out successfully');
+		redirect('users/login','refresh');
+	}
+
 	public function profile()
 	{
-		$this->load->view('public/header_profile');
-		$this->load->view('public/profile');
-		$this->load->view('public/footer_profile');
+		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+		{
+			$this->load->view('public/header_profile');
+			$this->load->view('public/profile');
+			$this->load->view('public/footer_profile');
+		}
+		else
+		{
+			$this->session->set_flashdata("error", "You have to login first to view this page");
+			redirect('users/login','refresh');
+		}
+		
 	}
+
 	public function paymentinfo()
 	{
 		$this->load->view('public/header_profile');
 		$this->load->view('public/payment_info');
 		$this->load->view('public/footer_profile');
 	}
+
 	public function editprofile()
 	{
 		$this->load->view('public/header_profile');

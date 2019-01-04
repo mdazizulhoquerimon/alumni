@@ -22,4 +22,9 @@ class Auth extends CI_Model {
                 return FALSE;
             }
         }
+
+        public function registeruser($data)
+        {
+            
+        }
 }
