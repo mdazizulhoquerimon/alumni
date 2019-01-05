@@ -1,55 +1,57 @@
+<?php include('header.php')?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/payment.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/profileview.css" />
 <div class="content-wrapper">
-        <div class="account-page login text-center">
-            <div class="container">
-            <div class="container">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-            <div class="panel panel-default">
-    <div class="panel-heading"><b>My Account</b></div>
-        <div class="panel-body">
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-                <ul class="nav">
-                <li>
-                    <a href="profile">
-                    <span class="glyphicon glyphicon-envelope"></span>
-                    Account Overview </a>
-                </li>
-                <li>
-                    <a href="inbox">
-                    Inbox <span class="badge badge-primary badge-pill">3</span></a>
-                    
-                </li>
-                <li class="active">
-                    <a href="paymentinfo">
-                    <i class="glyphicon glyphicon-ok"></i>
-                    Payment Info </a>
-                </li>
-                <li >
-                    <a href="editprofile">
-                    <i class="glyphicon glyphicon-user"></i>
-                    Account Settings </a>
-                </li>
-            </ul>
-				</div>
-				<!-- END MENU -->
+  <div class="account-page login">
+      <div class="container">
+          <div class="account-title">
+              <h4 class="heading-light text-center">PROFILE</h4>
+          </div>
+      </div>      
+
+      <div class="container">           
+      <div class="row">
+          <div class="col-sm-3">              
+            <div class="profile-block">
+              <div class="panel text-center">
+                  <div class="user-heading">
+                    <a href="#"><img class="img-circle img-responsive" alt="" src="<?php echo base_url(); ?>static/images/peng.jpg"></a>
+                    <h1>Elias Miah</h1>
+                    <p>Designation</p>
+                    <p>Company</p>
+                    <div class="">
+                       <ul class="list-inline text-center">
+                          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      </ul>                                 
+                    </div>
+                  </div>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="editprofile"><i class="fa fa-pencil-square-o"></i>Edit profile</a></li>
+                    <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>Inbox</a></li>
+                    <li><a href="paymentinfo"><i class="fa fa-usd" aria-hidden="true"></i>Payment History</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
+                  </ul>
+              </div>
             </div>
-        </div>
-	</div>
-</div>
-<!--Begin content wrapper-->
-		<div class="col-md-9">
-            <div>
-                <h3 class="text-left"><b>My Payment Info</b></h3>
-            </div>
-            <section class="features_table">
+          </div>
+          <div class="col-sm-9">              
+              <!-- resumt -->
+              <div class="panel panel-default">
+                 <div class="panel-heading resume-heading">
+                    <div class="row">
+                       <div class="col-lg-12">
+                          <div class="col-xs-12">
+                             <h4 class="text-center" style="margin-bottom: 10px;">Payment Status</h4>
+                             <section class="features_table">
         <div class="container ">
-        	<div class="col-sm-4 col-4 col-xs-5 no-padding">
-            	<div class="features-table">
-                	<ul>
-                    	<h1>Month</h1>
-                    	<li>January</li>
+            <div class="col-sm-4 col-4 col-xs-5 no-padding">
+                <div class="features-table">
+                    <ul>
+                        <h1>Month</h1>
+                        <li>January</li>
                         <li>February</li>
                         <li>March</li>
                         <li>April</li>
@@ -66,9 +68,9 @@
             </div>
             
              <div class="col-sm-2 col-2 col-xs-9 no-padding">
-             	 <div class="features-table-paid">
-                	<ul>
-                    	<h1>Status</h1>
+                 <div class="features-table-paid">
+                    <ul>
+                        <h1>Status</h1>
                         <li><i class="fa fa-check"></i></li>
                         <li><i class="fa fa-times"></i></li>
                         <li><i class="fa fa-times"></i></li>
@@ -88,5 +90,14 @@
         </div>
     
     </section>
+                          </div>
+                       </div>
+                    </div>
+               </div>
+            </div>              
+          </div>
+        </div>
     </div>
-<!--End content wrapper-->
+  </div>
+</div>
+<?php include('footer.php');?>

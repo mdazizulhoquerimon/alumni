@@ -1,10 +1,18 @@
 <?php include('header.php')?>
     <!--Begin content wrapper-->
+    !--Begin content wrapper-->
     <div class="content-wrapper">
+        <div class="account-page login">
+      <div class="container">
+          <div class="account-title">
+              <h4 class="heading-light text-center">NEWS</h4>
+          </div>
+      </div>
+
         <div class="latst-article">
             <div class="container">
                 <div class="area-img">
-                    <img src="images/img-article.jpg" alt="">
+                    <img src="<?php echo base_url(); ?>static/images/img-article.jpg" alt="">
                 </div>
                 <div class="area-content">
                     <div class="category animated fadeIn">
@@ -33,7 +41,7 @@
                         <div class="articles">
                             <div class="article-item">
                                 <div class="area-img">
-                                    <img src="images/article-img-1.jpg" alt="">
+                                    <img src="<?php echo base_url(); ?>static/images/article-img-1.jpg" alt="">
                                 </div>
                                 <div class="area-content">
                                     <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
@@ -63,7 +71,7 @@
                             </div>
                             <div class="article-item">
                                 <div class="area-img">
-                                    <img src="images/article-img-2.jpg" alt="">
+                                    <img src="<?php echo base_url(); ?>static/images/article-img-2.jpg" alt="">
                                 </div>
                                 <div class="area-content">
                                     <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
@@ -93,7 +101,7 @@
                             </div>
                             <div class="article-item">
                                 <div class="area-img">
-                                    <img src="images/article-img-3.jpg" alt="">
+                                    <img src="<?php echo base_url(); ?>static/images/article-img-3.jpg" alt="">
                                 </div>
                                 <div class="area-content">
                                     <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
@@ -191,7 +199,7 @@
                                     <ul>
                                         <li>
                                             <div class="area-img">
-                                                <img src="images/post-right-1.jpg" alt="">
+                                                <img src="<?php echo base_url(); ?>static/images/post-right-1.jpg" alt="">
                                             </div>
                                             <div class="area-content">
                                                 <h6>Project Teach shows youngsters what’s possible</h6>
@@ -205,7 +213,7 @@
                                         </li>
                                         <li>
                                             <div class="area-img">
-                                                <img src="images/post-right-2.jpg" alt="">
+                                                <img src="<?php echo base_url(); ?>static/images/post-right-2.jpg" alt="">
                                             </div>
                                             <div class="area-content">
                                                 <h6>Claritas est etiam processus dynamicus, quisasma</h6>
@@ -219,7 +227,7 @@
                                         </li>
                                         <li>
                                             <div class="area-img">
-                                                <img src="images/post-right-3.jpg" alt="">
+                                                <img src="<?php echo base_url(); ?>static/images/post-right-3.jpg" alt="">
                                             </div>
                                             <div class="area-content">
                                                 <h6>Typi non habent claritatem insitam est usus legentis in</h6>
@@ -233,7 +241,7 @@
                                         </li>
                                         <li>
                                             <div class="area-img">
-                                                <img src="images/post-right-4.jpg" alt="">
+                                                <img src="<?php echo base_url(); ?>static/images/post-right-4.jpg" alt="">
                                             </div>
                                             <div class="area-content">
                                                 <h6>Dolore eu feugiat nulla facilisis at vero eros et accumsan et i</h6>
@@ -247,7 +255,7 @@
                                         </li>
                                         <li>
                                             <div class="area-img">
-                                                <img src="images/post-right-5.jpg" alt="">
+                                                <img src="<?php echo base_url(); ?>static/images/post-right-5.jpg" alt="">
                                             </div>
                                             <div class="area-content">
                                                 <h6>Dignissim qui blandit praesent luptatum zzril delenit augue dui</h6>
@@ -262,67 +270,13 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="block-item twitter">
-                                <div class="block-title text-center">
-                                    <h5 class="text-regular text-uppercase">TWITTER</h5>
-                                </div>
-                                <div class="block-content">
-                                    <div class="twitter-wrapper text-center">
-                                        <div class="twitter-icon color-theme">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="twitter-content">
-                                            <div class="twitter-desc">
-                                                <p class="text-light text-center">“Dignissim qui blandit praesent luptatum zril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum  <a href="#" class="color-theme">@#SayidanAlumni</a>“</p>
-                                                <div class="twitter-user">
-                                                    <span class="text-regular">@KathleenLittle</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-item tag">
-                                <div class="block-title text-center">
-                                    <h5 class="text-regular text-uppercase">POPULAR TAGS</h5>
-                                </div>
-                                <div class="block-content">
-                                    <ul class="list-inline">
-                                        <li><a href="#">sayidan</a></li>
-                                        <li><a href="#">community</a></li>
-                                        <li><a href="#">news</a></li>
-                                        <li><a href="#">alumni</a></li>
-                                        <li><a href="#">profile</a></li>
-                                        <li><a href="#">interview</a></li>
-                                        <li><a href="#">envato</a></li>
-                                        <li><a href="#">themeforest</a></li>
-                                        <li><a href="#">psd</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!--begin newsletter-->
-        <div class="newsletter newsletter-parallax type2">
-            <div class="container">
-                <div class="newsletter-wrapper text-center">
-                    <div class="newsletter-title">
-                        <h2 class="heading-light">Keep Up and Join Our Newsletter</h2>
-                        <p class="text-white">Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>
-                    </div>
-                    <form name="subscribe-form" target="_blank" class="form-inline">
-                        <input type="text" class="form-control text-center form-text-light" name="EMAIL" value="" placeholder="E-mail Address" >
-                        <button type="submit" class="button bnt-theme">subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--end newsletter-->
-
+          </div>
     </div>
     <!--End content wrapper-->
     <?php include('footer.php')?>

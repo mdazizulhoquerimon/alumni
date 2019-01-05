@@ -1,120 +1,318 @@
 <?php include('header.php');?>
     <!--Begin content wrapper-->
     <div class="content-wrapper">
-        <div class="container">
-            <div class="alumni-directory">
-               <div class="top-section">
-                   <div class="container">
-                       <div class="title-page text-center" style="margin-top:60px;">
-                           <h4 class="text-regular"> Alumni Directory</h4>
-                           <hr>
-                       </div>
-                   </div>
+        <div class="account-page login text-center">
+            <div class="container">
+                <div class="account-title">
+                    <h4 class="heading-light">GENERAL MEMBER</h4>
+                </div>
                    <div class="row">
                        <div class="account-content">
-                           <form >
-                           <label for="company" style="width:40%;">
-                             <input style="font-size: 15px; border-top: 1px solid #9f9f9f; border-right: 1px solid #9f9f9f;border-left: 1px solid #9f9f9f; border-bottom: 1px solid #9f9f9f;" type="text" name="q" class="form-control input-search" placeholder="Keywords" autocomplete="off">
-                            </label>
-                            <label for="contact" style="width:30%;">
-                                <select style=" width:25%;  padding:15px; font-size: 15px; border-top: 1px solid #9f9f9f; border-right: 1px solid #9f9f9f;border-left: 1px solid #9f9f9f; border-bottom: 1px solid #9f9f9f;">
-                                   <option style="font-size: 15px;" value="" disabled selected>Batch No. </option>
-                                   <option style="font-size: 15px;" value="">Batch 01</option>
-                                   <option style="font-size: 15px;" value="">Batch 02</option>
-                                   <option style="font-size: 15px;" value="">Batch 03</option>
-                                   <option style="font-size: 15px;" value="">Batch 04</option>
-                                   <option style="font-size: 15px;" value="">Batch 05</option>
-                                   <option style="font-size: 15px;" value="">Batch 06</option>
-                               </select>
-                               
-                               <button type="submit" class=" bg-color-theme text-center text-regular">Search</button>
-                            </label>
+                           <form class="form-inline" role="form" >
+                               <div class="form-group" style="margin-bottom: 10px;">
+                                   <label class="sr-only" for="Search">Search</label>
+                                   <input type="search" class="form-control" id="Search" placeholder="Search">
+                               </div>
+                               <div class="form-group">
+                                   <label class="sr-only" for="batch">Batch No.</label>
+
+                                   <select class="form-control" id="batch">
+                                       <option style="font-size: 15px;" value="" disabled selected>Batch No. </option>
+                                       <option style="font-size: 15px;" value="">Batch 01</option>
+                                       <option style="font-size: 15px;" value="">Batch 02</option>
+                                       <option style="font-size: 15px;" value="">Batch 03</option>
+                                       <option style="font-size: 15px;" value="">Batch 04</option>
+                                       <option style="font-size: 15px;" value="">Batch 05</option>
+                                       <option style="font-size: 15px;" value="">Batch 06</option>
+                                   </select>
+                               </div>
+
+                               <button class="btn btn-outline-secondary bg-color-theme" type="button" style="margin-bottom: 10px;">Search</button>
                            </form>
                        </div>
                    </div>
                </div>
-               <div class="alumni-directory-content">
-                    <ul class="list-item">
-                        <li class="label-content">
-                            <span class="user">Name</span>
-                            <span class="year">Year Graduate</span>
-                            <span class="city">City</span>
-                            <span class="school">School</span>
-                            <span class="department">department</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user1.png" alt=""><span class="label-name">Katherine Chen</span></span>
-                            <span class="year">12 June 2012</span>
-                            <span class="city">San Francisco</span>
-                            <span class="scholl">School of Humanities &amp; Sciences</span>
-                            <span class="department">East Asian Languages and Cultures</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user2.png" alt=""><span class="label-name">Barbara Ortiz</span></span>
-                            <span class="year">02 August 2013</span>
-                            <span class="city">New York</span>
-                            <span class="scholl">School of Engineering</span>
-                            <span class="department">Bioengineering</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user3.png" alt=""><span class="label-name">Michael Kennedy</span></span>
-                            <span class="year">03 August 2011</span>
-                            <span class="city">Saint Petersburg</span>
-                            <span class="scholl">School of Medicine</span>
-                            <span class="department">Cardiothoracic Surgery</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user4.png" alt=""><span class="label-name">Harry Foster</span></span>
-                            <span class="year">18 August 2008</span>
-                            <span class="city">Johannesburg</span>
-                            <span class="scholl">School of Engineering</span>
-                            <span class="department">Civil &amp; Environmental Engineering</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user5.png" alt=""><span class="label-name">Sandra Dunn</span></span>
-                            <span class="year">07 June 2007</span>
-                            <span class="city">Jakarta</span>
-                            <span class="scholl">School of Environmental Sciences</span>
-                            <span class="department">Earth System Science</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user6.png" alt=""><span class="label-name">Steven Warren</span></span>
-                            <span class="year">18 June 2013</span>
-                            <span class="city">Washington</span>
-                            <span class="scholl">School of Engineering</span>
-                            <span class="department">Mechanical Engineering</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user7.png" alt=""><span class="label-name">Dorothy Mendez</span></span>
-                            <span class="year">28 July 2012</span>
-                            <span class="city">Los Angeles</span>
-                            <span class="scholl">School of Medicine</span>
-                            <span class="department">Developmental Biology</span>
-                        </li>
-
-                        <li class="box-content">
-                            <span class="user"><img src="images/user8.png" alt=""><span class="label-name">Sandra Dunn</span></span>
-                            <span class="year">07 June 2007</span>
-                            <span class="city">Jakarta</span>
-                            <span class="scholl">School of Environmental Sciences</span>
-                            <span class="department">Earth System Science</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user9.png" alt=""><span class="label-name">Steven Warren</span></span>
-                            <span class="year">18 June 2013</span>
-                            <span class="city">Washington</span>
-                            <span class="scholl">School of Engineering</span>
-                            <span class="department">Mechanical Engineering</span>
-                        </li>
-                        <li class="box-content">
-                            <span class="user"><img src="images/user10.png" alt=""><span class="label-name">Dorothy Mendez</span></span>
-                            <span class="year">28 July 2012</span>
-                            <span class="city">Los Angeles</span>
-                            <span class="scholl">School of Medicine</span>
-                            <span class="department">Developmental Biology</span>
-                        </li>
-                    </ul>
+                               
+                <!-- Start of teacher Area -->
+                <div class="teacher-area text-center pt-90 pb-90">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12" >
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img" >
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/1.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>rose haten</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/2.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Kate Watson</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/3.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>nicol rune</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/4.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Lara Wilems</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/5.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Roser</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/6.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Kate Watson</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/7.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Nipu Watson</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img" >
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/8.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>jack ron</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/9.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>sue ane</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/10.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Kate Wine</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/11.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Nipu Watson</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="single-teacher mb-30">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/12.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Lara Wilems</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 hidden-sm hidden-xs">
+                                <div class="single-teacher">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/13.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Amily</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 hidden-sm hidden-xs">
+                                <div class="single-teacher">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/14.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>rose Watson</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 hidden-sm hidden-xs">
+                                <div class="single-teacher">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/15.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Nipu Watson</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 hidden-sm hidden-xs">
+                                <div class="single-teacher">
+                                    <div class="teacher-img">
+                                        <img src="<?php echo base_url(); ?>static/images/teacher/16.jpg" alt="teacher">
+                                        <div class="teacher-content" style="background-color: #1a265c">
+                                            <h3>Lara Wilems</h3>
+                                            <div class="teacher-hover">
+                                                <ul class="list-inline text-center">
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- End of teacher Area -->
                 <div class="pagination-wrapper text-center">
                     <ul class="pagination">
                         <li class="prev"><a href="#">Previous</a></li>
@@ -128,6 +326,5 @@
                 </div>
             </div>
         </div>
-    </div>
     <!--End content wrapper-->
     <?php include('footer.php');?>

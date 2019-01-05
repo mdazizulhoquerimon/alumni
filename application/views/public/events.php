@@ -2,6 +2,13 @@
 
     <!--Begin content wrapper-->
     <div class="content-wrapper">
+        <div class="account-page login text-center">
+            <div class="container">
+                <div class="account-title">
+                    <h4 class="heading-light">EVENTS</h4>
+                </div>
+            </div>
+        </div>
 
         <!--begin upcoming event-->
         <div class="program-upcoming-event">
@@ -9,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="area-img">
-                            <img class="img-responsive animate zoomIn" src="images/programs-events-img.jpg" alt="">
+                            <img class="img-responsive animate zoomIn" src="<?php echo base_url(); ?>static/images/programs-events-img.jpg" alt="">
                             <div id="time-event" class="animated fadeIn"></div>
                         </div>
                     </div>
@@ -18,12 +25,12 @@
                             <div class="area-top">
                                 <div class="top-section animated lightSpeedIn">
                                     <h5 class="heading-light">UPCOMING EVENT</h5>
-                                    <span class="dates text-white text-uppercase">MARCH 29, 2016</span>
+                                    <span class="dates text-white text-uppercase">MARCH 29, 2019</span>
                                 </div>
-                                <h2 class="heading-bold animated rollIn">ANNUAL MEET UP AND SCHOLARSHIP PRESENTATIONS</h2>
+                                <h2 class="heading-bold animated rollIn">CUELSA AGM</h2>
                             <span class="animated fadeIn">
                                 <span class="icon map-icon"></span>
-                                <span class="text-place text-white">Sayidan Street, Gondomanan, 8993, San Francisco, CA</span>
+                                <span class="text-place text-white">University of Chittagong, Bangladesh</span>
                             </span>
                             </div>
                             <div class="area-bottom animated zoomInLeft">
@@ -45,19 +52,19 @@
                 <div class="event-month">
                     <ul class="columns1 text-center">
                         <li class="event-item">
-                            <span class="text-light year">2016</span>
+                            <span class="text-light year">2019</span>
                             <span class="text-light month">January</span>
                         </li>
                         <li class="event-item">
-                            <span class="text-light year">2016</span>
+                            <span class="text-light year">2019</span>
                             <span class="text-light month">February</span>
                         </li>
                         <li class="event-item">
-                            <span class="text-light year">2016</span>
+                            <span class="text-light year">2019</span>
                             <span class="text-light month">March</span>
                         </li>
                         <li class="event-item">
-                            <span class="text-light year">2016</span>
+                            <span class="text-light year">2019</span>
                             <span class="text-light month">April</span>
                         </li>
                     </ul>
@@ -201,24 +208,6 @@
             </div>
         </div>
         <!--end event calendar-->
-
-        <!--begin newsletter-->
-        <div class="newsletter newsletter-parallax">
-            <div class="container">
-                <div class="newsletter-wrapper text-center">
-                    <div class="newsletter-title">
-                        <h2 class="heading-light">Keep Up and Join Our Newsletter</h2>
-                        <p class="text-white">Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>
-                    </div>
-                    <form name="subscribe-form" target="_blank" class="form-inline">
-                        <input type="text" class="form-control text-center form-text-light" name="EMAIL" value="" placeholder="E-mail Address" >
-                        <button type="submit" class="button bnt-theme">subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--end newsletter-->
-
     </div>
     <!--End content wrapper-->
     <?php include('footer.php')?>

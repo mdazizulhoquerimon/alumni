@@ -4,51 +4,21 @@
         <div class="slider-hero">
             <div class="sliders-wrap columns1">
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider2.jpg" alt="">
-                    <div class="owl-caption">
-                        <div class="container">
-                            <div class="content-block">
-                                <h2 class="text-center">
-                                    <span class="text-bold">Hearty Welcomes with </span> <br />
-                                    <span class="text-white">a Touch of Rivalry</span>
-                                </h2>
-                                <a href="#" class="bnt bnt-theme read-story">READ STORY</a>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="<?php echo base_url(); ?>static/images/slider3.JPG" alt="">
                 </div>
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider1.jpg" alt="">
-                    <div class="owl-caption">
-                        <div class="container">
-                            <div class="content-block">
-                                <h2>
-                                    <span class="text-bold">SAYIDAN professor explores</span> <br />
-                                    <span class="text-white">marine biology with teens</span>
-                                </h2>
-                                <a href="#" class="bnt bnt-theme read-story">READ ARTICLE</a>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="<?php echo base_url(); ?>static/images/slider1.JPG" alt="">
                 </div>
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider2.jpg" alt="">
-                    <div class="owl-caption">
-                        <div class="container">
-                            <div class="content-block">
-                                <h2>
-                                    <span class="text-bold">Hearty Welcomes with </span> <br />
-                                    <span class="text-white">a Touch of Rivalry</span>
-                                </h2>
-                                <a href="#" class="bnt bnt-theme read-story">READ STORY</a>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="<?php echo base_url(); ?>static/images/slider2.JPG" alt="">
+                </div>
+                <div class="item">
+                    <img src="<?php echo base_url(); ?>static/images/slider4.JPG" alt="">
                 </div>
             </div>
         </div>
         <!--end slider-->
-
+        
         <!--begin upcoming event-->
         <div class="upcoming-event">
             <div class="container">
@@ -61,17 +31,17 @@
                             <div class="row">
                                 <div class="col-sm-10 col-xs-9">
                                     <h5 class="heading-light no-margin animated fadeInRight">UPCOMING EVENT</h5>
-                                    <h2 class="heading-bold animated fadeInLeft">ANNUAL MEET UP AND SCHOLARSHIP PRESENTATIONS</h2>
+                                    <h2 class="heading-bold animated fadeInLeft">CUELSA AGM</h2>
                                     <span>
                                         <span class="icon map-icon"></span>
-                                        <span class="text-place text-light animated fadeInRight">Sayidan Street, Gondomanan, 8993, San Francisco, CA</span>
+                                        <span class="text-place text-light animated fadeInRight">University of Chittagong, Bangladesh</span>
                                     </span>
                                 </div>
                                 <div class="col-sm-2 col-xs-3">
                                     <div class="area-calendar calendar animated slideInRight">
                                         <span class="day text-bold">29</span>
                                         <span class="month text-light">APRIL</span>
-                                        <span class="year text-light bg-year">2016</span>
+                                        <span class="year text-light bg-year">2019</span>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +61,7 @@
         <div class="alumni-dashboard">
             <div class="container">
                 <div class="title title-dashboard type1">
-                    <h3 class="heading-light no-margin"> My Sayidan Alumni Dashboard </h3>
+                    <h3 class="heading-light no-margin"> My Dashboard </h3>
                 </div>
                 <div class="area-content">
                     <div class="row">
@@ -203,7 +173,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="view-all"><a href="./blog.html">View All News</a></div>
+                            <div class="view-all"><a href="<?=base_url('common/news');?>">View All News</a></div>
                         </div>
                     </div>
 
@@ -315,7 +285,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="view-all"><a href="./programs-events.html">View All Events</a></div>
+                            <div class="view-all"><a href="<?=base_url('common/events');?>">View All Events</a></div>
                         </div>
                     </div>
                 </div>

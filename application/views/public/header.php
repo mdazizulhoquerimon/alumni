@@ -11,11 +11,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/owl.carousel.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/meanmenu.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/exe.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/hover.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/member.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/icofont.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/responsive.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/styles.css"/>
     <title>CUELSA</title>
 </head>
 <style>
@@ -54,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li>
                                     <a href="#">
                                         <span class="icon phone-icon"></span>
-                                        <span class="tex1t">+88018.........</span>
+                                        <span class="tex1t">+8801832751989</span>
                                     </a>
                                 </li>
                             </ul>
@@ -75,11 +82,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
+            <div class="container" style="text-align: center;">
+                <a href="<?= base_url();?>"><img  src="<?php echo base_url(); ?>static/images/logo.png" alt="logo"></a>
+                <div class="container">
+                    <h1 class="account-title">
+                        <a href="<?= base_url();?>"><h3 style="color: #1A265C">Chittagong University Ex-LAW Student Association</h3></a>
+                    </h1>
+                </div>
+            <!-- .site-identity -->
+            </div>
+
             <div class="header-middle">
                 <div class="container">
-                    <div class="logo hidden-sm hidden-xs">
-                        <a href="<?= base_url();?>"> <img src="<?php echo base_url(); ?>static/images/logo.jpg" alt="logo"></a>
-                    </div>
                     <div class="menu">
                         <nav>
                             <ul class="nav navbar-nav">
@@ -87,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                       <li><a href="<?=base_url('common/about_us');?>">CUELSA</a></li>
-                                      <li><a href="<?=base_url('common/about_us');?>">CONTACT</a></li>
+                                      <li><a href="<?=base_url('common/contact');?>">CONTACT</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -111,15 +125,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </li>
 
                                 <li>
+                                    <a href="./career-opportunity.html">CAREER OPPORTUNITY</a>
+                                </li>
+
+
+                                <li>
                                     <a href="<?=base_url('common/gallery');?>">PHOTO GALLERY</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="area-mobile-content visible-sm visible-xs">
-                        <div class="logo-mobile">
-                            <a href="#"> <img src="<?php echo base_url(); ?>static/images/logo-small.png" alt="logo"></a>
-                        </div>
                         <div class="mobile-menu ">
                         </div>
                     </div>
@@ -128,3 +144,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </header>
     </div>
     <!--End header wrapper-->
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

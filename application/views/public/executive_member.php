@@ -1,63 +1,118 @@
 <?php include('header.php');?>
-    <!--Begin content wrapper-->
-    
+<!--Begin content wrapper-->
+<div class="content-wrapper">
+    <div class="account-page login text-center">
         <div class="container">
-            <div class="alumni-directory">
-               <div class="top-section">
-                   <div class="container">
-                        <div class="row" style="margin-top:30px;">
-                            <h1>Executive Members</h1>
-                            <hr>
-    <div class="col-md-6" align="center">           
-        <div class="list-group">
-            <div class="list-group-item clearfix">
-                <div class="profile-teaser-left">
-                    <div class="profile-img img-circle"><img src="https://randomuser.me/api/portraits/men/5.jpg"/></div>
-                </div>
-                <div class="profile-teaser-main">
-                    <h2 class="profile-name">John Doe</h2>
-                    <div class="profile-info">
-                        <div class="info"><span class="">President</span></div> 
-                        <div><br>Something here</div>
-                    </div>
-                </div>
-            </div><!-- item -->
-<br>
-            <div class="list-group-item clearfix">
-                <div class="profile-teaser-left">
-                    <div class="profile-img img-circle"><img src="https://randomuser.me/api/portraits/men/9.jpg"/></div>
-                </div>
-                <div class="profile-teaser-main">
-                    <h2 class="profile-name">Jane Doe</h2>
-                    <div class="profile-info">
-                        <div class="info"><span class="">Vice-President</span></div>
-                        <div><br> Something here</div>
-                    </div>
-                </div>
-            </div><!-- item -->
-<br>
-            <div class="list-group-item clearfix">
-                <div class="profile-teaser-left">
-                    <div class="profile-img img-circle"><img src="https://randomuser.me/api/portraits/men/11.jpg"/></div>
-                </div>
-                <div class="profile-teaser-main">
-                    <h2 class="profile-name">Jane Doe</h2>
-                    <div class="profile-info">
-                        <div class="info"><span class="">Moderator</span></div>
-                        <div><br> Something here</div>
-                    </div>
-                </div>
-            </div><!-- item -->
-            <br>
-
-        </div>
-                            </div>
-                   </div>
-                  </div>
-               </div>
-               
-               
+            <div class="account-title">
+                <h4 class="heading-light">EXECUTIVE MEMBER</h4>
             </div>
+        </div>
+        <div class="container ">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3" style="margin-left: 50px;" >
+                        <div class="single-teacher mb-30">
+                            <div class="teacher-img" >
+                                <img src="<?php echo base_url(); ?>static/images/teacher/1.jpg" alt="teacher">
+                                <div class="teacher-content" style="background-color: #1a265c">
+                                    <h3>rose haten</h3>
+                                    <h3>President</h3>
+                                    <div class="teacher-hover">
+                                        <ul class="list-inline text-center">
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3" style="margin-left: 50px;" >
+                        <div class="single-teacher mb-30">
+                            <div class="teacher-img" >
+                                <img src="<?php echo base_url(); ?>static/images/teacher/1.jpg" alt="teacher">
+                                <div class="teacher-content" style="background-color: #1a265c">
+                                    <h3>rose haten</h3>
+                                    <div class="teacher-hover">
+                                        <ul class="list-inline text-center">
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3" style="margin-left: 50px;" >
+                        <div class="single-teacher mb-30">
+                            <div class="teacher-img" >
+                                <img src="<?php echo base_url(); ?>static/images/teacher/1.jpg" alt="teacher">
+                                <div class="teacher-content" style="background-color: #1a265c">
+                                    <h3>rose haten</h3>
+                                    <div class="teacher-hover">
+                                        <ul class="list-inline text-center">
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3" style="margin-left: 50px;" >
+                        <div class="single-teacher mb-30">
+                            <div class="teacher-img" >
+                                <img src="<?php echo base_url(); ?>static/images/teacher/1.jpg" alt="teacher">
+                                <div class="teacher-content" style="background-color: #1a265c">
+                                    <h3>rose haten</h3>
+                                    <div class="teacher-hover">
+                                        <ul class="list-inline text-center">
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3" style="margin-left: 50px;" >
+                        <div class="single-teacher mb-30">
+                            <div class="teacher-img" >
+                                <img src="<?php echo base_url(); ?>static/images/teacher/1.jpg" alt="teacher">
+                                <div class="teacher-content" style="background-color: #1a265c">
+                                    <h3>rose haten</h3>
+                                    <div class="teacher-hover">
+                                        <ul class="list-inline text-center">
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>           
+            </div>
+        </div>
     </div>
-    <!--End content wrapper-->
-    <?php include('footer.php');?>
+</div>
+<!--End content wrapper-->
+<?php include('footer.php');?>

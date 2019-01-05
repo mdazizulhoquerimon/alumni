@@ -6,15 +6,15 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12 col-xs-12 animated footer-col">
                             <div class="contact-footer">
-                                <div class="logo-footer">
-                                    <a href="./homepage-1.html"><img src="<?php echo base_url(); ?>static/images/logo.jpg" alt=""></a>
+                                <div class="logo-footer " style="float: left; margin-left: 70px;">
+                                    <a href="./homepage-1.html"><img src="<?php echo base_url(); ?>static/images/logo.png" alt=""></a>
                                 </div>
                                 <div class="contact-desc">
-                                    <p class="text-light">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare.</p>
+                                    <p class="text-light">CUELSA A Alumni Assoication To build a self-motivated, self-directed and self-sustaining alumni association in Bangladesh</p>
                                 </div>
                                 <div class="contact-phone-email">
-                                    <span class="contact-phone"><a href="#">+10872229</a> | <a href="#">+10872228 </a> </span>
-                                    <span class="contact-email"><a href="#">alumni@sayidan.edu</a></span>
+                                    <span class="contact-phone"><a href="#">+8801832751989</a> | <a href="#">+8801303019975 </a> </span>
+                                    <span class="contact-email"><a href="#">alumni@cuelsa.edu</a></span>
                                 </div>
                             </div>
                         </div>
@@ -34,6 +34,7 @@
                                         <h6 class="heading-bold">ABOUT US</h6>
                                         <ul class="list-unstyled no-margin">
                                             <li><a href="./event-single.html">EVENTS</a></li>
+                                            <li><a href="./event-single.html">NOTICE</a></li>
                                             <li><a href="./galery.html">GALLERY</a></li>
                                         </ul>
                                     </div>
@@ -72,12 +73,14 @@
 <script src="<?php echo base_url(); ?>static/js/libs/parallax.min.js"></script>
 <script src="<?php echo base_url(); ?>static/js/libs/jquery.waypoints.min.js"></script>
 <script src="<?php echo base_url(); ?>static/js/custom/main.js"></script>
+<script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
+
 <script>
     jQuery(document).ready(function () {
         $('#time').syotimer({
-            year: 2018,
+            year: 2019,
             month: 12,
-            day: 31,
+            day: 23,
             hour: 7,
             minute: 7,
         });

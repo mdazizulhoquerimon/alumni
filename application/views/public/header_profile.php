@@ -13,10 +13,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/meanmenu.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/profile.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="hhtps://code.jquery.com/jquery-1.11.1.min.js"></script>   
     <title> Profile | User </title>
 
     <style>
@@ -507,9 +513,9 @@ body {
 
 </head>
 <body>
-<div class="main-wrapper page">
+<div class="main-wrapper">
     <!--Begin header ưrapper-->
-    <div class="header-wrapper">
+    <div class="header-wrapper header-position">
         <header id="header" class="container-header type1">
             <div class="top-nav">
                 <div class="container">
@@ -517,15 +523,15 @@ body {
                         <div class="top-left col-sm-6 hidden-xs">
                             <ul class="list-inline">
                                 <li>
-                                    <a href="mailto:alumni@sayidan.edu">
+                                    <a href="mailto:alumni@cuelsa.com">
                                         <span class="icon mail-icon"></span>
-                                        <span class="text">alumni@sayidan.edu</span>
+                                        <span class="text">alumni@cuelsa.com</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
                                         <span class="icon phone-icon"></span>
-                                        <span class="text">+1 087 222 9</span>
+                                        <span class="tex1t">+88018.........</span>
                                     </a>
                                 </li>
                             </ul>
@@ -539,7 +545,7 @@ body {
                                     </form>
                                 </li>
                                 <li class="login">
-                                    <a href="./login-page.html">Log In</a>
+                                    <a href="login/userlogin">Log In</a>
                                 </li>
                             </ul>
                         </div>
@@ -549,31 +555,47 @@ body {
             <div class="header-middle">
                 <div class="container">
                     <div class="logo hidden-sm hidden-xs">
-                        <a href="<?php echo base_url(); ?>"> <img src="<?php echo base_url(); ?>static/images/logo.jpg" alt="logo"></a>
+                        <a href="<?= base_url();?>"> <img src="<?php echo base_url(); ?>static/images/logo.jpg" alt="logo"></a>
                     </div>
                     <div class="menu">
                         <nav>
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="./about-us.html">ABOUT US</a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="<?=base_url('common/about_us');?>">CUELSA</a></li>
+                                      <li><a href="<?=base_url('common/about_us');?>">CONTACT</a></li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="./programs-events.html">PROGRAM &amp; EVENTS</a>
+                                   <a href="./alumni-story.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ALUMNI CORNER<span class="caret"></span></a>
+                                   <ul class="dropdown-menu">
+                                      <li><a href="<?=base_url('users/login');?>">ALUUMNI LOGIN</a></li>
+                                      <li><a href="<?= base_url('users/profile');?>">ALUMNI PROFILE</a></li>
+                                      <li><a href="<?= base_url('users/register');?>">ALUMNI REGISTER</a></li>
+                                      <li><a href="<?=base_url('common/executive_member');?>">EXECUTIVE MEMBER</a></li>
+                                      <li><a href="<?=base_url('common/general_member');?>">GENERAL MEMBER</a></li>
+                                    </ul>
                                 </li>
 
                                 <li>
-                                   <a href="./alumni-story.html">ALUMNI STORY</a>
+                                    <a href="./programs-events.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROGRAM &amp; EVENTS<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="<?=base_url('common/news');?>">NEWS</a></li>
+                                      <li><a href="<?=base_url('common/events');?>">EVENTS</a></li>
+                                      <li><a href="#">NOTICE</a></li>
+                                    </ul>
                                 </li>
+
                                 <li>
-                                    <a href="./career-opportunity.html">CAREER OPPORTUNITY</a>
+                                    <a href="<?=base_url('common/gallery');?>">PHOTO GALLERY</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-
                     <div class="area-mobile-content visible-sm visible-xs">
                         <div class="logo-mobile">
-                            <a href="/"> <img src="<?php echo base_url(); ?>static/images/logo-small.png" alt="logo"></a>
+                            <a href="#"> <img src="<?php echo base_url(); ?>static/images/logo-small.png" alt="logo"></a>
                         </div>
                         <div class="mobile-menu ">
                         </div>

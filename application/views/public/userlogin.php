@@ -23,7 +23,7 @@
                             <input name="password" type="password" placeholder="Password">
                         </div>
                         <div class="buttons-set">
-                            <a href="#"  onclick="document.forms['loginform'].submit();" title="Log In" class="bnt bnt-theme text-regular text-uppercase">Log In</a>
+                            <a href="#"  onclick="document.forms['loginform'].submit();"  title="Log In" class="bnt bnt-theme text-regular text-uppercase">Log In</a>
                         </div>
                     </form>
                 </div>

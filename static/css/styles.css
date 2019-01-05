@@ -575,25 +575,15 @@ a:hover, a:active, a:focus {
 }
 @media (min-width: 1200px) {
   .container-header.type1 .menu .nav > li {
-    width: 200px;
+    width: 225px;
   }
-  .container-header.type1 .menu .nav > li:nth-child(2) {
-    margin-right: 140px;
-  }
-  .container-header.type1 .menu .nav > li:nth-child(3) {
-    margin-left: 140px;
-  }
+  
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .container-header.type1 .menu .nav > li {
-    width: 180px;
+    width: 188px;
   }
-  .container-header.type1 .menu .nav > li:nth-child(2) {
-    margin-right: 100px;
-  }
-  .container-header.type1 .menu .nav > li:nth-child(3) {
-    margin-left: 100px;
-  }
+  
   .container-header.type1 .menu .logo {
     width: 210px !important;
   }
@@ -2836,7 +2826,7 @@ a:hover, a:active, a:focus {
 .account-page .account-content {
   display: block;
 }
-.account-page .account-content .input-box input {
+.account-page .account-content .input-box input,select {
   width: 100%;
   max-width: 322px;
   margin: 0 auto;
