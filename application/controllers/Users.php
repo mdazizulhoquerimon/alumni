@@ -185,6 +185,9 @@ class Users extends CI_Controller {
 			$this->load->model('Auth');
 			if($this->Auth->verify_email($verificationkey) == TRUE)
 			{
+				$batchname = $this->Auth->getbatchname($verificationkey);
+				$generateduserid = $this->generateuserid($batchname);
+				
 				$this->session->set_flashdata("success", "Your Email has been successfully verified. Please LOGIN now to the Dashboard.");
 				redirect('users/login','refresh');
 			}
@@ -194,6 +197,16 @@ class Users extends CI_Controller {
 				redirect('users/login', 'refresh');
 			}
 		}
+	}
+
+	public function generateuserid($batch)
+	{
+		$finalid = $batch."CUELSA";
+		for ($x = 0; $x < 3; $x++)
+		{
+			$finalid .= mt_rand(0,9);
+		}
+		return $finalid;
 	}
 
 }

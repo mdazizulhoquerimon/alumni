@@ -32,7 +32,7 @@
                     <li><a href="editprofile"><i class="fa fa-pencil-square-o"></i>Edit profile</a></li>
                     <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>Inbox</a></li>
                     <li><a href="paymentinfo"><i class="fa fa-usd" aria-hidden="true"></i>Payment History</a></li>
-                    <li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
+                    <li><a href="logout"><i class="fa fa-sign-out"></i>Logout</a></li>
                   </ul>
               </div>
             </div>
