@@ -25,7 +25,9 @@ class Auth extends CI_Model {
 
         public function registeruser($data)
         {
-            $this->db->insert('registeredalumni',$data);
+            $verificationdata['verificationkey'] = $data['verificationkey'];
+            $this->db->insert('profiledata', $verificationdata);
+            $this->db->insert('registeredalumni', $data);
             return $this->db->insert_id();
         }
 
@@ -46,5 +48,44 @@ class Auth extends CI_Model {
             {
                 return FALSE;
             }
+        }
+
+        public function getbatchname($verificationkey)
+        {
+            $this->db->select('batch');
+            $this->db->where('verificationkey', $verificationkey);
+            $query = $this->db->get('registeredalumni');
+
+            if($query->num_rows() > 0)
+            {
+                $row = $query->row();
+                if(isset($row))
+                {
+                    return $row->batch;
+                }
+                else
+                {
+                    return FALSE;
+                }
+            }
+        }
+
+        public function userid_exists($userid)
+        {
+            $this->db->where('userid',$userid);
+            $query = $this->db->get('profiledata');
+            if ($query->num_rows() > 0){
+                return TRUE;
+            }
+            else{
+                return FALSE;
+            }
+        }
+
+        public function push_userid($generateduserid, $verificationkey)
+        {
+            $data['userid'] = $generateduserid;
+            $this->db->where('verificationkey', $verificationkey);
+            $this->db->update('profiledata', $data);
         }
 }

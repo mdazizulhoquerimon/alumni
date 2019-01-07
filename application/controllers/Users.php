@@ -159,7 +159,7 @@ class Users extends CI_Controller {
 		$this->email->set_newline("\r\n");
 
 		//Email content
-		$htmlContent = '<h1>Please verify your email addressr</h1>';
+		$htmlContent = '<h1>Please verify your email address</h1>';
 		$htmlContent .= '<h2>From CUELSA</h2>';
 		$htmlContent .= '<p>This email has sent from CUELSA website. You have been registered as a user.</p>';
 		$htmlContent .= '<p>Please click this <a href="localhost/alumni/users/verifyemail/'.$verificationkey.'">link</a>.</p>';
@@ -187,7 +187,12 @@ class Users extends CI_Controller {
 			{
 				$batchname = $this->Auth->getbatchname($verificationkey);
 				$generateduserid = $this->generateuserid($batchname);
-				
+
+				while($this->Auth->userid_exists($generateduserid))
+				{
+					$generateduserid = $this->generateuserid($batchname);
+				}
+				$this->Auth->push_userid($generateduserid, $verificationkey);
 				$this->session->set_flashdata("success", "Your Email has been successfully verified. Please LOGIN now to the Dashboard.");
 				redirect('users/login','refresh');
 			}
@@ -208,5 +213,7 @@ class Users extends CI_Controller {
 		}
 		return $finalid;
 	}
+
+	
 
 }
