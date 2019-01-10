@@ -33,11 +33,6 @@ class Users extends CI_Controller {
 					redirect("users/login", 'refresh');
 				}
 			}
-			// else
-			// {
-			// 	//$this->session->set_flashdata("error", "No such email/password found");
-			// 	redirect("users/login", 'refresh');
-			// }
 		}
 
 		$this->load->view('public/userlogin');
@@ -45,7 +40,6 @@ class Users extends CI_Controller {
 
 	public function register()
 	{
-		//if(isset($_POST['registerbtn']))
 		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			$this->load->model('Auth');
@@ -112,9 +106,14 @@ class Users extends CI_Controller {
 	{
 		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
 		{
-			$this->load->view('public/header_profile');
-			$this->load->view('public/profile');
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
+
+			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/profile', $fetched_user_data);
 			$this->load->view('public/footer_profile');
+			
 		}
 		else
 		{
@@ -126,16 +125,128 @@ class Users extends CI_Controller {
 
 	public function paymentinfo()
 	{
-		$this->load->view('public/header_profile');
-		$this->load->view('public/payment_info');
-		$this->load->view('public/footer_profile');
+		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+		{
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
+			
+			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/payment_info', $fetched_user_data);
+			$this->load->view('public/footer_profile');
+			
+		}
+		else
+		{
+			$this->session->set_flashdata("error", "You have to login first to view this page");
+			redirect('users/login','refresh');
+		}
+	}
+
+	public function editcredentials()
+	{
+		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+		{
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				$this->form_validation->set_rules('email','Email','required');
+				$this->form_validation->set_rules('password','Password','required|min_length[6]');
+				$this->form_validation->set_rules('password2','Confirm Password','required|min_length[6]|matches[password]');
+		
+				if($this->form_validation->run() == TRUE)
+				{
+					$data = $this->input->post();
+					$data['password'] = md5($data['password']);
+					unset($data['password2']);
+					if($this->ProfileModel->edit_user_credentials($data,$useremail))
+					{
+						$this->session->set_flashdata('success','Your have successfully modified your user data');
+						redirect('users/editcredentials','refresh');
+					}
+					else
+					{
+						$this->session->set_flashdata("error", "An error occurred. Please try again");
+						redirect('users/editcredentials','refresh');
+					}
+					
+				}
+			}
+			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/edit_credentials', $fetched_user_data);
+			$this->load->view('public/footer_profile');
+			
+		}
+		else
+		{
+			$this->session->set_flashdata("error", "You have to login first to view this page");
+			redirect('users/login','refresh');
+		}
 	}
 
 	public function editprofile()
 	{
-		$this->load->view('public/header_profile');
-		$this->load->view('public/edit_profile');
-		$this->load->view('public/footer_profile');
+		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+		{
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
+			//$fetched_user_data['lastname'] = $fullname[1];
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				$this->form_validation->set_rules('firstname','First Name','required');
+				$this->form_validation->set_rules('lastname','Last Name','required');
+				$this->form_validation->set_rules('designation','Designation Name','required');
+				$this->form_validation->set_rules('companyname','Company/Institution Name','required');
+		
+				if($this->form_validation->run() == TRUE)
+				{
+					$data = $this->input->post();
+					if($_FILES['imagename']['name'] !== '')
+					{
+						$this->load->helper(array('form','file','url'));
+						$config_image = array();
+						$config_image['upload_path'] = './uploads/';
+						$config_image['allowed_types'] = 'jpeg|jpg|png|gif';
+						$config_image['max_size'] = '2048000';
+						$this->load->library('upload', $config_image);
+						$this->upload->do_upload('imagename');
+						$imgData = array('upload_data' => $this->upload->data());
+						$data['imagename'] = $imgData['upload_data']['file_name'];
+					}
+					else
+					{
+						unset($data['imagename']);
+					}
+					
+					if($this->ProfileModel->edit_user_data($data,$useremail))
+					{
+						$this->session->set_flashdata('success','Your have successfully modified your user data');
+						redirect('users/editprofile','refresh');
+					}
+					else
+					{
+						$this->session->set_flashdata("error", "An error occurred. Please try again");
+						redirect('users/editprofile','refresh');
+					}
+					
+				}
+			}
+
+			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/edit_profile', $fetched_user_data);
+			$this->load->view('public/footer_profile');
+			
+		}
+		else
+		{
+			$this->session->set_flashdata("error", "You have to login first to view this page");
+			redirect('users/login','refresh');
+		}
+		
 	}
 
 	public function sendemail($verificationkey,$emailaddr)

@@ -1,0 +1,166 @@
+/* Large desktop :1920px. */
+@media (min-width: 1501px) and (max-width: 2300px) {
+}
+
+/* Normal desktop :1200px. */
+@media (min-width: 1201px) and (max-width: 1500px) {
+/*    .container, .wrapper.boxed-layout, .wrapper.boxed-layout .sticky, .wrapper.box-layout, .wrapper.box-layout .sticky {width: 1170px}*/
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .container, .wrapper.boxed-layout, .wrapper.boxed-layout .sticky, .wrapper.box-layout, .wrapper.box-layout .sticky {width: 970px}
+    .mobile-menu-area {display: block}
+    .slide-content h1, .home-banner-content h1 {font-size: 70px;line-height: 70px}
+    .class-content ul li { margin: 0 20px}
+    .footer-widget input {width: 130px}
+    .main-menu ul li a{padding: 44px 15px}
+    .stick .main-menu ul li a{padding: 22px 15px}
+    #slider-container { height: 550px}
+    .google-map-area.ml-100.mr-100{margin: 0}
+    .single .event-content {padding: 12px 15px 12px}
+    .single .event-content p {margin-left: 0px}
+    .single .event-content p:before, .single .event-content p:after {display: none}
+    .single-event-owl .owl-controls {padding-top: 5px}
+    .single-testimonial::after {left: -50px}
+    .single-event{margin-bottom: 30px}
+    .about-owl .owl-controls .owl-prev {left: 25px}
+	.about-owl .owl-controls .owl-next {right: 25px}
+}
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container, .wrapper.boxed-layout, .wrapper.box-layout {width:750px}
+    .mobile-menu-area {display: block}
+    .header-top{display: none;}
+    .wrapper.boxed-layout .sticky, .wrapper.box-layout .sticky {width: 750px;}
+    .sticky {position: inherit;} 
+    .single-testimonial::after {left: -90px}
+    .main-menu ul li a {padding: 33px 22px}
+    .slide-content h1, .home-banner-content h1 {font-size: 65px;line-height: 65px}
+    .grid .grid-item:nth-child(2), .grid .grid-item:nth-child(3) {padding-bottom: 18px}
+    .class-content ul li{ margin: 0 25px}
+    .footer-widget input {width: 135px}
+    .main-menu ul li a{padding: 44px 22px}
+    .stick .main-menu ul li a{padding: 22px}
+    #slider-container { height: 500px}
+    .teacher-area .col-md-3:nth-child(12) .single-teacher, .teacher-area .col-md-3:nth-child(11) .single-teacher, .teacher-area .col-md-3:nth-child(10) .single-teacher{margin-bottom: 0}
+    #mc-submit{padding: 0 9px}
+    .google-map-area.ml-100.mr-100{margin: 0}
+    .event-img > img{width: 100%}
+    .events-area .single-event{margin-bottom: 80px}
+    .teacher-owl.owl-carousel .owl-controls .owl-dots, .event-owl.owl-carousel .owl-controls, .single-event-owl .owl-controls {display: none}
+    .single .event-content p::after {right: -20px}
+    .about-owl .owl-controls .owl-prev {left: -15px}
+    .about-owl .owl-controls .owl-next { right: -15px}
+    .about-content.ml-100 {margin-left: 0}
+    .about-owl .owl-controls .owl-prev {left: -20px}
+	.about-owl .owl-controls .owl-next {right: -20px}
+    .slide-content h3, .slide-content h2 {font-size: 40px}
+    .mean-container a.meanmenu-reveal {margin-top: -68px;}
+}
+    
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .container, .wrapper.boxed-layout, .wrapper.box-layout {width:300px}
+    .mobile-menu-area {display: block;}
+    #sticky-header, .wrapper.boxed-layout #sticky-header, .wrapper.box-layout #sticky-header, #sticky-header.fixed {position: inherit;}
+#sticky-header, #contact-form > input, #contact-form > textarea, .main-menu ul li ul.submenu.megamenu.two > li, .portfolio-img > img, .teacher-img > img, .event-img > img, .class-img > img{width: 100%}
+    .logo {text-align: center;}
+    .slide-content h1, .home-banner-content h1 {font-size: 38px;line-height: 50px}
+    .about-content.ml-100 {margin-left: 0; margin-bottom: 50px}
+    .slide-content h3 {margin-bottom: 0px}
+    #slider-container .owl-controls {bottom: 35px;}
+    .sticky .logo img {width: auto;}
+    .single-testimonial::after {left: -90px}
+    .about-owl .owl-controls .owl-prev {left: -30px}
+	.about-owl .owl-controls .owl-next {right: -30px}
+    #mc-submit { padding: 0 4px}
+    #slider-container {height: 300px}
+    .single-event{margin-left: 0; margin-right: 0}
+    .events-area .container .row:nth-child(2) .single-event:nth-child(even) .owl-controls > div{margin-bottom: 30px}
+    .slide-content h2{font-size: 30px;line-height: 30px}
+    .slide-content h3{font-size: 25px}
+    .single .event-content p {margin-left: 50px}
+    .google-map-area.ml-100.mr-100{margin: 0}
+    .slide-content .btn {margin-top: 20px;}
+    .portfolio-img, .single-fun, .teacher-img, .single-event, .single-class, .single-contact, .single-contact, .footer-widget, .single-table {margin-bottom: 30px}
+    .col-md-3:last-child .portfolio-img img, .col-md-3:last-child .single-fun, .col-md-3:last-child .teacher-img, .col-md-3:last-child .single-event, .col-md-4:last-child .single-class, .col-md-3:last-child .single-contact, .col-md-3:last-child .footer-widget, .col-md-4:last-child .single-table {margin-bottom: 0}
+    .grid .grid-item:nth-child(2), .grid .grid-item:nth-child(3) {padding-bottom: 0px}
+    .header-top, .slider-img, .home-banner-content h1, .teacher-owl .owl-controls, .single-testimonial::after, .single-event-owl .owl-controls{display: none}
+    .class-content ul li {margin: 0 15px}
+    .section-title h2 {font-size: 20px;}
+    .main-menu ul li::before, .main-menu ul li::after{display: none}
+    .menu-area {
+      display: inherit;
+      float: none;
+      position: relative;
+      top: -42px;
+    }
+    .stick .menu-area{top: -38px}
+    .stick .logo {padding: 15px 0 0}
+    .main-menu ul > li ul.submenu {
+        display: none;
+        list-style: outside none none;
+        margin: 0;
+        padding-left: 20px;
+        position: inherit;
+        width: 100%;
+    }
+    .main-menu ul > li ul.submenu.open {display: block; opacity: 1; visibility: visible}
+    .main-menu ul li {display: block; margin-bottom: 1px}
+    .main-menu ul li ul.submenu.megamenu > li {width: 100%}
+    .main-menu ul li ul.submenu.megamenu {white-space: inherit}
+    .main-menu ul li a i {float: right}
+    .main-menu ul li ul.submenu.open {background-color: #000; top: 0px}
+    .main-menu ul li:hover a, .main-menu ul li ul.submenu li a, .main-menu ul li ul.submenu li:hover > a, .main-menu ul li ul.submenu.megamenu > li:hover > a{color: #fff}
+    #topnav .navbar-toggle {
+      border: 0 none;
+      cursor: pointer;
+      margin: 0;
+      padding: 10px 7px;
+      position: relative;
+      width: 40px;
+    }
+    .logo {
+      padding: 34px 0 0;
+    }
+    #topnav .navbar-toggle .lines {
+        display: block;
+        height: 15px;
+        position: relative;
+        width: 25px;
+    }
+    #topnav .navbar-toggle span {
+        background-color: #fff;
+        display: block;
+        height: 1px;
+        margin-bottom: 5px;
+        transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+        width: 100%;
+    }
+    #topnav .navbar-toggle.open span {position: absolute}
+    #topnav .navbar-toggle span {background-color: #191b1d}
+    #topnav .navbar-toggle span:last-child {
+        margin-bottom: 0;
+        width: 75%;
+    }
+    #topnav .navbar-toggle.open span:nth-child(2) {visibility: hidden}
+    #topnav .navbar-toggle.open span:last-child {top: 6px; transform: rotate(-45deg); width: 100%}
+    #topnav .navbar-toggle.open span:first-child {top: 6px; transform: rotate(45deg)}
+    .menu-item {border: 1px solid #ddd; float: right}
+    .footer-bottom p.pull-left{text-align: center; float: none}
+    .footer-icons, .footer-bottom p.pull-left{float: none !important ; text-align: center; margin-top: 10px}
+    .footer-bottom {padding-bottom: 25px}
+    .mean-container a.meanmenu-reveal {margin-top: -33px;}
+    .mean-container .mean-nav {margin-top: 40px}
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {width:450px}
+    .wrapper.boxed-layout, .wrapper.box-layout {width:450px}
+    .about-owl .owl-controls .owl-prev {left: -20px}
+	.about-owl .owl-controls .owl-next {right: -20px}
+    #slider-container {height: 400px}
+}
