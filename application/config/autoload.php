@@ -89,8 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','form','file','html');
-
+$autoload['helper'] = array('url','form','file','cias_helper','html')
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files

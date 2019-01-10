@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include("dbpass.php");
+//include("dbpass.php");
 /*
 | -------------------------------------------------------------------
 | DATABASE CONNECTIVITY SETTINGS
@@ -77,8 +77,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => USERNAME,
-	'password' => PASSWORD,
+	'username' => 'root',
+	'password' => '',
 	'database' => 'cuelsa',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
