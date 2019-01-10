@@ -15,24 +15,25 @@
             <div class="profile-block">
               <div class="panel text-center">
                   <div class="user-heading">
-                    <a href="#"><img class="img-circle img-responsive" alt="" src="<?php echo base_url(); ?>static/images/peng.jpg"></a>
-                    <h1>Elias Miah</h1>
-                    <p>Designation</p>
-                    <p>Company</p>
-                    <div class="">
+                    <a href="#"><img class="img-circle img-responsive" alt="" src="<?php echo base_url().'/uploads/'.$fetched_user_data['imagename']; ?>"></a>
+                    <h1><?php echo $fetched_user_data['fullname']; ?></h1>
+                    <p><?php echo $fetched_user_data['designation']; ?></p>
+                    <p><?php echo $fetched_user_data['companyname']; ?></p>
+                    <div class="links-social">
                        <ul class="list-inline text-center">
-                          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                          <li><a href="<?php echo $fetched_user_data['twitterlink']; ?>"><i style="color: #f7ca18" class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                          <li><a href="<?php echo $fetched_user_data['instagramlink']; ?>"><i style="color: #f7ca18" class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                          <li><a href="<?php echo $fetched_user_data['facebooklink']; ?>"><i style="color: #f7ca18" class="fa fa-facebook" aria-hidden="true"></i></a></li>
                       </ul>                                 
                     </div>
                   </div>
                   <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="profile"><i class="fa fa-user"></i>Profile</a></li>
                     <li><a href="editprofile"><i class="fa fa-pencil-square-o"></i>Edit profile</a></li>
+                    <li><a href="editcredentials"><i class="fa fa-lock"></i>Edit Login Credentials</a></li>
                     <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>Inbox</a></li>
-                    <li><a href="paymentinfo"><i class="fa fa-usd" aria-hidden="true"></i>Payment History</a></li>
-                    <li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
+                    <li class="active"><a href="paymentinfo"><i class="fa fa-usd" aria-hidden="true"></i>Payment History</a></li>
+                    <li><a href="logout"><i class="fa fa-sign-out"></i>Logout</a></li>
                   </ul>
               </div>
             </div>
