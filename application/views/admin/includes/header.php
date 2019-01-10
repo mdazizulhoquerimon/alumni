@@ -154,7 +154,7 @@
                         <a href="#"><i class="fa fa-user-circle"></i> <span>General Members</span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="generalMember">
-                        <a href="#"><i class="fa fa-eye"></i> <span>View All General Members</span></a>
+                        <a href="<?php echo base_url(); ?>member/memberListing"><i class="fa fa-eye"></i> <span>View All General Members</span></a>
                     </li>
                     <!-- General Member Section End -->
                     <!-- Executive Member Section Strat -->
@@ -174,8 +174,8 @@
                         <a href="#"><i class="fa fa-users"></i> <span>Batch Admin</span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="bacthAdmin">
-                        <a href="<?php echo base_url(); ?>user/addNew" > <i class="fa fa-plus-circle"></i> <span>Add Batch Admin</span></a>
-                        <a href="<?php echo base_url(); ?>user/userListing" > <i class="fa fa-eye"></i> <span>View All Batch Admin</span></a>
+                        <a href="<?php echo base_url(); ?>addNew" > <i class="fa fa-plus-circle"></i> <span>Add Batch Admin</span></a>
+                        <a href="<?php echo base_url(); ?>userListing" > <i class="fa fa-eye"></i> <span>View All Batch Admin</span></a>
                     </li>
                     <!-- Batch Admin Section End -->
 

@@ -16,12 +16,13 @@ class User_model extends CI_Model
      */
     function userListingCount($searchText = '')
     {
-        $this->db->select('BaseTbl.userId, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role');
+        $this->db->select('BaseTbl.userId, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.batchNo, BaseTbl.createdDtm, Role.role');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         if(!empty($searchText)) {
             $likeCriteria = "(BaseTbl.email  LIKE '%".$searchText."%'
                             OR  BaseTbl.name  LIKE '%".$searchText."%'
+                            OR  BaseTbl.batchNo  LIKE '%".$searchText."%'
                             OR  BaseTbl.mobile  LIKE '%".$searchText."%')";
             $this->db->where($likeCriteria);
         }

@@ -9,7 +9,7 @@ require APPPATH . '/libraries/BaseController.php';
  * @version : 1.1
  * @since : 15 November 2016
  */
-class User extends BaseController
+class Adminuser extends BaseController
 {
     /**
      * This is default constructor of the class
@@ -322,7 +322,7 @@ class User extends BaseController
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($this->vendorId);
         $data["active"] = $active;
         
-        $this->global['pageTitle'] = $active == "details" ? 'CUELSA : My Profile' : 'CUELSA : Change Password';
+        $this->global['pageTitle'] = $active == "details" ? 'CUELSA : Profile' : 'CUELSA : Change Password';
         $this->loadViews("profile", $this->global, $data, NULL);
     }
 
