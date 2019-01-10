@@ -151,6 +151,30 @@ class Users extends CI_Controller {
 			$this->load->model('ProfileModel');
 			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
 			
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				$this->form_validation->set_rules('email','Email','required');
+				$this->form_validation->set_rules('password','Password','required|min_length[6]');
+				$this->form_validation->set_rules('password2','Confirm Password','required|min_length[6]|matches[password]');
+		
+				if($this->form_validation->run() == TRUE)
+				{
+					$data = $this->input->post();
+					$data['password'] = md5($data['password']);
+					unset($data['password2']);
+					if($this->ProfileModel->edit_user_credentials($data,$useremail))
+					{
+						$this->session->set_flashdata('success','Your have successfully modified your user data');
+						redirect('users/editcredentials','refresh');
+					}
+					else
+					{
+						$this->session->set_flashdata("error", "An error occurred. Please try again");
+						redirect('users/editcredentials','refresh');
+					}
+					
+				}
+			}
 			$this->load->view('public/header_profile', $fetched_user_data);
 			$this->load->view('public/edit_credentials', $fetched_user_data);
 			$this->load->view('public/footer_profile');
