@@ -56,7 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 /*********** USER DEFINED ROUTES *******************/
 
-$route['loginMe'] = 'login/loginMe';
+$route['loginMe'] = 'admin/loginMe';
 $route['dashboard'] = 'user';
 $route['logout'] = 'user/logout';
 $route['userListing'] = 'user/userListing';
@@ -81,9 +81,9 @@ $route['login-history'] = "user/loginHistoy";
 $route['login-history/(:num)'] = "user/loginHistoy/$1";
 $route['login-history/(:num)/(:num)'] = "user/loginHistoy/$1/$2";
 
-$route['forgotPassword'] = "login/forgotPassword";
-$route['resetPasswordUser'] = "login/resetPasswordUser";
-$route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
-$route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
-$route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
-$route['createPasswordUser'] = "login/createPasswordUser";
+$route['forgotPassword'] = "admin/forgotPassword";
+$route['resetPasswordUser'] = "admin/resetPasswordUser";
+$route['resetPasswordConfirmUser'] = "admin/resetPasswordConfirmUser";
+$route['resetPasswordConfirmUser/(:any)'] = "admin/resetPasswordConfirmUser/$1";
+$route['resetPasswordConfirmUser/(:any)/(:any)'] = "admin/resetPasswordConfirmUser/$1/$2";
+$route['createPasswordUser'] = "admin/createPasswordUser";

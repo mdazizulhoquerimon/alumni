@@ -20,7 +20,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>CodeInsect</b><br>Admin System</a>
+        <a href="#"><b>Cuelsa</b><br>Admin System</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Forgot Password</p>
@@ -96,7 +96,7 @@
             </div><!-- /.col -->
           </div>
         </form>
-        <a href="<?php echo base_url() ?>">Login</a><br>
+        <a href="<?php echo base_url() ?>admin">Login</a><br>
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
 

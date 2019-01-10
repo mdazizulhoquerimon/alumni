@@ -7,7 +7,7 @@
  * @version : 1.1
  * @since : 15 November 2016
  */
-class Login extends CI_Controller
+class Admin extends CI_Controller
 {
     /**
      * This is default constructor of the class
@@ -85,7 +85,7 @@ class Login extends CI_Controller
 
                 $this->login_model->lastLogin($loginInfo);
 
-                redirect('/login');
+                redirect('admin');
             }
             else
             {
@@ -109,7 +109,7 @@ class Login extends CI_Controller
         }
         else
         {
-            redirect('/dashboard');
+            redirect('dashboard');
         }
     }
     
@@ -177,7 +177,7 @@ class Login extends CI_Controller
                 $status = 'invalid';
                 setFlashData($status, "This email is not registered with us.");
             }
-            redirect('/forgotPassword');
+            redirect('forgotPassword');
         }
     }
 
@@ -203,7 +203,7 @@ class Login extends CI_Controller
         }
         else
         {
-            redirect('/login');
+            redirect('admin');
         }
     }
     
@@ -249,7 +249,7 @@ class Login extends CI_Controller
             
             setFlashData($status, $message);
 
-            redirect("/login");
+            redirect("admin");
         }
     }
 }
