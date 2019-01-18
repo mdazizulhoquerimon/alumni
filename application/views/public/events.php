@@ -49,38 +49,16 @@
                 <div class="top-section text-center">
                     <h4>All Alumni Events</h4>
                 </div>
-                <div class="event-month">
-                    <ul class="columns1 text-center">
-                        <li class="event-item">
-                            <span class="text-light year">2019</span>
-                            <span class="text-light month">January</span>
-                        </li>
-                        <li class="event-item">
-                            <span class="text-light year">2019</span>
-                            <span class="text-light month">February</span>
-                        </li>
-                        <li class="event-item">
-                            <span class="text-light year">2019</span>
-                            <span class="text-light month">March</span>
-                        </li>
-                        <li class="event-item">
-                            <span class="text-light year">2019</span>
-                            <span class="text-light month">April</span>
-                        </li>
-                    </ul>
-                </div>
                 <div class="event-list-content">
                     <div class="event-list-item">
                         <div class="date-item">
                             <span class="day text-bold color-theme">07</span>
                             <span class="dates text-gray text-uppercase">SAT</span>
+                            <span class="dates text-gray text-uppercase">JANUARY</span>
                         </div>
                         <div class="date-desc-wrapper">
                             <div class="date-desc">
                                 <div class="date-title"><h4 class="heading-regular"><a href="#">Club Sponsorship 2015-2016</a></h4></div>
-                                <div class="date-excerpt">
-                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velitesse molestie consequat, vel illum dolore eu feugiat. nulla facilisis at vero eros et accumsan. molestie consequat, vel illum dolore eu.</p>
-                                </div>
                                 <div class="place">
                                     <span class="icon map-icon"></span>
                                     <span class="text-place">Gondomanan Street 209, California </span>

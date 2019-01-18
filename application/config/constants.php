@@ -97,7 +97,7 @@ define('SEGMENT',								2);
 
 define('EMAIL_FROM',                            'Your from email');		// e.g. email@example.com
 define('EMAIL_BCC',                            	'Your bcc email');		// e.g. email@example.com
-define('FROM_NAME',                             'CIAS Admin System');	// Your system name
+define('FROM_NAME',                             'CUELSA Admin System');	// Your system name
 define('EMAIL_PASS',                            'Your email password');	// Your email password
 define('PROTOCOL',                             	'smtp');				// mail, sendmail, smtp
 define('SMTP_HOST',                             'Your smtp host');		// your smtp host e.g. smtp.gmail.com

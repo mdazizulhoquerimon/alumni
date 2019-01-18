@@ -12,7 +12,7 @@ $batchNo = $userInfo->batchNo;
     <section class="content-header">
       <h1>
         <i class="fa fa-users"></i> Batch Admin Management
-        <small>Add / Edit User</small>
+        <small>Edit Batch Admin</small>
       </h1>
     </section>
     
@@ -22,15 +22,11 @@ $batchNo = $userInfo->batchNo;
             <!-- left column -->
             <div class="col-md-8">
               <!-- general form elements -->
-                
-                
-                
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Enter Bacth Admin Details</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
-                    
                     <form role="form" action="<?php echo base_url() ?>editUser" method="post" id="editUser" role="form">
                         <div class="box-body">
                             <div class="row">
@@ -67,7 +63,7 @@ $batchNo = $userInfo->batchNo;
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="mobile">Mobile Number</label>
-                                        <input type="text" class="form-control" id="mobile" placeholder="Mobile Number" name="mobile" value="<?php echo $mobile; ?>" maxlength="10">
+                                        <input type="text" class="form-control" id="mobile" placeholder="Mobile Number" name="mobile" value="<?php echo $mobile; ?>" maxlength="11">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -93,8 +89,8 @@ $batchNo = $userInfo->batchNo;
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="role">Batch No</label>
-                                        <select class="form-control" id="role" name="role">
+                                        <label for="batchNo">Batch No</label>
+                                        <select class="form-control" id="batchNo" name="batchNo">
                                             <option value="01" <?php if($batchNo=='01') {echo "selected=selected";}?> >Batch 01</option>
                                             <option value="02" <?php if($batchNo=='02') {echo "selected=selected";}?> >Batch 02</option>
                                             <option value="03" <?php if($batchNo=='03') {echo "selected=selected";}?> >Batch 03</option>
@@ -105,6 +101,21 @@ $batchNo = $userInfo->batchNo;
                                             <option value="08" <?php if($batchNo=='08') {echo "selected=selected";}?> >Batch 08</option>
                                             <option value="09" <?php if($batchNo=='09') {echo "selected=selected";}?> >Batch 09</option>
                                             <option value="10" <?php if($batchNo=='10') {echo "selected=selected";}?> >Batch 10</option>
+                                            <option value="11" <?php if($batchNo=='11') {echo "selected=selected";}?> >Batch 11</option>
+                                            <option value="12" <?php if($batchNo=='12') {echo "selected=selected";}?> >Batch 12</option>
+                                            <option value="13" <?php if($batchNo=='13') {echo "selected=selected";}?> >Batch 13</option>
+                                            <option value="14" <?php if($batchNo=='14') {echo "selected=selected";}?> >Batch 14</option>
+                                            <option value="15" <?php if($batchNo=='15') {echo "selected=selected";}?> >Batch 15</option>
+                                            <option value="16" <?php if($batchNo=='16') {echo "selected=selected";}?> >Batch 16</option>
+                                            <option value="17" <?php if($batchNo=='17') {echo "selected=selected";}?> >Batch 17</option>
+                                            <option value="18" <?php if($batchNo=='18') {echo "selected=selected";}?> >Batch 18</option>
+                                            <option value="19" <?php if($batchNo=='19') {echo "selected=selected";}?> >Batch 19</option>
+                                            <option value="20" <?php if($batchNo=='20') {echo "selected=selected";}?> >Batch 20</option>
+                                            <option value="21" <?php if($batchNo=='21') {echo "selected=selected";}?> >Batch 21</option>
+                                            <option value="22" <?php if($batchNo=='22') {echo "selected=selected";}?> >Batch 22</option>
+                                            <option value="23" <?php if($batchNo=='23') {echo "selected=selected";}?> >Batch 23</option>
+                                            <option value="24" <?php if($batchNo=='24') {echo "selected=selected";}?> >Batch 24</option>
+                                            <option value="25" <?php if($batchNo=='25') {echo "selected=selected";}?> >Batch 25</option>
                                         </select>
                                     </div>
                                 </div>
@@ -112,8 +123,8 @@ $batchNo = $userInfo->batchNo;
                         </div><!-- /.box-body -->
     
                         <div class="box-footer">
-                            <input type="submit" class="btn btn-primary" value="Submit" />
-                            <input type="reset" class="btn btn-default" value="Reset" />
+                            <input type="submit" class="btn btn-primary" value="Update" />
+                            <a class="btn btn-primary" href="<?php echo base_url(); ?>userListing"> Cancel</a>
                         </div>
                     </form>
                 </div>

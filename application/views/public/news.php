@@ -39,9 +39,10 @@
                 <div class="row">
                     <div class="col-main col-lg-8 col-md-7 col-xs-12">
                         <div class="articles">
+                            <?php foreach ($allRecords as $records):?>
                             <div class="article-item">
                                 <div class="area-img">
-                                    <img src="<?php echo base_url(); ?>static/images/article-img-1.jpg" alt="">
+                                    <img src="<?=$records->image_path; ?>" alt="">
                                 </div>
                                 <div class="area-content">
                                     <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
@@ -54,83 +55,83 @@
                                         </div>
                                     </div>
                                     <div class="article-right col-lg-10 col-md-9 col-sm-9 col-xs-12 pull-left">
-                                        <h3><a href="#">Bringing Computer Skills to Classrooms</a></h3>
-                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>
-                                        <div class="stats">
-                                            <span class="clock">
-                                                <span class="icon clock-icon"></span>
-                                                <span class="text-center text-light">16 May 2016</span>
-                                            </span>
-                                            <span class="comment">
-                                                <span class="icon comment-icon"></span>
-                                                <span class="text-center text-light">10 Comments</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-item">
-                                <div class="area-img">
-                                    <img src="<?php echo base_url(); ?>static/images/article-img-2.jpg" alt="">
-                                </div>
-                                <div class="area-content">
-                                    <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
-                                        <div class="catetory-title">
-                                            <h6 class="text-regular">News</h6>
-                                        </div>
-                                        <div class="stats">
-                                            <span class="icon user-icon"></span>
-                                            <span class="text-content text-light">Sayidan Admin</span>
-                                        </div>
-                                    </div>
-                                    <div class="article-right col-lg-10 col-md-9 col-sm-9 col-xs-12 pull-left">
-                                        <h3><a href="#">Community Spirit Shines Through</a></h3>
-                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>
-                                        <div class="stats">
-                                            <span class="clock">
-                                                <span class="icon clock-icon"></span>
-                                                <span class="text-center text-light">16 May 2016</span>
-                                            </span>
-                                            <span class="comment">
-                                                <span class="icon comment-icon"></span>
-                                                <span class="text-center text-light">10 Comments</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-item">
-                                <div class="area-img">
-                                    <img src="<?php echo base_url(); ?>static/images/article-img-3.jpg" alt="">
-                                </div>
-                                <div class="area-content">
-                                    <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
-                                        <div class="catetory-title">
-                                            <h6 class="text-regular">News</h6>
-                                        </div>
-                                        <div class="stats">
-                                            <span class="icon user-icon"></span>
-                                            <span class="text-content text-light">Sayidan Admin</span>
-                                        </div>
-                                    </div>
-                                    <div class="article-right col-lg-10 col-md-9 col-sm-9 col-xs-12 pull-left">
-                                        <h3><a href="#">Bringing Computer Skills to Classrooms</a></h3>
-                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>
-                                        <div class="stats">
-                                            <span class="clock">
-                                                <span class="icon clock-icon"></span>
-                                                <span class="text-center text-light">16 May 2016</span>
-                                            </span>
-                                            <span class="comment">
-                                                <span class="icon comment-icon"></span>
-                                                <span class="text-center text-light">10 Comments</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-item">
+                                        <h3><a href="#"><?=$records->news_title; ?></a></h3>
 
+                                        <div class="stats">
+                                            <span class="clock">
+                                                <span class="icon clock-icon"></span>
+                                                <span class="text-center text-light"><?=$records->published_on; ?></span>
+                                            </span>
+                                            <span class="comment">
+                                                <span class="icon comment-icon"></span>
+                                                <span class="text-center text-light">10 Comments</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach;?>
+<!--                            <div class="article-item">-->
+<!--                                <div class="area-img">-->
+<!--                                    <img src="--><?php //echo base_url(); ?><!--static/images/article-img-2.jpg" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="area-content">-->
+<!--                                    <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">-->
+<!--                                        <div class="catetory-title">-->
+<!--                                            <h6 class="text-regular">News</h6>-->
+<!--                                        </div>-->
+<!--                                        <div class="stats">-->
+<!--                                            <span class="icon user-icon"></span>-->
+<!--                                            <span class="text-content text-light">Sayidan Admin</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-right col-lg-10 col-md-9 col-sm-9 col-xs-12 pull-left">-->
+<!--                                        <h3><a href="#">Community Spirit Shines Through</a></h3>-->
+<!--                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>-->
+<!--                                        <div class="stats">-->
+<!--                                            <span class="clock">-->
+<!--                                                <span class="icon clock-icon"></span>-->
+<!--                                                <span class="text-center text-light">16 May 2016</span>-->
+<!--                                            </span>-->
+<!--                                            <span class="comment">-->
+<!--                                                <span class="icon comment-icon"></span>-->
+<!--                                                <span class="text-center text-light">10 Comments</span>-->
+<!--                                            </span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="article-item">-->
+<!--                                <div class="area-img">-->
+<!--                                    <img src="--><?php //echo base_url(); ?><!--static/images/article-img-3.jpg" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="area-content">-->
+<!--                                    <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">-->
+<!--                                        <div class="catetory-title">-->
+<!--                                            <h6 class="text-regular">News</h6>-->
+<!--                                        </div>-->
+<!--                                        <div class="stats">-->
+<!--                                            <span class="icon user-icon"></span>-->
+<!--                                            <span class="text-content text-light">Sayidan Admin</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-right col-lg-10 col-md-9 col-sm-9 col-xs-12 pull-left">-->
+<!--                                        <h3><a href="#">Bringing Computer Skills to Classrooms</a></h3>-->
+<!--                                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis.</p>-->
+<!--                                        <div class="stats">-->
+<!--                                            <span class="clock">-->
+<!--                                                <span class="icon clock-icon"></span>-->
+<!--                                                <span class="text-center text-light">16 May 2016</span>-->
+<!--                                            </span>-->
+<!--                                            <span class="comment">-->
+<!--                                                <span class="icon comment-icon"></span>-->
+<!--                                                <span class="text-center text-light">10 Comments</span>-->
+<!--                                            </span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="article-item">
                                 <div class="area-content">
                                     <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
                                         <div class="catetory-title">

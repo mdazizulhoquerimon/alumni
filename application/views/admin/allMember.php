@@ -33,6 +33,7 @@
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover">
                             <tr>
+                                <th>#Sl No</th>
                                 <th>Name</th>
                                 <th>Batch No</th>
                                 <th>Student Id</th>
@@ -43,10 +44,12 @@
                             <?php
                             if(!empty($memberRecords))
                             {
+                                $sl = $this->uri->segment(3,0);
                                 foreach($memberRecords as $record)
                                 {
                                     ?>
                                     <tr>
+                                        <td><?=++$sl?></td>
                                         <td><?php echo $record->fullname ?></td>
                                         <td><?php echo $record->batch ?></td>
                                         <td><?php echo $record->studentid ?></td>
@@ -85,7 +88,7 @@
             e.preventDefault();
             var link = jQuery(this).get(0).href;
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "userListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "member/memberListing/" + value);
             jQuery("#searchList").submit();
         });
     });

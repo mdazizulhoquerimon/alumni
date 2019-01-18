@@ -18,7 +18,9 @@ class Adminuser extends BaseController
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->isLoggedIn();   
+        $this->load->model('member_model');
+        $this->load->model('news_model');
+        $this->isLoggedIn();
     }
     
     /**
@@ -199,8 +201,9 @@ class Adminuser extends BaseController
             $this->form_validation->set_rules('password','Password','matches[cpassword]|max_length[20]');
             $this->form_validation->set_rules('cpassword','Confirm Password','matches[password]|max_length[20]');
             $this->form_validation->set_rules('role','Role','trim|required|numeric');
-            $this->form_validation->set_rules('mobile','Mobile Number','required|min_length[10]');
-            
+            $this->form_validation->set_rules('mobile','Mobile Number','required|min_length[11]');
+            $this->form_validation->set_rules('batchNo','Batch No','trim|required');
+
             if($this->form_validation->run() == FALSE)
             {
                 $this->editOld($userId);
@@ -212,21 +215,18 @@ class Adminuser extends BaseController
                 $password = $this->input->post('password');
                 $roleId = $this->input->post('role');
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
-                
-                $userInfo = array();
-                
+                $batchNo = $this->input->post('batchNo');
                 if(empty($password))
                 {
-                    $userInfo = array('email'=>$email, 'roleId'=>$roleId, 'name'=>$name,
+                    $userInfo = array('email'=>$email, 'roleId'=>$roleId, 'name'=>$name,'batchNo'=>$batchNo,
                                     'mobile'=>$mobile, 'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
                 }
                 else
                 {
-                    $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId,
+                    $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'roleId'=>$roleId,'batchNo'=>$batchNo,
                         'name'=>ucwords($name), 'mobile'=>$mobile, 'updatedBy'=>$this->vendorId, 
                         'updatedDtm'=>date('Y-m-d H:i:s'));
                 }
-                
                 $result = $this->user_model->editUser($userInfo, $userId);
                 
                 if($result == true)

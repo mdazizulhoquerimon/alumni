@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         <i class="fa fa-users"></i> Batch Admin Management
-        <small>Add / Edit User</small>
+        <small>Add Batch Admin</small>
       </h1>
     </section>
     
@@ -13,15 +13,11 @@
             <!-- left column -->
             <div class="col-md-8">
               <!-- general form elements -->
-                
-                
-                
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Enter Batch Admin Details</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
-                    <?php $this->load->helper("form"); ?>
                     <form role="form" id="addUser" action="<?php echo base_url() ?>addNewUser" method="post" role="form">
                         <div class="box-body">
                             <div class="row">
@@ -64,7 +60,7 @@
                                     <div class="form-group">
                                         <label for="role">Role</label>
                                         <select class="form-control required" id="role" name="role">
-                                            <option value="0">Select Role</option>
+                                            <option value="0" selected disabled >Select Role</option>
                                             <?php
                                             if(!empty($roles))
                                             {
@@ -85,7 +81,7 @@
                                     <div class="form-group">
                                         <label for="role">Batch No</label>
                                         <select class="form-control required" id="batchNo" name="batchNo">
-                                            <option value="0" selected disabled>Select Batch No</option>
+                                            <option value="0" selected disabled >Select Batch No</option>
                                             <option value="01">Batch 01</option>
                                             <option value="02">Batch 02</option>
                                             <option value="03">Batch 03</option>
@@ -96,6 +92,21 @@
                                             <option value="08">Batch 08</option>
                                             <option value="09">Batch 09</option>
                                             <option value="10">Batch 10</option>
+                                            <option value="11">Batch 11</option>
+                                            <option value="12">Batch 12</option>
+                                            <option value="13">Batch 13</option>
+                                            <option value="14">Batch 14</option>
+                                            <option value="15">Batch 15</option>
+                                            <option value="16">Batch 16</option>
+                                            <option value="17">Batch 17</option>
+                                            <option value="18">Batch 18</option>
+                                            <option value="19">Batch 19</option>
+                                            <option value="20">Batch 20</option>
+                                            <option value="21">Batch 21</option>
+                                            <option value="22">Batch 22</option>
+                                            <option value="23">Batch 23</option>
+                                            <option value="24">Batch 24</option>
+                                            <option value="25">Batch 25</option>
                                         </select>
                                     </div>
                                 </div>
