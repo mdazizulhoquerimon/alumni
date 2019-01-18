@@ -122,8 +122,8 @@
                     <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span></a>
                 </li>
                 <li class="sub-menu collapse treeview" id="news">
-                    <a href="#"><i class="fa fa-plus"></i> <span>Create News</span></a>
-                    <a href="#"><i class="fa fa-eye"></i> <span>View All News</span></a>
+                    <a href="<?php echo base_url(); ?>news/addNews" ><i class="fa fa-plus"></i> <span>Create News</span></a>
+                    <a href="<?php echo base_url(); ?>news/newsListing" ><i class="fa fa-eye"></i> <span>View All News</span></a>
                 </li>
                 <!-- News Section End -->
                 <!-- Event Section Start -->
@@ -154,7 +154,7 @@
                         <a href="#"><i class="fa fa-user-circle"></i> <span>General Members</span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="generalMember">
-                        <a href="<?php echo base_url(); ?>member/memberListing"><i class="fa fa-eye"></i> <span>View All General Members</span></a>
+                        <a href="<?php echo base_url(); ?>member/memberListing" ><i class="fa fa-eye"></i> <span>View All General Members</span></a>
                     </li>
                     <!-- General Member Section End -->
                     <!-- Executive Member Section Strat -->
@@ -162,8 +162,8 @@
                         <a href="#"><i class="fa fa-user-circle"></i> <span>Executive Members</span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="executiveMember">
-                        <a href="#"><i class="fa fa-plus-circle"></i> <span>Add Executive Member</span></a>
-                        <a href="#"><i class="fa fa-eye"></i> <span>View All Executive Members</span></a>
+                        <a  href="<?php echo base_url(); ?>member/addExecutiveMember" ><i class="fa fa-plus-circle"></i> <span>Add Executive Member</span></a>
+                        <a href="<?php echo base_url(); ?>member/executiveMemberListing" ><i class="fa fa-eye"></i> <span>View All Executive Members</span></a>
                     </li>
                     <!-- Executive Member Section End -->
                     <!-- Member Section End -->

@@ -1,7 +1,17 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+require APPPATH . '/libraries/BaseController.php';
 
-class Common extends CI_Controller {
+class Common extends BaseController {
+
+    /**
+     * This is default constructor of the class
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('member_model');
+        $this->load->model('news_model');
+    }
 
 	public function about_us()
 	{
@@ -15,12 +25,18 @@ class Common extends CI_Controller {
 
 	public function executive_member()
 	{
-		$this->load->view('public/executive_member');
+        $data['allRecords'] = $this->member_model->getAllExecutiveMember();
+//        echo ("<pre>");
+//        print_r($data);
+//        exit;
+
+		$this->load->view('public/executive_member',$data);
 	}
 	
 	public function news()
 	{
-		$this->load->view('public/news');
+        $data['allRecords'] = $this->news_model->getAllNews();
+		$this->load->view('public/news',$data);
 	}
 
 	public function news_view()
