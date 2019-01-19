@@ -87,3 +87,11 @@ $route['resetPasswordConfirmUser'] = "admin/resetPasswordConfirmUser";
 $route['resetPasswordConfirmUser/(:any)'] = "admin/resetPasswordConfirmUser/$1";
 $route['resetPasswordConfirmUser/(:any)/(:any)'] = "admin/resetPasswordConfirmUser/$1/$2";
 $route['createPasswordUser'] = "admin/createPasswordUser";
+
+
+//======================== Routes for Payment Method ===================
+//$route['requestssl'] = 'payment/requestssl';
+//$route['validate'] = 'payment/validateresponse';
+//$route['fail'] = 'payment/fail';
+//$route['cancel'] = 'payment/cancel';
+//$route['ipn'] = 'payment/ipn';

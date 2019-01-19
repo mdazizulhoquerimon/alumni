@@ -52,7 +52,7 @@
                 <div class="features-table">
                     <ul>
                         <h1>Month</h1>
-                        <li>January</li>
+                        <li><a href="http://localhost/alumni/payment/monthlypayment">January</a></li>
                         <li>February</li>
                         <li>March</li>
                         <li>April</li>
