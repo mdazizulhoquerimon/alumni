@@ -1,0 +1,56 @@
+body{
+    padding-bottom: 50px;
+}
+.headding-title{
+
+    color: #3a3a3a;
+}
+.team-box{
+    z-index:1000;
+    height:200px;
+    padding: 0px;
+
+}
+.team-box:hover{
+    z-index:1001;
+}
+.team-boxs{
+    position: relative;
+    height:290px;
+    width: 100%;
+    padding:30px; 
+    background-color:#fff;
+    border:1px solid #F0F0F0;
+}
+.team-boxs:hover{
+    top:-15px;
+    left:-15px;
+    height:320px;
+    width: calc(100% + 30px);
+    transition: all 0.7s;
+    box-shadow: 0px 0px 15px 0px #555;
+}
+.team-boxs img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+.team-boxs:hover.team-boxs img{
+    border:2px solid #1a265c;
+    padding:2px;
+} 
+.team-boxs h4{
+    font-weight: bold;
+    color:#898695;      
+}
+.team-boxs h5{
+    font-size:16px;
+    color:#898686;
+}
+.team-boxs p{
+    color:#A9A9A9;
+}
+.team-boxs .btn{
+    background: #1a265c;
+    color: #fff;
+}
