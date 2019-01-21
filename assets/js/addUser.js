@@ -5,15 +5,16 @@
  * 
  * Using validation plugin : jquery.validate.js
  * 
- * @author Kishor Mali
+ * @author Kishor Mali & MD Azizul Hoque Rimon
  */
 
 $(document).ready(function(){
 	
 	var addUserForm = $("#addUser");
-	
+	var addNewsForm = $("#addNews");
+	var addEventForm = $("#addEvent");
+
 	var validator = addUserForm.validate({
-		
 		rules:{
 			fname :{ required : true },
 			email : { required : true, email : true, remote : { url : baseURL + "checkEmailExists", type :"post"} },
@@ -32,7 +33,54 @@ $(document).ready(function(){
 		}
 	});
 
+    var validator = addNewsForm.validate({
+
+        rules:{
+            news_title :{ required : true },
+            news_details :{ required : true },
+        },
+        messages:{
+            news_title :{ required : "This field is required" },
+            news_details :{ required : "This field is required" },
+        }
+    });
+
+    var validator = addEventForm.validate({
+
+        rules:{
+            event_title :{ required : true },
+            event_type :{ required : true },
+            event_details :{ required : true },
+            event_date :{ required : true },
+        },
+        messages:{
+            event_title :{ required : "This field is required" },
+            event_type :{ required : "This field is required",selected : "Please select atleast one option"  },
+            event_details :{ required : "This field is required" },
+            event_date :{ required : "This field is required" },
+        }
+    });
+    $('.form_datetime').datetimepicker({
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1,
+        minuteStep: 15,
+        pickerPosition: "bottom-left"
+    });
+
 });
+
+$(document).on("focusin", "#event_date", function() {
+    $(this).prop('readonly', true);
+});
+
+$(document).on("focusout", "#event_date", function() {
+    $(this).prop('readonly', false);
+});
+
 $("#image_upload").on('change', function () {
 
     //Get count of selected files

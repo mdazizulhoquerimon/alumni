@@ -77,12 +77,12 @@
 
 <script>
     jQuery(document).ready(function () {
-        $('#time').syotimer({
+        $('#time-event').syotimer({
             year: 2019,
-            month: 12,
-            day: 23,
-            hour: 7,
-            minute: 7,
+            month: 1,
+            day: 20,
+            hour: 23,
+            minute: 53,
         });
     });
 </script>

@@ -72,7 +72,6 @@ class Adminuser extends BaseController
         }
         else
         {
-            $this->load->model('user_model');
             $data['roles'] = $this->user_model->getUserRoles();
             
             $this->global['pageTitle'] = 'CUELSA : Add New User';

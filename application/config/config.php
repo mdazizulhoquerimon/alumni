@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/alumni';
-
+date_default_timezone_set('Asia/Dhaka');
 /*
 |--------------------------------------------------------------------------
 | Index File

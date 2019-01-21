@@ -3,7 +3,7 @@
 require APPPATH . '/libraries/BaseController.php';
 
 /**
- * Class : Member (MemberController)
+ * Class : News (NewsController)
  * User Class to control all user related operations.
  * @author : Rimon
  * @version : 1.0

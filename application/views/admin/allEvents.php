@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <i class="fa fa-newspaper-o fa-2x"></i> News Management
+            <i class="fa fa-calendar fa-2x"></i> Event Management
             <small>Edit, Delete</small>
         </h1>
     </section>
@@ -35,11 +35,6 @@
                     <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <?php if(isset($upload_error)) { echo $upload_error;  }  ?>
-                </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-xs-12 text-right">
@@ -52,9 +47,9 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">News List</h3>
+                        <h3 class="box-title">Event List</h3>
                         <div class="box-tools">
-                            <form action="<?php echo base_url() ?>news/newsListing" method="POST" id="searchList">
+                            <form action="<?php echo base_url() ?>event/eventListing" method="POST" id="searchList">
                                 <div class="input-group">
                                     <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                                     <div class="input-group-btn">
@@ -70,32 +65,28 @@
                                 <th>#Sl No</th>
                                 <th>Title</th>
                                 <th>Details</th>
-                                <th>Image</th>
-                                <th>Published On</th>
+                                <th>Type</th>
+                                <th>Event Date</th>
+                                <th>Created On</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             <?php
-                            if(!empty($newsRecords))
+                            if(!empty($eventRecords))
                             {
                                 $sl = $this->uri->segment(3,0);
-                                foreach($newsRecords as $record)
+                                foreach($eventRecords as $record)
                                 {
                                     ?>
                                     <tr>
                                         <td><?=++$sl?></td>
-                                        <td><?php echo $record->news_title ?></td>
-                                        <td><?php echo $record->news_details ?></td>
-                                        <td>
-                                            <?php if (!is_null($record->image_path)):?>
-                                                <img src="<?php echo $record->image_path ?>" alt="" width="97" height="60">
-                                            <?php else:?>
-                                                <img src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="97" height="60">
-                                            <?php endif; ?>
-                                        </td>
-                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->published_on)) ?></td>
+                                        <td><?php echo $record->event_title ?></td>
+                                        <td><?php echo $record->event_details ?></td>
+                                        <td><?php echo $record->event_type ?></td>
+                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->event_date)) ?></td>
+                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'news/editNews/'.$record->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-sm btn-danger deleteNews" href="#" data-newsid="<?php echo $record->id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
+                                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'event/editEvent/'.$record->event_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                                            <a class="btn btn-sm btn-danger deleteEvent" href="#" data-eventid="<?php echo $record->event_id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -120,7 +111,7 @@
             e.preventDefault();
             var link = jQuery(this).get(0).href;
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "news/newsListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "event/eventListing/" + value);
             jQuery("#searchList").submit();
         });
     });
