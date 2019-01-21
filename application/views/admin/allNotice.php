@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <i class="fa fa-newspaper-o fa-2x"></i> News Management
-            <small>Edit, Delete</small>
+            <i class="fa fa-upload fa-2x"></i> Notice Management
+            <small>Download, Delete</small>
         </h1>
     </section>
     <section class="content">
@@ -52,9 +52,9 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">News List</h3>
+                        <h3 class="box-title">Notice List</h3>
                         <div class="box-tools">
-                            <form action="<?php echo base_url() ?>news/newsListing" method="POST" id="searchList">
+                            <form action="<?php echo base_url() ?>notice/noticeListing" method="POST" id="searchList">
                                 <div class="input-group">
                                     <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                                     <div class="input-group-btn">
@@ -69,33 +69,31 @@
                             <tr>
                                 <th>#Sl No</th>
                                 <th>Title</th>
-                                <th>Details</th>
-                                <th>Image</th>
-                                <th>Published On</th>
+                                <th>File</th>
+                                <th>Uploaded On</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             <?php
-                            if(!empty($newsRecords))
+                            if(!empty($noticeRecords))
                             {
                                 $sl = $this->uri->segment(3,0);
-                                foreach($newsRecords as $record)
+                                foreach($noticeRecords as $record)
                                 {
                                     ?>
                                     <tr>
                                         <td><?=++$sl?></td>
-                                        <td><?php echo $record->news_title ?></td>
-                                        <td><?php echo $record->news_details ?></td>
+                                        <td><?php echo $record->notice_title ?></td>
                                         <td>
-                                            <?php if (!is_null($record->image_path)):?>
-                                                <img src="<?php echo $record->image_path ?>" alt="" width="97" height="60">
+                                            <?php if (!is_null($record->notice_path)):?>
+                                                <embed src="<?php echo $record->notice_path ?>" alt="" width="300" height="100">
                                             <?php else:?>
-                                                <img src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="97" height="60">
+                                                <embed src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="100" height="100">
                                             <?php endif; ?>
                                         </td>
-                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->published_on)) ?></td>
+                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->uploaded_on)) ?></td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'news/editNews/'.$record->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                                            <a onclick="return confirm('Are You Sure To Delete??')" class="btn btn-sm btn-danger" href="<?php echo base_url().'news/deleteNews/'.$record->id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
+                                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'notice/downloadNotice/'.$record->notice_id; ?>" title="Download"><i class="fa fa-download"></i></a>
+                                            <a onclick="return confirm('Are You Sure To Delete??')" class="btn btn-sm btn-danger" href="<?php echo base_url().'notice/deleteNotice/'.$record->notice_id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php

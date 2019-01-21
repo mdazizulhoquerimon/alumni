@@ -13,6 +13,7 @@ $(document).ready(function(){
 	var addUserForm = $("#addUser");
 	var addNewsForm = $("#addNews");
 	var addEventForm = $("#addEvent");
+	var uploadNoticeForm = $("#uploadNotice");
 
 	var validator = addUserForm.validate({
 		rules:{
@@ -42,6 +43,16 @@ $(document).ready(function(){
         messages:{
             news_title :{ required : "This field is required" },
             news_details :{ required : "This field is required" },
+        }
+    });
+
+    var validator = uploadNoticeForm.validate({
+
+        rules:{
+            notice_title :{ required : true },
+        },
+        messages:{
+            notice_title :{ required : "This field is required" },
         }
     });
 

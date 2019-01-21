@@ -98,7 +98,8 @@
                                         </td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-info" href="<?php echo base_url() . 'member/editExecutiveMember/' . $record->ex_mem_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-sm btn-danger deleteExMem" href="#" data-exmemid="<?php echo $record->ex_mem_id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
+<!--                                            <a class="btn btn-sm btn-danger deleteExMem" href="#" data-exmemid="--><?php //echo $record->ex_mem_id; ?><!--" title="Delete"><i class="fa fa-trash"></i></a>-->
+                                            <a onclick="return confirm('Are You Sure To Delete??')" class="btn btn-sm btn-danger" href="<?php echo base_url().'member/deleteExecutivemember/'.$record->ex_mem_id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php

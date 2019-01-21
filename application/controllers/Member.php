@@ -146,9 +146,9 @@ class Member extends BaseController
 
                 $data=$this->upload->data();
                 $image_path=base_url("uploads/executive_member_image/".$data['raw_name'].$data['file_ext']);
-
+                $file_name= $data['raw_name'].$data['file_ext'];
                 $exMemInfo = array('name'=> $name, 'mobile'=>$mobile, 'batchNo'=>$batchNo, 'designation_id'=>$designation,
-                     'image_path'=>$image_path, 'active_year'=>$active_year, 'createdDtm'=>date('Y-m-d H:i:s'));
+                    'file_name'=>$file_name, 'image_path'=>$image_path, 'active_year'=>$active_year, 'createdDtm'=>date('Y-m-d H:i:s'));
 
                 $result = $this->member_model->addNewExecutiveMember($exMemInfo);
 
@@ -298,9 +298,10 @@ class Member extends BaseController
 
                 $data=$this->upload->data();
                 $image_path=base_url("uploads/executive_member_image/".$data['raw_name'].$data['file_ext']);
+                $file_name= $data['raw_name'].$data['file_ext'];
 
                 $exMemInfo = array('name'=> $name, 'mobile'=>$mobile, 'batchNo'=>$batchNo, 'designation_id'=>$designation,
-                    'image_path'=>$image_path, 'active_year'=>$active_year, 'createdDtm'=>date('Y-m-d H:i:s'));
+                    'file_name'=>$file_name, 'image_path'=>$image_path, 'active_year'=>$active_year, 'createdDtm'=>date('Y-m-d H:i:s'));
 
 
                 $result = $this->member_model->updateExecutiveMember($exMemInfo,$exMemId);
@@ -349,20 +350,34 @@ class Member extends BaseController
      * This function is used to delete the executive member using exMemId
      * @return boolean $result : TRUE / FALSE
      */
-    function deleteExecutivemember()
+    function deleteExecutivemember($exMemId)
     {
         if($this->isAdmin() == TRUE)
         {
-            echo(json_encode(array('status'=>'access')));
+            $this->loadThis();
         }
         else
         {
-            $exMemId = $this->input->post('exMemId');
-
+            if($exMemId == null)
+            {
+                redirect('member/executiveMemberListing');
+            }
+            $data['exMemInfo'] = $this->member_model->getExMemInfo($exMemId);
+            if (!empty($data['exMemInfo']->file_name)) {
+                $path = './uploads/executive_member_image/';
+                @unlink($path . $data['exMemInfo']->file_name);
+            }
             $result = $this->member_model->deleteExecutiveMember($exMemId);
 
-            if ($result > 0) { echo(json_encode(array('status'=>TRUE))); }
-            else { echo(json_encode(array('status'=>FALSE))); }
+            if($result > 0)
+            {
+                $this->session->set_flashdata('success', 'Executive Member Deleted successfully');
+            }
+            else
+            {
+                $this->session->set_flashdata('error', 'Executive Member Deleted failed');
+            }
+            redirect('member/executiveMemberListing');
         }
     }
 

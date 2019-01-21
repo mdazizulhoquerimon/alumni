@@ -87,33 +87,6 @@ jQuery(document).ready(function(){
         }
     });
 
-    jQuery(document).on("click", ".deleteNews", function(){
-        var newsId = $(this).data("newsid"),
-
-            hitURL = baseURL + "news/deleteNews",
-            currentRow = $(this);
-        var confirmation = confirm("Are you sure to delete this News ?");
-
-        if(confirmation)
-        {
-            jQuery.ajax({
-                type : "POST",
-                dataType : "json",
-                url : hitURL,
-                data : { newsId : newsId }
-            }).done(function(data){
-                console.log(data);
-                currentRow.parents('tr').remove();
-                if(data.status = true) {
-                    alert("News successfully deleted");
-                    window.location.reload();
-                }
-                else if(data.status = false) { alert("News deletion failed"); }
-                else { alert("Access denied..!"); }
-            });
-        }
-    });
-
     jQuery(document).on("click", ".deleteEvent", function(){
         var eventId = $(this).data("eventid"),
 
@@ -140,32 +113,6 @@ jQuery(document).ready(function(){
             });
         }
     });
-
-    jQuery(document).on("click", ".deleteExMem", function(){
-        var exMemId = $(this).data("exmemid"),
-            hitURL = baseURL + "member/deleteExecutiveMember",
-            currentRow = $(this);
-
-        var confirmation = confirm("Are you sure to delete this Executive Member ?");
-
-        if(confirmation)
-        {
-            jQuery.ajax({
-                type : "POST",
-                dataType : "json",
-                url : hitURL,
-                data : { exMemId : exMemId }
-            }).done(function(data){
-                console.log(data);
-                currentRow.parents('tr').remove();
-                if(data.status = true) {
-                    alert("Executive Member successfully deleted");
-                    window.location.reload();
-                }
-                else if(data.status = false) { alert("Executive Member deletion failed"); }
-                else { alert("Access denied..!"); }
-            });
-        }
-    });
+    
 	
 });

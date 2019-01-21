@@ -175,8 +175,8 @@
                         <a href="#"><i class="fa fa-upload"></i> <span>Notice</span><span class="caret"></span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="notice">
-                        <a href="<?php echo base_url(); ?>" > <i class="fa fa-plus-circle"></i> <span>Upload Notice</span></a>
-                        <a href="<?php echo base_url(); ?>" > <i class="fa fa-eye"></i> <span>View All Notice</span></a>
+                        <a href="<?php echo base_url(); ?>notice/uploadNotice" > <i class="fa fa-plus-circle"></i> <span>Upload Notice</span></a>
+                        <a href="<?php echo base_url(); ?>notice/noticeListing"  > <i class="fa fa-eye"></i> <span>View All Notice</span></a>
                     </li>
                     <!-- Notice Section End -->
 
