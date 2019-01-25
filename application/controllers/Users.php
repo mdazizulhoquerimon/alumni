@@ -129,12 +129,70 @@ class Users extends CI_Controller {
 		{
 			$useremail = $_SESSION['email'];
 			$this->load->model('ProfileModel');
-			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
-			
+			$this->load->model('PaymentModel');
+			$user_data = array();
+			$user_data = $this->ProfileModel->get_user_data($useremail);
+			$verificationkey = $user_data['verificationkey'];
+			//error_log(print_r($user_data, true));
+			$paymentdata = array();
+			$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+			//error_log(print_r($paymentdata, true));
+			$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+			//error_log(print_r($fetched_user_data['fetched_user_data'], true));
 			$this->load->view('public/header_profile', $fetched_user_data);
 			$this->load->view('public/payment_info', $fetched_user_data);
 			$this->load->view('public/footer_profile');
 			
+		}
+		else
+		{
+			$this->session->set_flashdata("error", "You have to login first to view this page");
+			redirect('users/login','refresh');
+		}
+	}
+
+	public function monthlypayment()
+	{
+		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+		{
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$this->load->model('PaymentModel');
+			$user_data = array();
+			$user_data = $this->ProfileModel->get_user_data($useremail);
+			$verificationkey = $user_data['verificationkey'];
+			//error_log(print_r($user_data, true));
+			$paymentdata = array();
+			$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+			$monthname = $this->input->get('month');
+			if($paymentdata[$monthname] == 'fa-check')
+			{
+				$paymentdata['isPaid'] = '1';
+				$paymentdata['monthname'] = $monthname;
+				$checkarray = array('verificationkey'=>$verificationkey, 'value_a'=>$monthname, 'order_status'=>'Processing');
+				$this->load->database();
+				$this->db->where($checkarray);
+				$query = $this->db->get('payment_details');
+				if($query->num_rows() > 0)
+				{
+					$row = $query->row_array();
+				}
+				$paymentdata = array_merge($paymentdata, $row);
+				//error_log(print_r($paymentdata, true));
+				$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+				$this->load->view('public/header_profile', $fetched_user_data);
+				$this->load->view('public/payment_details', $fetched_user_data);
+				$this->load->view('public/footer_profile');
+			}
+			else if($paymentdata[$monthname] == 'fa-times')
+			{
+				$paymentdata['isPaid'] = '0';
+				$paymentdata['monthname'] = $monthname;
+				$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+				$this->load->view('public/header_profile', $fetched_user_data);
+				$this->load->view('public/payment_details', $fetched_user_data);
+				$this->load->view('public/footer_profile');
+			}			
 		}
 		else
 		{

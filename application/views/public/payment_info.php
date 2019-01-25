@@ -28,12 +28,12 @@
                     </div>
                   </div>
                   <ul class="nav nav-pills nav-stacked">
-                    <li><a href="profile"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="editprofile"><i class="fa fa-pencil-square-o"></i>Edit profile</a></li>
-                    <li><a href="editcredentials"><i class="fa fa-lock"></i>Edit Login Credentials</a></li>
+                    <li><a href="<?php echo base_url(); ?>users/profile"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="<?php echo base_url(); ?>users/editprofile"><i class="fa fa-pencil-square-o"></i>Edit profile</a></li>
+                    <li><a href="<?php echo base_url(); ?>users/editcredentials"><i class="fa fa-lock"></i>Edit Login Credentials</a></li>
                     <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>Inbox</a></li>
                     <li class="active"><a href="paymentinfo"><i class="fa fa-usd" aria-hidden="true"></i>Payment History</a></li>
-                    <li><a href="logout"><i class="fa fa-sign-out"></i>Logout</a></li>
+                    <li><a href="<?php echo base_url(); ?>users/logout"><i class="fa fa-sign-out"></i>Logout</a></li>
                   </ul>
               </div>
             </div>
@@ -52,18 +52,18 @@
                 <div class="features-table">
                     <ul>
                         <h1>Month</h1>
-                        <li>January</li>
-                        <li>February</li>
-                        <li>March</li>
-                        <li>April</li>
-                        <li>May</li>
-                        <li>June</li>
-                        <li>July</li>
-                        <li>August</li>
-                        <li>September</li>
-                        <li>October</li>
-                        <li>November</li>
-                        <li>December</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=january';">January</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=february';">February</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=march';">March</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=april';">April</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=may';">May</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=june';">June</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=july';">July</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=august';">August</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=september';">September</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=october';">October</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=november';">November</li>
+                        <li onclick="location.href = '<?php echo base_url(); ?>users/monthlypayment?month=december';">December</li>
                     </ul>
                 </div>
             </div>
@@ -72,18 +72,18 @@
                  <div class="features-table-paid">
                     <ul>
                         <h1>Status</h1>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-times"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['january']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['february']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['march']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['april']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['may']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['june']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['july']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['august']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['september']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['october']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['november']; ?>"></i></li>
+                        <li><i class="fa <?php echo $fetched_user_data['december']; ?>"></i></li>
                        
                     </ul>
                 </div>

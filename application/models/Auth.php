@@ -39,7 +39,11 @@ class Auth extends CI_Model {
 
             if($query->num_rows() > 0)
             {
+                $vfkey = array();
+                $vfkey['verificationkey'] = $key;
                 $data['isverified'] = 1;
+                $this->db->insert('payment_info', $vfkey);
+                $this->db->insert('payment_details',$vfkey);
                 $this->db->where('verificationkey', $key);
                 $this->db->update('registeredalumni', $data);
                 return TRUE;

@@ -20,6 +20,7 @@ class Payment extends CI_Controller{
 			$state = $this->input->post('state');
 			$city = $this->input->post('city');
 			$postcode =	$this->input->post('postcode');
+			$monthname = $this->input->post('monthname');
 
 			$post_data = array();
 			$post_data['store_id'] = SSLCZ_STORE_ID;
@@ -59,9 +60,10 @@ class Payment extends CI_Controller{
 			$post_data['ship_country'] = "Bangladesh";
 
 			# OPTIONAL PARAMETERS
-			$post_data['value_a'] = "ref001";
-			$post_data['value_b '] = "ref002";
-			$post_data['value_c'] = "ref003";
+			$yearofpayment = date('Y');
+			$post_data['value_a'] = $monthname;
+			$post_data['value_b '] = "";
+			$post_data['value_c'] = $yearofpayment;
 			$post_data['value_d'] = "ref004";
 
 			# CART PARAMETERS
@@ -87,14 +89,22 @@ class Payment extends CI_Controller{
 
 
 			#$this->load->library('sslcommerz');
-			echo "<pre>";
-			print_r($post_data);
+			// echo "<pre>";
+			// print_r($post_data);
 			if($this->sslcommerz->RequestToSSLC($post_data, false))
 			{
-				echo "Pending";
-				#***************************************
-				# Change your database status to Pending.
-				#***************************************
+				$useremail = $_SESSION['email'];
+				$this->load->model('ProfileModel');
+				$this->load->model('PaymentModel');
+				$user_data = array();
+				$user_data = $this->ProfileModel->get_user_data($useremail);
+				$verificationkey = $user_data['verificationkey'];
+				$data['verificationkey'] = $verificationkey;
+				$data['order_status'] = "Pending";
+				$data['value_a'] = $post_data['value_a'];
+				$data['value_c'] = date('Y');
+				$this->load->database();
+				$this->db->insert('payment_details', $data);
 			}
 		}
 	}
@@ -111,20 +121,54 @@ class Payment extends CI_Controller{
 			{
 				if($database_order_status == 'Pending')
 				{
-					#****************************************************************************
-					# Change your database status to Processing & You can redirect to success page from here
-					#*****************************************************************************
-					echo "Transaction Successful<br>";
-					echo "Processing";
-					echo "<pre>";
-					print_r($_POST);exit;
+					$validationdata = array();
+					$validationdata = $_POST;
+					$validationdata['order_status'] = 'Processing';
+					unset($validationdata['verify_key']);
+					unset($validationdata['value_b']);
+					unset($validationdata['value_d']);
+					$useremail = $_SESSION['email'];
+					$this->load->model('ProfileModel');
+					$this->load->model('PaymentModel');
+					$user_data = array();
+					$user_data = $this->ProfileModel->get_user_data($useremail);
+					$verificationkey = $user_data['verificationkey'];
+					$checkarray = array('verificationkey'=>$verificationkey, 'value_a'=>$validationdata['value_a'], 'value_c'=>$validationdata['value_c'], 'order_status'=>'Pending');
+					$this->load->database();
+					$this->db->where($checkarray);
+					$this->db->update('payment_details', $validationdata);
+					$verifiedmonth = array();
+					$verifiedmonth[$validationdata['value_a']] = '1';
+					$this->db->where('verificationkey', $verificationkey);
+					$this->db->update('payment_info', $verifiedmonth);
+					
+					$paymentdata = array();
+					$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+					//error_log(print_r($paymentdata, true));
+					$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+					//error_log(print_r($fetched_user_data['fetched_user_data'], true));
+					$this->load->view('public/header_profile', $fetched_user_data);
+					$this->load->view('public/payment_info', $fetched_user_data);
+					$this->load->view('public/footer_profile');
 				}
 				else
 				{
-					#*****************************************************************
-					# Just redirect to your success page status already changed by IPN.
-					#*****************************************************************
-					echo "Just redirect to your success page";
+					$useremail = $_SESSION['email'];
+					$this->load->model('ProfileModel');
+					$this->load->model('PaymentModel');
+					$user_data = array();
+					$user_data = $this->ProfileModel->get_user_data($useremail);
+					$verificationkey = $user_data['verificationkey'];
+					//error_log(print_r($user_data, true));
+					$paymentdata = array();
+					$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+					$monthname = $this->input->get('month');
+					$paymentdata['isPaid'] = '0';
+					$paymentdata['monthname'] = $monthname;
+					$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+					$this->load->view('public/header_profile', $fetched_user_data);
+					$this->load->view('public/payment_details', $fetched_user_data);
+					$this->load->view('public/footer_profile');
 				}
 			}
 		}
@@ -134,19 +178,29 @@ class Payment extends CI_Controller{
 		$database_order_status = 'FAILED'; #Check this from your database here Pending is dummy data,
 		if($database_order_status == 'FAILED')
 		{
-			#*****************************************************************************
-			# Change your database status to FAILED & You can redirect to failed page from here
-			#*****************************************************************************
-			echo "<pre>";
-			print_r($_POST);
-			echo "Transaction Faild";
+			// echo "<pre>";
+			// print_r($_POST);
+			// echo "Transaction Faild";
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$this->load->model('PaymentModel');
+			$user_data = array();
+			$user_data = $this->ProfileModel->get_user_data($useremail);
+			$verificationkey = $user_data['verificationkey'];
+			//error_log(print_r($user_data, true));
+			$paymentdata = array();
+			$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+			$monthname = $this->input->get('month');
+			$paymentdata['isPaid'] = '0';
+			$paymentdata['monthname'] = $monthname;
+			$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/payment_details', $fetched_user_data);
+			$this->load->view('public/footer_profile');
 		}
 		else
 		{
-			#******************************************************************
-			# Just redirect to your success page status already changed by IPN.
-			#******************************************************************
-			echo "Just redirect to your failed page";
+			echo "failed page";
 		}	
 	}
 	public function cancel()
@@ -154,19 +208,35 @@ class Payment extends CI_Controller{
 		$database_order_status = 'CANCELLED'; # Check this from your database here Pending is dummy data,
 		if($database_order_status == 'CANCELLED')
 		{
-			#*****************************************************************************
-			# Change your database status to CANCELLED & You can redirect to cancelled page from here
-			#******************************************************************************
-			echo "<pre>";
-			print_r($_POST);
-			echo "Transaction Canceled";
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$this->load->model('PaymentModel');
+			$user_data = array();
+			$user_data = $this->ProfileModel->get_user_data($useremail);
+			$verificationkey = $user_data['verificationkey'];
+			//error_log(print_r($user_data, true));
+			$paymentdata = array();
+			$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+			$monthname = $this->input->get('month');
+			$paymentdata['isPaid'] = '0';
+			$paymentdata['monthname'] = $monthname;
+			$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
+			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/payment_details', $fetched_user_data);
+			$this->load->view('public/footer_profile');
 		}
 		else
 		{
-			#******************************************************************
-			# Just redirect to your cancelled page status already changed by IPN.
-			#******************************************************************
-			echo "Just redirect to your failed page";
+			$useremail = $_SESSION['email'];
+			$this->load->model('ProfileModel');
+			$this->load->model('PaymentModel');
+			$user_data = array();
+			$user_data = $this->ProfileModel->get_user_data($useremail);
+			$verificationkey = $user_data['verificationkey'];
+			//error_log(print_r($user_data, true));
+			$paymentdata = array();
+			$paymentdata = $this->PaymentModel->get_user_payment_data($verificationkey);
+			$monthname = $this->input->get('month');
 		}
 	}
 	public function ipn()

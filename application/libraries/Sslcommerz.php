@@ -71,8 +71,8 @@
 		                                <script>
 		                                    window.location.href = '" . $this->sslc_data['GatewayPageURL'] . "';
 		                                </script>
-		                            ";
-		                            exit;
+									";
+		                            return true;
 		                        } 
 		                        else 
 		                        {
