@@ -92,10 +92,10 @@
                                                 <img src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="97" height="60">
                                             <?php endif; ?>
                                         </td>
-                                        <td><?php echo $record->published_on ?></td>
+                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->published_on)) ?></td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-info" href="<?php echo base_url().'news/editNews/'.$record->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-sm btn-danger deleteNews" href="#" data-newsid="<?php echo $record->id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
+                                            <a onclick="return confirm('Are You Sure To Delete??')" class="btn btn-sm btn-danger" href="<?php echo base_url().'news/deleteNews/'.$record->id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php

@@ -3,8 +3,8 @@
 require APPPATH . '/libraries/BaseController.php';
 
 /**
- * Class : Member (MemberController)
- * User Class to control all user related operations.
+ * Class : News (NewsController)
+ * News Class to control all News related operations.
  * @author : Rimon
  * @version : 1.0
  * @since : 12 january 2019
@@ -33,8 +33,6 @@ class News extends BaseController
         }
         else
         {
-            $this->load->model('user_model');
-            $data['roles'] = $this->user_model->getUserRoles();
             $data['upload_error']=$this->upload->display_errors();
             $this->global['pageTitle'] = 'CUELSA : Add News';
 
@@ -73,6 +71,7 @@ class News extends BaseController
                 $data=$this->upload->data();
                 $image_path=base_url("uploads/news_image/".$data['raw_name'].$data['file_ext']);
                 $newsInfo['image_path']=$image_path;
+                $newsInfo['file_name']=$data['raw_name'].$data['file_ext'];
                 $newsInfo['published_on']=date('Y-m-d H:i:s');
                 $result = $this->news_model->addNewNews($newsInfo);
                 if($result > 0)
@@ -83,7 +82,7 @@ class News extends BaseController
                 {
                     $this->session->set_flashdata('error', 'News creation failed');
                 }
-                redirect('news/addNews');
+                redirect('news/newsListing');
             }
         }
     }
@@ -222,6 +221,7 @@ class News extends BaseController
                 $data=$this->upload->data();
                 $image_path=base_url("uploads/news_image/".$data['raw_name'].$data['file_ext']);
                 $newsInfo['image_path']=$image_path;
+                $newsInfo['file_name']=$data['raw_name'].$data['file_ext'];
                 $newsInfo['published_on']=date('Y-m-d H:i:s');
                 $result = $this->news_model->updateNews($newsInfo,$newsId);
                 if($result > 0)
@@ -241,23 +241,36 @@ class News extends BaseController
      * This function is used to delete the news using newsId
      * @return boolean $result : TRUE / FALSE
      */
-    function deleteNews()
+    function deleteNews($newsId = NULL)
     {
         if($this->isAdmin() == TRUE)
         {
-            echo(json_encode(array('status'=>'access')));
+            $this->loadThis();
         }
         else
         {
-            $newsId = $this->input->post('newsId');
+            if($newsId == null)
+            {
+                redirect('news/newsListing');
+            }
 
+            $data['newsInfo'] = $this->news_model->getNewsInfo($newsId);
+            if (!empty($data['newsInfo']->file_name)) {
+                $path = './uploads/news_image/';
+                @unlink($path . $data['newsInfo']->file_name);
+            }
             $result = $this->news_model->deleteNews($newsId);
 
-            if ($result > 0) { echo(json_encode(array('status'=>TRUE))); }
-            else { echo(json_encode(array('status'=>FALSE))); }
+            if($result > 0)
+            {
+                $this->session->set_flashdata('success', 'News Deleted successfully');
+            }
+            else
+            {
+                $this->session->set_flashdata('error', 'News Deleted failed');
+            }
+            redirect('news/newsListing');
         }
     }
 
 }
-
-?>

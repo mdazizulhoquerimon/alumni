@@ -2,7 +2,7 @@
 
 /**
  * Class : News_model (News Model)
- * User model class to get to handle user related data
+ * User model class to get to handle news related data
  * @author : Md Azizul Hoque Rimon
  * @version : 1.0
  * @since : 10 January 2019

@@ -383,6 +383,4 @@ class Users extends CI_Controller {
 		return $finalid;
 	}
 
-	
-
 }

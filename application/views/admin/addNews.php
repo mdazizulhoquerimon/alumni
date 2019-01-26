@@ -43,7 +43,7 @@
                                     <div class="form-group col-md-5">
                                         <label for="image" style="font-size: 16px;">Select Images</label>
 <!--                                        --><?php // echo form_upload(array('name'=>'userfile')); ?>
-                                        <input id="image_upload" type="file" multiple, name="userfile" />
+                                        <input id="image_upload" type="file"  name="userfile" />
                                     </div>
                                     <div class="col-md-3" id="image-holder"></div>
                                 </div>
