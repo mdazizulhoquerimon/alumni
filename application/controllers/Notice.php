@@ -172,5 +172,3 @@ class Notice extends BaseController
     }
 
 }
-
-?>

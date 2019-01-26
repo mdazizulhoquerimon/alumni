@@ -6,8 +6,10 @@
     <title><?php echo $pageTitle; ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo base_url(); ?>assets/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="<?php echo base_url(); ?>assets/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"
+          rel="stylesheet" type="text/css"/>
     <!-- FontAwesome 4.3.0 -->
     <link href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -112,71 +114,87 @@
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
-                    <a href="<?php echo base_url();?>dashboard">
+                    <a href="<?php echo base_url(); ?>dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
                     </a>
                 </li>
-                <?php if ($role == ROLE_ADMIN) : ?>
-                <!-- News Section Strat -->
-                <li data-toggle="collapse" data-target="#news" class="collapsed treeview">
-                    <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span><span class="caret"></span></a>
-                </li>
-                <li class="sub-menu collapse treeview" id="news">
-                    <a href="<?php echo base_url(); ?>news/addNews" ><i class="fa fa-plus"></i> <span>Create News</span></a>
-                    <a href="<?php echo base_url(); ?>news/newsListing" ><i class="fa fa-eye"></i> <span>View All News</span></a>
-                </li>
-                <!-- News Section End -->
-                <!-- Event Section Start -->
-                <!-- General Event Section Strat -->
-                <li data-toggle="collapse" data-target="#generalEvent" class="collapsed treeview">
-                    <a href="#"><i class="fa fa-calendar"></i> <span>Events</span><span class="caret"></span></a>
-                </li>
-                <li class="sub-menu collapse treeview" id="generalEvent">
-                    <a href="<?php echo base_url(); ?>event/addEvent" ><i class="fa fa-plus-circle"></i> <span> Create Event</span></a>
-                    <a href="<?php echo base_url(); ?>event/eventListing" ><i class="fa fa-eye"></i> <span>View All Events</span></a>
-                </li>
-                <!-- General Event Section End -->
-                <!-- Event Section End -->
-                <?php endif; ?>
-                <?php if ($role == ROLE_ADMIN || $role == ROLE_MANAGER) : ?>
-                    <!-- Member Section Strat -->
-                    <!-- General Member Section Strat -->
-                    <li data-toggle="collapse" data-target="#generalMember" class="collapsed treeview">
-                        <a href="#"><i class="fa fa-user-circle"></i> <span>General Members</span><span class="caret"></span></a>
-                    </li>
-                    <li class="sub-menu collapse treeview" id="generalMember">
-                        <a href="<?php echo base_url(); ?>member/memberListing" ><i class="fa fa-eye"></i> <span>View All General Members</span></a>
-                    </li>
-                    <!-- General Member Section End -->
-                    <!-- Executive Member Section Strat -->
-                    <li data-toggle="collapse" data-target="#executiveMember" class="collapsed treeview">
-                        <a href="#"><i class="fa fa-user-circle"></i> <span>Executive Members</span><span class="caret"></span></a>
-                    </li>
-                    <li class="sub-menu collapse treeview" id="executiveMember">
-                        <a  href="<?php echo base_url(); ?>member/addExecutiveMember" ><i class="fa fa-plus-circle"></i> <span>Add Executive Member</span></a>
-                        <a href="<?php echo base_url(); ?>member/executiveMemberListing" ><i class="fa fa-eye"></i> <span>View All Executive Members</span></a>
-                    </li>
-                    <!-- Executive Member Section End -->
-                    <!-- Member Section End -->
-                <?php endif; ?>
                 <?php if ($role == ROLE_ADMIN) : ?>
                     <!-- Batch Admin Section Strat -->
                     <li data-toggle="collapse" data-target="#bacthAdmin" class="collapsed treeview">
                         <a href="#"><i class="fa fa-users"></i> <span>Batch Admin</span><span class="caret"></span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="bacthAdmin">
-                        <a href="<?php echo base_url(); ?>addNew" > <i class="fa fa-plus-circle"></i> <span>Add Batch Admin</span></a>
-                        <a href="<?php echo base_url(); ?>userListing" > <i class="fa fa-eye"></i> <span>View All Batch Admin</span></a>
+                        <a href="<?php echo base_url(); ?>addNew"> <i class="fa fa-plus-circle"></i> <span>Add Batch Admin</span></a>
+                        <a href="<?php echo base_url(); ?>userListing"> <i class="fa fa-eye"></i> <span>View All Batch Admin</span></a>
                     </li>
                     <!-- Batch Admin Section End -->
-
+                    <!-- News Section Strat -->
+                    <li data-toggle="collapse" data-target="#news" class="collapsed treeview">
+                        <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span><span class="caret"></span></a>
+                    </li>
+                    <li class="sub-menu collapse treeview" id="news">
+                        <a href="<?php echo base_url(); ?>news/addNews"><i class="fa fa-plus"></i>
+                            <span>Create News</span></a>
+                        <a href="<?php echo base_url(); ?>news/newsListing"><i class="fa fa-eye"></i> <span>View All News</span></a>
+                    </li>
+                    <!-- News Section End -->
+                    <!-- Event Section Start -->
+                    <!-- General Event Section Strat -->
+                    <li data-toggle="collapse" data-target="#generalEvent" class="collapsed treeview">
+                        <a href="#"><i class="fa fa-calendar"></i> <span>Events</span><span class="caret"></span></a>
+                    </li>
+                    <li class="sub-menu collapse treeview" id="generalEvent">
+                        <a href="<?php echo base_url(); ?>event/addEvent"><i class="fa fa-plus-circle"></i> <span> Create Event</span></a>
+                        <a href="<?php echo base_url(); ?>event/eventListing"><i class="fa fa-eye"></i> <span>View All Events</span></a>
+                    </li>
+                    <!-- General Event Section End -->
+                    <!-- Event Section End -->
+                <?php endif; ?>
+                <?php if ($role == ROLE_ADMIN || $role == ROLE_MANAGER) : ?>
+                    <!-- Member Section Strat -->
+                    <!-- General Member Section Strat -->
+                    <li data-toggle="collapse" data-target="#generalMember" class="collapsed treeview">
+                        <a href="#"><i class="fa fa-user-circle"></i> <span>General Members</span><span
+                                    class="caret"></span></a>
+                    </li>
+                    <li class="sub-menu collapse treeview" id="generalMember">
+                        <a href="<?php echo base_url(); ?>member/memberListing"><i class="fa fa-eye"></i> <span>View All General Members</span></a>
+                    </li>
+                    <!-- General Member Section End -->
+                    <!-- Executive Member Section Strat -->
+                    <li data-toggle="collapse" data-target="#executiveMember" class="collapsed treeview">
+                        <a href="#"><i class="fa fa-user-circle"></i> <span>Executive Members</span><span
+                                    class="caret"></span></a>
+                    </li>
+                    <li class="sub-menu collapse treeview" id="executiveMember">
+                        <a href="<?php echo base_url(); ?>member/addExecutiveMember"><i class="fa fa-plus-circle"></i>
+                            <span>Add Executive Member</span></a>
+                        <a href="<?php echo base_url(); ?>member/executiveMemberListing"><i class="fa fa-eye"></i>
+                            <span>View All Executive Members</span></a>
+                    </li>
+                    <!-- Executive Member Section End -->
+                    <!-- Member Section End -->
+                    <!-- Photo Section Strat -->
+                    <li data-toggle="collapse" data-target="#photo_gallery" class="collapsed treeview">
+                        <a href="#"><i class="fa fa-image"></i> <span>Photo Gallery</span><span
+                                    class="caret"></span></a>
+                    </li>
+                    <li class="sub-menu collapse treeview" id="photo_gallery">
+                        <a href="<?php echo base_url(); ?>photo_gallery/uploadPhoto"> <i class="fa fa-plus-circle"></i>
+                            <span>Upload Photo</span></a>
+                        <a href="<?php echo base_url(); ?>photo_gallery/folderListing"> <i class="fa fa-eye"></i>
+                            <span>View All Photo</span></a>
+                    </li>
+                    <!-- Photo Section End -->
+                <?php endif; ?>
+                <?php if ($role == ROLE_ADMIN) : ?>
                     <!-- Notice Section Strat -->
                     <li data-toggle="collapse" data-target="#notice" class="collapsed treeview">
                         <a href="#"><i class="fa fa-upload"></i> <span>Notice</span><span class="caret"></span></a>
                     </li>
                     <li class="sub-menu collapse treeview" id="notice">
-                        <a href="<?php echo base_url(); ?>notice/uploadNotice" > <i class="fa fa-plus-circle"></i> <span>Upload Notice</span></a>
-                        <a href="<?php echo base_url(); ?>notice/noticeListing"  > <i class="fa fa-eye"></i> <span>View All Notice</span></a>
+                        <a href="<?php echo base_url(); ?>notice/uploadNotice"> <i class="fa fa-plus-circle"></i> <span>Upload Notice</span></a>
+                        <a href="<?php echo base_url(); ?>notice/noticeListing"> <i class="fa fa-eye"></i> <span>View All Notice</span></a>
                     </li>
                     <!-- Notice Section End -->
 

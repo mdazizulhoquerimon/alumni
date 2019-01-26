@@ -406,5 +406,3 @@ class Adminuser extends BaseController
         }
     }
 }
-
-?>
