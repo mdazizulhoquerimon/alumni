@@ -14,6 +14,7 @@ $(document).ready(function(){
 	var addNewsForm = $("#addNews");
 	var addEventForm = $("#addEvent");
 	var uploadNoticeForm = $("#uploadNotice");
+	var addCircularForm = $("#addCircular");
 
 	var validator = addUserForm.validate({
 		rules:{
@@ -82,13 +83,44 @@ $(document).ready(function(){
         pickerPosition: "bottom-left"
     });
 
+    var validator = addCircularForm.validate({
+        rules:{
+            career_title :{ required : true },
+            company_name :{ required : true },
+            location :{ required : true },
+            education_requirement :{ required : true },
+            experience :{ required : true },
+            deadline_date :{ required : true },
+            job_link :{ required : true },
+
+        },
+        messages:{
+            career_title :{ required : "This field is required" },
+            company_name :{ required : "This field is required" },
+            location :{ required : "This field is required" },
+            education_requirement :{ required : "This field is required" },
+            experience :{ required : "This field is required" },
+            deadline_date :{ required : "This field is required" },
+            job_link :{ required : "This field is required" },
+        }
+    });
+
+    $('#deadline_date').datepicker({
+        orientation: "bottom auto",
+        daysOfWeekHighlighted: "5",
+        autoclose: true,
+        format: 'yyyy/mm/dd',
+        todayHighlight: true,
+        todayBtn: "linked"
+    });
+
 });
 
-$(document).on("focusin", "#event_date", function() {
+$(document).on("focusin", "#event_date,#deadline_date", function() {
     $(this).prop('readonly', true);
 });
 
-$(document).on("focusout", "#event_date", function() {
+$(document).on("focusout", "#event_date,#deadline_date", function() {
     $(this).prop('readonly', false);
 });
 

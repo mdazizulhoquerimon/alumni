@@ -20,6 +20,9 @@ class Adminuser extends BaseController
         $this->load->model('user_model');
         $this->load->model('member_model');
         $this->load->model('news_model');
+        $this->load->model('event_model');
+        $this->load->model('notice_model');
+        $this->load->model('photo_gallery_model');
         $this->isLoggedIn();
     }
     
