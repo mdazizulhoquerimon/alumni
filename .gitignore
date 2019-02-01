@@ -1,0 +1,7 @@
+application/config/dbpass.php
+/application/config/database.php
+/application/config/constants.php
+.htaccess
+/.idea
+
+

@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <i class="fa fa-calendar fa-2x"></i> Event Management
+            <i class="fa fa-graduation-cap fa-2x"></i> Circular Management
             <small>Edit, Delete</small>
         </h1>
     </section>
@@ -47,9 +47,9 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Event List</h3>
+                        <h3 class="box-title">Cicular List</h3>
                         <div class="box-tools">
-                            <form action="<?php echo base_url() ?>event/eventListing" method="POST" id="searchList">
+                            <form action="<?php echo base_url() ?>career/circularListing" method="POST" id="searchList">
                                 <div class="input-group">
                                     <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                                     <div class="input-group-btn">
@@ -64,28 +64,37 @@
                             <tr>
                                 <th>#Sl No</th>
                                 <th>Title</th>
-                                <th>Details</th>
-                                <th>Type</th>
-                                <th>Event Date</th>
+                                <th>Company</th>
+                                <th>Location</th>
+                                <th>Education Requirement</th>
+                                <th>Experience</th>
+                                <th>Deadline</th>
+                                <th>Link</th>
+                                <th>Description</th>
                                 <th>Created On</th>
                                 <th class="text-center">Actions</th>
                             </tr>
-                            <?php if(!empty($eventRecords))
+                            <?php
+                            if(!empty($cicularRecords))
                             {
                                 $sl = $this->uri->segment(3,0);
-                                foreach($eventRecords as $record)
+                                foreach($cicularRecords as $record)
                                 {
                                     ?>
                                     <tr>
                                         <td><?=++$sl?></td>
-                                        <td><?php echo $record->event_title ?></td>
-                                        <td><?php echo $record->event_details ?></td>
-                                        <td><?php echo $record->event_type ?></td>
-                                        <td><?=date('d-M-Y h:i a',strtotime($record->event_date)) ?></td>
-                                        <td><?= date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
+                                        <td><?php echo $record->career_title ?></td>
+                                        <td><?php echo $record->company_name ?></td>
+                                        <td><?php echo $record->location ?></td>
+                                        <td><?php echo $record->education_requirement ?></td>
+                                        <td><?php echo $record->experience ?></td>
+                                        <td><?php echo date('d-M-Y',strtotime($record->deadline_date)) ?></td>
+                                        <td><?php echo $record->job_link ?></td>
+                                        <td><?php echo $record->job_description ?></td>
+                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'event/editEvent/'.$record->event_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-sm btn-danger deleteEvent" href="#" data-eventid="<?php echo $record->event_id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
+                                            <a class="btn btn-sm btn-info" href="<?= base_url().'career/editCircular/'.$record->career_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                                            <a onclick="return confirm('Are You Sure To Delete??')" class="btn btn-sm btn-danger" href="<?= base_url().'career/deleteCircular/'.$record->career_id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -110,7 +119,7 @@
             e.preventDefault();
             var link = jQuery(this).get(0).href;
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "event/eventListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "career/circularListing/" + value);
             jQuery("#searchList").submit();
         });
     });

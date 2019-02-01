@@ -20,7 +20,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/default.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/responsive.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/styles.css"/>
     <title>CUELSA</title>
@@ -80,16 +79,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="container" style="text-align: center;">
-                <a href="<?= base_url();?>"><img  src="<?php echo base_url(); ?>static/images/logo.png" alt="logo"></a>
-                <div class="container">
-                    <h1 class="account-title">
+                    <div class="row hidden-sm hidden-xs" style="text-align: center;">
+                        <a href="<?= base_url();?>"><img  src="<?php echo base_url(); ?>static/images/logo.png" alt="logo"></a>
                         <a href="<?= base_url();?>"><h3 style="color: #1A265C">Chittagong University Ex-LAW Student Association</h3></a>
-                    </h1>
+                    </div>
                 </div>
-            <!-- .site-identity -->
             </div>
 
             <div class="header-middle">
@@ -105,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </ul>
                                 </li>
                                 <li>
-                                   <a href="./alumni-story.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ALUMNI CORNER<span class="caret"></span></a>
+                                   <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ALUMNI CORNER<span class="caret"></span></a>
                                    <ul class="dropdown-menu">
                                       <li><a href="<?=base_url('users/login');?>">ALUUMNI LOGIN</a></li>
                                       <li><a href="<?= base_url('users/profile');?>">ALUMNI PROFILE</a></li>
@@ -116,7 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </li>
 
                                 <li>
-                                    <a href="./programs-events.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROGRAM &amp; EVENTS<span class="caret"></span></a>
+                                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROGRAM &amp; EVENTS<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                       <li><a href="<?=base_url('common/news');?>">NEWS</a></li>
                                       <li><a href="<?=base_url('common/events');?>">EVENTS</a></li>
@@ -125,17 +119,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </li>
 
                                 <li>
-                                    <a href="./career-opportunity.html">CAREER OPPORTUNITY</a>
+                                    <a href="<?=base_url('common/career');?>" >CAREER OPPORTUNITY</a>
                                 </li>
 
 
                                 <li>
-                                    <a href="<?=base_url('common/gallery');?>">PHOTO GALLERY</a>
+                                    <a href="<?=base_url('common/folder_gallery');?>">PHOTO GALLERY</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="area-mobile-content visible-sm visible-xs">
+                        <div class="logo-mobile">
+                            <a href="#"> <h5>CUELSA</h5></a>
+                        </div>
                         <div class="mobile-menu ">
                         </div>
                     </div>
@@ -145,18 +142,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <!--End header wrapper-->
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />

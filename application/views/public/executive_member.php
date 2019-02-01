@@ -1,4 +1,4 @@
-<?php include('header.php');?>
+
 <!--Begin content wrapper-->
 <div class="content-wrapper">
     <div class="account-page login text-center">
@@ -117,4 +117,3 @@
     </div>
 </div>
 <!--End content wrapper-->
-<?php include('footer.php');?>

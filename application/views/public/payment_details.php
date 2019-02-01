@@ -52,7 +52,7 @@
         <?php if($fetched_user_data['isPaid'] == '0') { ?>
             <div id="startpayment" class="startpayment">
                 <div class="alert alert-danger"> <b>You haven't paid this month's payment <br> Please pay the payment below <b></div>
-                <h3>Please fill out the form below to make your monthly payment</h2><hr>
+                <h2>Please fill out the form below to make your monthly payment</h2><hr>
                 <form method="post" action="<?php echo base_url(); ?>payment/requestssl">
                     <table>
                         <tr>

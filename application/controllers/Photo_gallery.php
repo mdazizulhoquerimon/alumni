@@ -22,6 +22,7 @@ class Photo_gallery extends BaseController
         $this->load->library('form_validation');
         $this->load->library('upload');
     }
+//................................................................................Admin Part Functionality START...........................................................................................................//
 
     /**
      * This function is used to load the Upload Phpto form
@@ -157,7 +158,7 @@ class Photo_gallery extends BaseController
 
         $count = $this->photo_gallery_model->folderWiseListingCount($folder_id,$searchText);
 
-        $returns = $this->paginationCompress("photo_gallery/folderWiseListing/", $count, 18, 4);
+        $returns = $this->paginationCompress("photo_gallery/folderWiseListing/".$folder_id."/", $count, 18, 4);
 
         $data["folder_id"] = $folder_id;
 
@@ -168,4 +169,5 @@ class Photo_gallery extends BaseController
         $this->loadViews("allPhotoFolderWise", $this->global,$data, NULL);
 
     }
+//................................................................................Admin Part Functionality END...........................................................................................................//
 }

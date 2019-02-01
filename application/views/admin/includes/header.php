@@ -10,6 +10,8 @@
           type="text/css"/>
     <link href="<?php echo base_url(); ?>assets/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"
           rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url(); ?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"
+          rel="stylesheet" type="text/css"/>
     <!-- FontAwesome 4.3.0 -->
     <link href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -188,6 +190,15 @@
                     <!-- Photo Section End -->
                 <?php endif; ?>
                 <?php if ($role == ROLE_ADMIN) : ?>
+                    <!-- Career Opportunity Section Strat -->
+                    <li data-toggle="collapse" data-target="#career" class="collapsed treeview">
+                        <a href="#"><i class="fa fa-graduation-cap"></i> <span>Career</span><span class="caret"></span></a>
+                    </li>
+                    <li class="sub-menu collapse treeview" id="career">
+                        <a href="<?php echo base_url(); ?>career/addCircular"> <i class="fa fa-plus-circle"></i> <span>Add Circular</span></a>
+                        <a href="<?php echo base_url(); ?>career/circularListing"> <i class="fa fa-eye"></i> <span>View All Circular</span></a>
+                    </li>
+                    <!-- Career Opportunity Section End -->
                     <!-- Notice Section Strat -->
                     <li data-toggle="collapse" data-target="#notice" class="collapsed treeview">
                         <a href="#"><i class="fa fa-upload"></i> <span>Notice</span><span class="caret"></span></a>
@@ -197,7 +208,6 @@
                         <a href="<?php echo base_url(); ?>notice/noticeListing"> <i class="fa fa-eye"></i> <span>View All Notice</span></a>
                     </li>
                     <!-- Notice Section End -->
-
                 <?php endif; ?>
             </ul>
         </section>

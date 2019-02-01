@@ -1,9 +1,13 @@
 /* Large desktop :1920px. */
 @media (min-width: 1501px) and (max-width: 2300px) {
+    .content-wrapper {padding-top: 160px;}
+    .header-middle {padding-top: 170px;}
 }
 
 /* Normal desktop :1200px. */
 @media (min-width: 1201px) and (max-width: 1500px) {
+    .content-wrapper {padding-top: 160px;}
+    .header-middle {padding-top: 170px;}
 /*    .container, .wrapper.boxed-layout, .wrapper.boxed-layout .sticky, .wrapper.box-layout, .wrapper.box-layout .sticky {width: 1170px}*/
 }
 
@@ -11,6 +15,8 @@
 @media (min-width: 992px) and (max-width: 1200px) {
     .container, .wrapper.boxed-layout, .wrapper.boxed-layout .sticky, .wrapper.box-layout, .wrapper.box-layout .sticky {width: 970px}
     .mobile-menu-area {display: block}
+    .content-wrapper {padding-top: 160px;}
+    .header-middle {padding-top: 170px;}
     .slide-content h1, .home-banner-content h1 {font-size: 70px;line-height: 70px}
     .class-content ul li { margin: 0 20px}
     .footer-widget input {width: 130px}
@@ -27,14 +33,16 @@
     .about-owl .owl-controls .owl-prev {left: 25px}
 	.about-owl .owl-controls .owl-next {right: 25px}
 }
- 
+
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
     .container, .wrapper.boxed-layout, .wrapper.box-layout {width:750px}
     .mobile-menu-area {display: block}
+    .content-wrapper {padding-top: 0px;}
+    .header-middle {padding-top: 0px;}
     .header-top{display: none;}
     .wrapper.boxed-layout .sticky, .wrapper.box-layout .sticky {width: 750px;}
-    .sticky {position: inherit;} 
+    .sticky {position: inherit;}
     .single-testimonial::after {left: -90px}
     .main-menu ul li a {padding: 33px 22px}
     .slide-content h1, .home-banner-content h1 {font-size: 65px;line-height: 65px}
@@ -59,7 +67,7 @@
     .slide-content h3, .slide-content h2 {font-size: 40px}
     .mean-container a.meanmenu-reveal {margin-top: -68px;}
 }
-    
+
 /* small mobile :320px. */
 @media (max-width: 767px) {
     .container, .wrapper.boxed-layout, .wrapper.box-layout {width:300px}
@@ -82,6 +90,8 @@
     .slide-content h2{font-size: 30px;line-height: 30px}
     .slide-content h3{font-size: 25px}
     .single .event-content p {margin-left: 50px}
+    .content-wrapper {padding-top: 0px;}
+    .header-middle {padding-top: 0px;}
     .google-map-area.ml-100.mr-100{margin: 0}
     .slide-content .btn {margin-top: 20px;}
     .portfolio-img, .single-fun, .teacher-img, .single-event, .single-class, .single-contact, .single-contact, .footer-widget, .single-table {margin-bottom: 30px}
@@ -155,7 +165,7 @@
     .mean-container a.meanmenu-reveal {margin-top: -33px;}
     .mean-container .mean-nav {margin-top: 40px}
 }
- 
+
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .container {width:450px}

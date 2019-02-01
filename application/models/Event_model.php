@@ -109,6 +109,21 @@ class Event_model extends CI_Model
 
         return $this->db->affected_rows();
     }
+    /**
+     * This function used to get latest event information
+     *
+     * @return array $result : This is event information
+     */
+    function getLatestEvent()
+    {
+        $this->db->select();
+        $this->db->from('event');
+        $this->db->order_by('event.event_date', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
 
 }
 ?>

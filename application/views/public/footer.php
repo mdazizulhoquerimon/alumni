@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12 col-xs-12 animated footer-col">
                             <div class="contact-footer">
-                                <div class="logo-footer " style="float: left; margin-left: 70px;">
+                                <div class="logo-footer ">
                                     <a href="./homepage-1.html"><img src="<?php echo base_url(); ?>static/images/logo.png" alt=""></a>
                                 </div>
                                 <div class="contact-desc">
@@ -62,6 +62,12 @@
         </footer>
     </div>
     <!--End footer wrapper-->
+<?php  $latestRecords = $this->event_model->getLatestEvent();?>
+<input type="hidden" value="<?=date('Y',strtotime($latestRecords->event_date));?>"id="event_year" />
+<input type="hidden" value="<?=date('m',strtotime($latestRecords->event_date));?>"id="event_month" />
+<input type="hidden" value="<?=date('d',strtotime($latestRecords->event_date));?>"id="event_day" />
+<input type="hidden" value="<?=date('h',strtotime($latestRecords->event_date));?>"id="event_hour" />
+<input type="hidden" value="<?=date('i',strtotime($latestRecords->event_date));?>"id="event_min" />
 </div>
 
 <script src="<?php echo base_url(); ?>static/js/libs/jquery-2.2.4.min.js"></script>
@@ -74,18 +80,16 @@
 <script src="<?php echo base_url(); ?>static/js/libs/jquery.waypoints.min.js"></script>
 <script src="<?php echo base_url(); ?>static/js/custom/main.js"></script>
 <script src="<?php echo base_url(); ?>static/js/libs/modernizr.custom.js"></script>
-
 <script>
     jQuery(document).ready(function () {
         $('#time-event').syotimer({
-            year: 2019,
-            month: 1,
-            day: 20,
-            hour: 23,
-            minute: 53,
+            year: $('#event_year').val(),
+            month: $('#event_month').val(),
+            day: $('#event_day').val(),
+            hour: $('#event_hour').val(),
+            minute: $('#event_min').val(),
         });
     });
 </script>
-
 </body>
 </html>

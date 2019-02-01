@@ -631,7 +631,6 @@ a:hover, a:active, a:focus {
   width: 100%;
   float: left;
 }
-
 /*************************************
    7. Footer
 *************************************/
@@ -2475,6 +2474,7 @@ a:hover, a:active, a:focus {
 .event-calendar .event-list-content {
   background-color: #fcfcfc;
   margin-bottom: 55px;
+  width: 100%;
   float: left;
 }
 .event-calendar .event-list-content .event-list-item:last-child {
