@@ -28,9 +28,9 @@ class Payment extends CI_Controller{
 			$post_data['total_amount'] = $amount;
 			$post_data['currency'] = "BDT";
 			$post_data['tran_id'] = uniqid()."_sslc";
-			$post_data['success_url'] = "http://localhost/alumni/payment/validateresponse";
-			$post_data['fail_url'] = "http://localhost/alumni/payment/fail";
-			$post_data['cancel_url'] = "http://localhost/alumni/payment/cancel";
+			$post_data['success_url'] = base_url()."payment/validateresponse";
+			$post_data['fail_url'] = base_url()."payment/fail";
+			$post_data['cancel_url'] = base_url()."payment/cancel";
 			# $post_data['multi_card_name'] = "mastercard,visacard,amexcard";  # DISABLE TO DISPLAY ALL AVAILABLE
 
 			# EMI INFO
