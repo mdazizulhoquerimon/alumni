@@ -70,8 +70,7 @@
                                 <th>Created On</th>
                                 <th class="text-center">Actions</th>
                             </tr>
-                            <?php
-                            if(!empty($eventRecords))
+                            <?php if(!empty($eventRecords))
                             {
                                 $sl = $this->uri->segment(3,0);
                                 foreach($eventRecords as $record)
@@ -82,8 +81,8 @@
                                         <td><?php echo $record->event_title ?></td>
                                         <td><?php echo $record->event_details ?></td>
                                         <td><?php echo $record->event_type ?></td>
-                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->event_date)) ?></td>
-                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
+                                        <td><?=date('d-M-Y h:i a',strtotime($record->event_date)) ?></td>
+                                        <td><?= date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-info" href="<?php echo base_url().'event/editEvent/'.$record->event_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                                             <a class="btn btn-sm btn-danger deleteEvent" href="#" data-eventid="<?php echo $record->event_id; ?>"title="Delete"><i class="fa fa-trash"></i></a>
