@@ -110,22 +110,31 @@ class Users extends CI_Controller {
 
 	public function profile()
 	{
-		if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+		try 
 		{
-			$useremail = $_SESSION['email'];
-			$this->load->model('ProfileModel');
-			$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
-
-			$this->load->view('public/header_profile', $fetched_user_data);
-			$this->load->view('public/profile', $fetched_user_data);
-			$this->load->view('public/footer_profile');
-			
+			if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
+			{
+				$useremail = $_SESSION['email'];
+				$this->load->model('ProfileModel');
+				$fetched_user_data['fetched_user_data'] = $this->ProfileModel->get_user_data($useremail);
+	
+				$this->load->view('public/header_profile', $fetched_user_data);
+				$this->load->view('public/profile', $fetched_user_data);
+				$this->load->view('public/footer_profile');
+				
+			}
+			else
+			{
+				$this->session->set_flashdata("error", "You have to login first to view this page");
+				redirect('users/login','refresh');
+			}
 		}
-		else
+		catch(Exception $e)
 		{
 			$this->session->set_flashdata("error", "You have to login first to view this page");
 			redirect('users/login','refresh');
 		}
+		
 		
 	}
 
@@ -337,7 +346,7 @@ class Users extends CI_Controller {
 		$htmlContent = '<h1>Please verify your email address</h1>';
 		$htmlContent .= '<h2>From CUELSA</h2>';
 		$htmlContent .= '<p>This email has sent from CUELSA website. You have been registered as a user.</p>';
-		$htmlContent .= '<p>Please click this <a href="localhost/alumni/users/verifyemail/'.$verificationkey.'">link</a>.</p>';
+		$htmlContent .= '<p>Please click this <a href="'.base_url().'users/verifyemail/'.$verificationkey.'">link</a>.</p>';
 		$htmlContent .= '<br><br><p>After you click this link, your account will be activated.</p>';
 		$htmlContent .= '<br><br><p>If you did not intend to receive this mail, please ignore and delete this mail.</p>';
 		$htmlContent .= '<br><br><p>Thank you<br>CUELSA</p>';
