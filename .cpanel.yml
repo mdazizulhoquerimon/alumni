@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/okkhoritcom/public_html/cuelsa
+    - /bin/cp -R application $DEPLOYPATH/application
+    - /bin/cp -R assets $DEPLOYPATH/assets
+    - /bin/cp -R static $DEPLOYPATH/static
+    - /bin/cp -R system $DEPLOYPATH/system
+    - /bin/cp -R tests $DEPLOYPATH/tests
+    - /bin/cp -R uploads $DEPLOYPATH/uploads
+
