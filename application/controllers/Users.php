@@ -110,7 +110,7 @@ class Users extends CI_Controller {
 
 	public function profile()
 	{
-		try 
+		if(isset($_SESSION['user_logged']))
 		{
 			if($_SESSION['user_logged'] == TRUE && $_SESSION['email'] != "")
 			{
@@ -129,7 +129,7 @@ class Users extends CI_Controller {
 				redirect('users/login','refresh');
 			}
 		}
-		catch(Exception $e)
+		else
 		{
 			$this->session->set_flashdata("error", "You have to login first to view this page");
 			redirect('users/login','refresh');
