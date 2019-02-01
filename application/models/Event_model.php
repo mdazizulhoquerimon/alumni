@@ -124,6 +124,20 @@ class Event_model extends CI_Model
 
         return $query->row();
     }
+    /**
+     * This function is used to get the all news
+     */
+    function getAllEvents()
+    {
+        $this->db->select();
+        $this->db->from('event');
+        $this->db->limit(6);
+        $this->db->order_by('event_date', 'DESC');
+        $query = $this->db->get();
+
+        $result = $query->result();
+        return $result;
+    }
 
 }
 ?>

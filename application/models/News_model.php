@@ -107,19 +107,55 @@ class News_model extends CI_Model
 
         return TRUE;
     }
+    /**
+     * This function is used to update the news information
+     * @param array $newsInfo : This is news updated information
+     * @param number $newsId : This is news id
+     */
+    function updateReadNews($newsId)
+    {
+        $this->db->set('read_news', 'read_news+1', FALSE);
+        $this->db->where('id', $newsId);
+        $this->db->update('news');
+
+        return TRUE;
+    }
 
     /**
-     * This function is used to get the news listing count
-     * @param string $searchText : This is optional search text
-     * @param number $page : This is pagination offset
-     * @param number $segment : This is pagination limit
-     * @return array $result : This is result
+     * This function used to get latest news information
+     *
+     * @return array $result : This is news information
+     */
+    function getLatestNews()
+    {
+        $this->db->select();
+        $this->db->from('news');
+        $this->db->order_by('news.published_on', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+    function getPopularNews()
+    {
+        $this->db->select();
+        $this->db->from('news');
+        $this->db->order_by('news.read_news', 'desc');
+        $this->db->limit(5);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    /**
+     * This function is used to get the all news
      */
     function getAllNews()
     {
         $this->db->select();
         $this->db->from('news');
         $this->db->order_by('news.published_on', 'asc');
+        $this->db->limit(4);
         $query = $this->db->get();
 
         $result = $query->result();
@@ -128,4 +164,3 @@ class News_model extends CI_Model
 
 
 }
-?>

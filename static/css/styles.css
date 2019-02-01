@@ -1354,6 +1354,12 @@ a:hover, a:active, a:focus {
     height: 434px;
   }
 }
+@media (min-width: 991px) {
+  .block-links .block-news .post-wrapper {
+    overflow-y: scroll;
+    height: 485px;
+  }
+}
 @media (max-width: 991px) {
   .block-links .block-news {
     margin-bottom: 30px;
@@ -2285,7 +2291,8 @@ a:hover, a:active, a:focus {
    20. Programs events Page
 *************************************/
 .program-upcoming-event {
-  background: url("../images/bg-event.jpg") no-repeat;
+  /*background: url("../images/bg-event.jpg") no-repeat;*/
+  background: #1F2C5B;
   background-size: cover;
 }
 .program-upcoming-event .area-img {
@@ -3696,6 +3703,7 @@ a:hover, a:active, a:focus {
 }
 .latst-article .area-img img {
   width: 100%;
+  height: 500px;
 }
 .latst-article .area-content {
   position: absolute;
@@ -3943,6 +3951,7 @@ a:hover, a:active, a:focus {
 *************************************/
 .blog-post-content .blog-post .area-img img {
   width: 100%;
+  height: 500px;
 }
 .blog-post-content .blog-post .area-content {
   border-bottom: 1px solid #acacac;

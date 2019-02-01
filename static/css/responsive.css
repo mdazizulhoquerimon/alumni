@@ -1,13 +1,13 @@
 /* Large desktop :1920px. */
 @media (min-width: 1501px) and (max-width: 2300px) {
-    .content-wrapper {padding-top: 160px;}
-    .header-middle {padding-top: 170px;}
+    .content-wrapper {padding-top: 170px;}
+    .header-middle {padding-top: 185px;}
 }
 
 /* Normal desktop :1200px. */
 @media (min-width: 1201px) and (max-width: 1500px) {
-    .content-wrapper {padding-top: 160px;}
-    .header-middle {padding-top: 170px;}
+    .content-wrapper {padding-top: 170px;}
+    .header-middle {padding-top: 185px;}
 /*    .container, .wrapper.boxed-layout, .wrapper.boxed-layout .sticky, .wrapper.box-layout, .wrapper.box-layout .sticky {width: 1170px}*/
 }
 
@@ -15,8 +15,8 @@
 @media (min-width: 992px) and (max-width: 1200px) {
     .container, .wrapper.boxed-layout, .wrapper.boxed-layout .sticky, .wrapper.box-layout, .wrapper.box-layout .sticky {width: 970px}
     .mobile-menu-area {display: block}
-    .content-wrapper {padding-top: 160px;}
-    .header-middle {padding-top: 170px;}
+    .content-wrapper {padding-top: 170px;}
+    .header-middle {padding-top: 185px;}
     .slide-content h1, .home-banner-content h1 {font-size: 70px;line-height: 70px}
     .class-content ul li { margin: 0 20px}
     .footer-widget input {width: 130px}

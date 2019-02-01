@@ -20,8 +20,12 @@ class Common extends BaseController
 //................................................................................Home Page Functionality START..........................................................................................//
     public function index()
     {
+        $data['latestEvents'] = $this->event_model->getLatestEvent();
+        $data['eventRecords'] = $this->event_model->getAllEvents();
+        $data['latestNews'] = $this->news_model->getAllNews();
+
         $this->load->view('public/header');
-        $this->load->view('public/home');
+        $this->load->view('public/home',$data);
         $this->load->view('public/footer');
     }
 //................................................................................Home Page Functionality END...........................................................................................//
@@ -44,9 +48,7 @@ class Common extends BaseController
     public function executive_member()
     {
         $data['allRecords'] = $this->member_model->getAllExecutiveMember();
-//        echo ("<pre>");
-//        print_r($data);
-//        exit;
+
         $this->load->view('public/header');
         $this->load->view('public/executive_member', $data);
         $this->load->view('public/footer');
@@ -56,15 +58,31 @@ class Common extends BaseController
 //................................................................................News Functionality START...........................................................................................//
     public function news()
     {
-        $data['allRecords'] = $this->news_model->getAllNews();
+        $searchText = $this->security->xss_clean($this->input->post('searchText'));
+        $data['searchText'] = $searchText;
+        $this->load->library('pagination');
+        $count = $this->news_model->newsListingCount($searchText);
+        $returns = $this->paginationCompress("common/news/", $count, 10, 3);
+
+        $data['allRecords'] = $this->news_model->newsListing($searchText, $returns["page"], $returns["segment"]);
+        $data['latestNews'] = $this->news_model->getLatestNews();
+        $data['popularNews'] = $this->news_model->getPopularNews();
+
 
         $this->load->view('public/header');
         $this->load->view('public/news', $data);
         $this->load->view('public/footer');
     }
-    public function news_view()
+    public function news_view($newsId)
     {
-        $this->load->view('public/news_view');
+        if(!empty($newsId)){
+            $this->news_model->updateReadNews($newsId);
+        }
+        $data["newsDetails"] = $this->news_model->getNewsInfo($newsId);
+
+        $this->load->view('public/header');
+        $this->load->view('public/news_view',$data);
+        $this->load->view('public/footer');
     }
 
 //...............................................................................News Functionality END...........................................................................................//
@@ -80,7 +98,7 @@ class Common extends BaseController
         $returns = $this->paginationCompress("common/events/", $count, 10, 3);
 
         $data['eventRecords'] = $this->event_model->eventListing($searchText, $returns["page"], $returns["segment"]);
-        $data['latestRecords'] = $this->event_model->getLatestEvent();
+        $data['latestEvents'] = $this->event_model->getLatestEvent();
 
 //        echo("<pre>");
 //        print_r($data);
@@ -104,6 +122,50 @@ class Common extends BaseController
         $this->load->view('public/header');
         $this->load->view('public/career_opportunity');
         $this->load->view('public/footer');
+    }
+//................................................................................Career Functionality END...........................................................................................//
+
+//................................................................................Career Functionality START...........................................................................................//
+    public function notice()
+    {
+        $searchText = $this->security->xss_clean($this->input->post('searchText'));
+        $data['searchText'] = $searchText;
+
+        $this->load->library('pagination');
+
+        $count = $this->notice_model->noticeListingCount($searchText);
+
+        $returns = $this->paginationCompress("common/notice/", $count, 10, 3);
+
+        $data['noticeRecords'] = $this->notice_model->noticeListing($searchText, $returns["page"], $returns["segment"]);
+
+
+        $this->load->view('public/header');
+        $this->load->view('public/notice',$data);
+        $this->load->view('public/footer');
+    }
+
+    /**
+     * This function is used download notice
+     * @param number $noticeId : Optional : This is notice id
+     */
+    function downloadNotice($noticeId = NULL)
+    {
+
+
+
+        {
+            if($noticeId == null)
+            {
+                redirect('notice/noticeListing');
+            }
+            $this->load->helper('download');
+            $data['noticeInfo'] = $this->notice_model->getNoticeInfo($noticeId);
+            //file path
+            $file = 'uploads/notice/'.$data['noticeInfo']->file_name;
+            //download file from directory
+            force_download($file, NULL);
+        }
     }
 //................................................................................Career Functionality END...........................................................................................//
 

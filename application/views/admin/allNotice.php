@@ -118,7 +118,7 @@
             e.preventDefault();
             var link = jQuery(this).get(0).href;
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "news/newsListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "notice/noticeListing/" + value);
             jQuery("#searchList").submit();
         });
     });

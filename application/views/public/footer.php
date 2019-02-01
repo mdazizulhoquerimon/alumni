@@ -62,12 +62,12 @@
         </footer>
     </div>
     <!--End footer wrapper-->
-<?php  $latestRecords = $this->event_model->getLatestEvent();?>
-<input type="hidden" value="<?=date('Y',strtotime($latestRecords->event_date));?>"id="event_year" />
-<input type="hidden" value="<?=date('m',strtotime($latestRecords->event_date));?>"id="event_month" />
-<input type="hidden" value="<?=date('d',strtotime($latestRecords->event_date));?>"id="event_day" />
-<input type="hidden" value="<?=date('h',strtotime($latestRecords->event_date));?>"id="event_hour" />
-<input type="hidden" value="<?=date('i',strtotime($latestRecords->event_date));?>"id="event_min" />
+<?php  $latestEvents = $this->event_model->getLatestEvent();?>
+<input type="hidden" value="<?=date('Y',strtotime($latestEvents->event_date));?>"id="event_year" />
+<input type="hidden" value="<?=date('m',strtotime($latestEvents->event_date));?>"id="event_month" />
+<input type="hidden" value="<?=date('d',strtotime($latestEvents->event_date));?>"id="event_day" />
+<input type="hidden" value="<?=date('h',strtotime($latestEvents->event_date));?>"id="event_hour" />
+<input type="hidden" value="<?=date('i',strtotime($latestEvents->event_date));?>"id="event_min" />
 </div>
 
 <script src="<?php echo base_url(); ?>static/js/libs/jquery-2.2.4.min.js"></script>
@@ -90,6 +90,15 @@
             minute: $('#event_min').val(),
         });
     });
+
+    $(document).ready(function(){
+        $('#image_slider').owlCarousel({
+            autoplay:true,
+            loop:true,
+            items:1,
+        });
+    });
+
 </script>
 </body>
 </html>

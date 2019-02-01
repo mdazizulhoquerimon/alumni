@@ -3,50 +3,19 @@
     <!--begin slider-->
     <div class="container">
         <div class="slider-hero">
-<!--            <div class="sliders-wrap columns1">-->
-<!--                <div class="item">-->
-<!--                    <img src="--><?php //echo base_url(); ?><!--static/images/slider3.JPG" alt="">-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <img src="--><?php //echo base_url(); ?><!--static/images/slider1.JPG" alt="">-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <img src="--><?php //echo base_url(); ?><!--static/images/slider2.JPG" alt="">-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <img src="--><?php //echo base_url(); ?><!--static/images/slider4.JPG" alt="">-->
-<!--                </div>-->
-<!--            </div>-->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="<?php echo base_url(); ?>static/images/slider1.jpg" alt="">
-                    </div>
-
-                    <div class="item">
-                        <img src="<?php echo base_url(); ?>static/images/slider1.jpg" alt="">
-                    </div>
-
-                    <div class="item">
-                        <img src="<?php echo base_url(); ?>static/images/slider2.jpg" alt="">
-                    </div>
+            <div class="owl-carousel" id="image_slider">
+                <div class="item">
+                    <img src="<?php echo base_url(); ?>static/images/slider3.JPG" alt="">
                 </div>
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="item">
+                    <img src="<?php echo base_url(); ?>static/images/slider1.JPG" alt="">
+                </div>
+                <div class="item">
+                    <img src="<?php echo base_url(); ?>static/images/slider2.JPG" alt="">
+                </div>
+                <div class="item">
+                    <img src="<?php echo base_url(); ?>static/images/slider4.JPG" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -66,25 +35,25 @@
                             <div class="row">
                                 <div class="col-sm-10 col-xs-9">
                                     <h5 class="heading-light no-margin animated fadeInRight">UPCOMING EVENT</h5>
-                                    <h2 class="heading-bold animated fadeInLeft">CUELSA AGM</h2>
+                                    <h2 class="heading-bold animated fadeInLeft"><?= $latestEvents->event_title; ?>,<?= $latestEvents->event_type; ?></h2>
                                     <span>
                                         <span class="icon map-icon"></span>
-                                        <span class="text-place text-light animated fadeInRight">University of Chittagong, Bangladesh</span>
+                                        <span class="text-place text-light animated fadeInRight"><?= $latestEvents->event_details; ?></span>
                                     </span>
                                 </div>
                                 <div class="col-sm-2 col-xs-3">
                                     <div class="area-calendar calendar animated slideInRight">
-                                        <span class="day text-bold">29</span>
-                                        <span class="month text-light">APRIL</span>
-                                        <span class="year text-light bg-year">2019</span>
+                                        <span class="day text-bold"><?= date('d', strtotime($latestEvents->event_date)) ?></span>
+                                        <span class="month text-light"><?= date('F', strtotime($latestEvents->event_date)) ?></span>
+                                        <span class="year text-light bg-year"><?=date('Y',strtotime($latestEvents->event_date));?></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-<!--                        <div class="area-bottom">-->
-<!--                            <div id="time" class="pull-left animated slideInLeft"></div>-->
-<!--                            <a href="#" class="bnt bnt-theme join-now pull-right animated fadeIn">Join Now</a>-->
-<!--                        </div>-->
+                        <!--                        <div class="area-bottom">-->
+                        <!--                            <div id="time" class="pull-left animated slideInLeft"></div>-->
+                        <!--                            <a href="#" class="bnt bnt-theme join-now pull-right animated fadeIn">Join Now</a>-->
+                        <!--                        </div>-->
 
                     </div>
                 </div>
@@ -142,7 +111,7 @@
                         </div>
                     </div>
                     <div class="login-dashboard text-center col-sm-12 col-xs-12">
-                        <a href="./login-page.html" class="bnt bnt-theme login-links">LOG IN TO ALUMNI DASHBOARD</a>
+                        <a href="<?=base_url('users/login');?>" class="bnt bnt-theme login-links">LOG IN TO ALUMNI DASHBOARD</a>
                     </div>
                 </div>
             </div>
@@ -160,66 +129,25 @@
                             <h3 class="heading-regular">Latest News</h3>
                         </div>
                         <div class="post-wrapper">
-                            <div class="post-item clearfix ">
-                                <div class="image-frame post-photo-wrapper">
-                                    <a href="#"> <img src="<?php echo base_url(); ?>static/images/new-img1.jpg" alt=""></a>
-                                </div>
-                                <div class="post-desc-wrapper">
-                                    <div class="post-desc">
-                                        <div class="post-title"><h6 class="heading-regular"><a href="#">New Sayidan
-                                                    "Start-Up" in Distrupt 2016</a></h6></div>
-                                        <div class="post-excerpt">
-                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem
-                                                consuetudium.</p>
+                            <?php if (!empty($latestNews)): ?>
+                                <?php foreach ($latestNews as $records): ?>
+                                        <div class="post-item clearfix ">
+                                            <div class="image-frame post-photo-wrapper">
+                                                <a href="<?=base_url('common/news_view/'.$records->id )?>" > <img src="<?= $records->image_path; ?>" alt=""></a>
+                                            </div>
+                                            <div class="post-desc-wrapper">
+                                                <div class="post-desc">
+                                                    <div class="post-title">
+                                                        <h6 class="heading-regular"><a href="<?=base_url('common/news_view/'.$records->id )?>" ><?= $records->news_title; ?></a></h6>
+                                                    </div>
+                                                    <div class="post-excerpt">
+                                                        <p><?= $records->news_details; ?></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item clearfix ">
-                                <div class="image-frame post-photo-wrapper">
-                                    <a href="#"> <img src="<?php echo base_url(); ?>static/images/new-img2.jpg" alt=""></a>
-                                </div>
-                                <div class="post-desc-wrapper">
-                                    <div class="post-desc">
-                                        <div class="post-title"><h6 class="heading-regular"><a href="#">Sayidan Library
-                                                    Gives Alumni New Access</a></h6></div>
-                                        <div class="post-excerpt">
-                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem
-                                                consuetudium.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item clearfix ">
-                                <div class="image-frame post-photo-wrapper">
-                                    <a href="#"> <img src="<?php echo base_url(); ?>static/images/new-img3.jpg" alt=""></a>
-                                </div>
-                                <div class="post-desc-wrapper">
-                                    <div class="post-desc">
-                                        <div class="post-title"><h6 class="heading-regular"><a href="#">Alumni Service
-                                                    Spotlight: Larry Traimor AB '82</a></h6></div>
-                                        <div class="post-excerpt">
-                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem
-                                                consuetudium.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item clearfix ">
-                                <div class="image-frame post-photo-wrapper">
-                                    <a href="#"> <img src="<?php echo base_url(); ?>static/images/new-img4.jpg" alt=""></a>
-                                </div>
-                                <div class="post-desc-wrapper">
-                                    <div class="post-desc">
-                                        <div class="post-title"><h6 class="heading-regular"><a href="#">Sayidan in
-                                                    Silicon Valley: Family and Finance</a></h6></div>
-                                        <div class="post-excerpt">
-                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem
-                                                consuetudium.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         <div class="view-all"><a href="<?= base_url('common/news'); ?>">View All News</a></div>
                     </div>
@@ -232,110 +160,55 @@
                         </div>
                         <div class="content-calendar bg-calendar no-padding">
                             <div class="top-section">
-                                <h6 class="heading-light">April 2016</h6>
+                                <h6 class="heading-light">Year <?= date('Y')?></h6>
                                 <span class="icon calendar-icon pull-right"></span>
                             </div>
                             <div class="list-view">
-                                <div class="view-item">
-                                    <div class="date-item">
-                                        <span class="dates text-light">SAT</span>
-                                        <span class="day text-bold color-theme">07</span>
-                                        <span class="month text-light">APR</span>
-                                    </div>
-                                    <div class="date-desc-wrapper">
-                                        <div class="date-desc">
-                                            <div class="date-title"><h6 class="heading-regular">Club Sponsorship
-                                                    2015-2016</h6></div>
-                                            <div class="date-excerpt">
-                                                <p>Organizer: Sayidan Black Alumni Association</p>
+                                <?php if (!empty($eventRecords)): ?>
+                                    <?php foreach ($eventRecords as $record): ?>
+                                        <?php if ($record->event_id != $latestEvents->event_id): ?>
+                                            <div class="view-item">
+                                                <div class="date-item">
+                                                    <span class="dates text-light"><?= date('D', strtotime($record->event_date)) ?></span>
+                                                    <span class="day text-bold color-theme"><?= date('d', strtotime($record->event_date)) ?></span>
+                                                    <span class="month text-light"><?= date('M', strtotime($record->event_date)) ?></span>
+                                                </div>
+                                                <div class="date-desc-wrapper">
+                                                    <div class="date-desc">
+                                                        <div class="date-title"><h6 class="heading-regular"><?= $record->event_title ?></h6></div>
+                                                        <div class="date-excerpt">
+                                                            <p>Organizer: CUELSA</p>
+                                                        </div>
+                                                        <div class="place">
+                                                            <span class="icon map-icon"></span>
+                                                            <span class="text-place"><?= $record->event_details ?></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="place">
-                                                <span class="icon map-icon"></span>
-                                                <span class="text-place">Gondomanan Street 209, California</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="view-item">
-                                    <div class="date-item">
-                                        <span class="dates text-light">MON</span>
-                                        <span class="day text-bold color-theme">09</span>
-                                        <span class="month text-light">APR</span>
-                                    </div>
-                                    <div class="date-desc-wrapper">
-                                        <div class="date-desc">
-                                            <div class="date-title"><h6 class="heading-regular">Weekend at Sayidan
-                                                    Sierra Camp</h6></div>
-                                            <div class="date-excerpt">
-                                                <p>Organizer: Sayidan Black Alumni Association</p>
-                                            </div>
-                                            <div class="place">
-                                                <span class="icon map-icon"></span>
-                                                <span class="text-place">Gondomanan Street 209, California</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="view-item">
-                                    <div class="date-item">
-                                        <span class="dates text-light">TUE</span>
-                                        <span class="day text-bold color-theme">10</span>
-                                        <span class="month text-light">APR</span>
-                                    </div>
-                                    <div class="date-desc-wrapper">
-                                        <div class="date-desc">
-                                            <div class="date-title"><h6 class="heading-regular">Gondomanan Street 209,
-                                                    California</h6></div>
-                                            <div class="date-excerpt">
-                                                <p>Organizer: Sayidan Black Alumni Association</p>
-                                            </div>
-                                            <div class="place">
-                                                <span class="icon map-icon"></span>
-                                                <span class="text-place">Gondomanan Street 209, California</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="view-item">
-                                    <div class="date-item">
-                                        <span class="dates text-light">THU</span>
-                                        <span class="day text-bold color-theme">12</span>
-                                        <span class="month text-light">APR</span>
-                                    </div>
-                                    <div class="date-desc-wrapper">
-                                        <div class="date-desc">
-                                            <div class="date-title"><h6 class="heading-regular">Annual Meeting and
-                                                    Luncheon</h6></div>
-                                            <div class="date-excerpt">
-                                                <p>Organizer: Sayidan Black Alumni Association</p>
-                                            </div>
-                                            <div class="place">
-                                                <span class="icon map-icon"></span>
-                                                <span class="text-place">Gondomanan Street 209, California</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="view-item">
-                                    <div class="date-item">
-                                        <span class="dates text-light">SAT</span>
-                                        <span class="day text-bold color-theme">14</span>
-                                        <span class="month text-light">APR</span>
-                                    </div>
-                                    <div class="date-desc-wrapper">
-                                        <div class="date-desc">
-                                            <div class="date-title"><h6 class="heading-regular">Food Sort at Second Food
-                                                    Bank</h6></div>
-                                            <div class="date-excerpt">
-                                                <p>Organizer: Sayidan Black Alumni Association</p>
-                                            </div>
-                                            <div class="place">
-                                                <span class="icon map-icon"></span>
-                                                <span class="text-place">Gondomanan Street 209, California</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+<!--                                <div class="view-item">-->
+<!--                                    <div class="date-item">-->
+<!--                                        <span class="dates text-light">MON</span>-->
+<!--                                        <span class="day text-bold color-theme">09</span>-->
+<!--                                        <span class="month text-light">APR</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="date-desc-wrapper">-->
+<!--                                        <div class="date-desc">-->
+<!--                                            <div class="date-title"><h6 class="heading-regular">Weekend at Sayidan-->
+<!--                                                    Sierra Camp</h6></div>-->
+<!--                                            <div class="date-excerpt">-->
+<!--                                                <p>Organizer: Sayidan Black Alumni Association</p>-->
+<!--                                            </div>-->
+<!--                                            <div class="place">-->
+<!--                                                <span class="icon map-icon"></span>-->
+<!--                                                <span class="text-place">Gondomanan Street 209, California</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                         </div>
                         <div class="view-all"><a href="<?= base_url('common/events'); ?>">View All Events</a></div>
@@ -375,6 +248,5 @@
         </div>
     </div>
     <!--end instagream-->
-
 </div>
 <!--End content wrapper-->

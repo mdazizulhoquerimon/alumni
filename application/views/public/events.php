@@ -1,12 +1,10 @@
 <!--Begin content wrapper-->
 <div class="content-wrapper">
-    <div class="account-page login text-center">
-        <div class="container">
-            <div class="account-title">
-                <h4 class="heading-light">EVENTS</h4>
-            </div>
-        </div>
+
+    <div class="account-title text-center" style="padding-top: 130px; padding-bottom: 20px;">
+        <h4 class="heading-light">EVENTS</h4>
     </div>
+
     <!--begin upcoming event-->
     <div class="program-upcoming-event">
         <div class="container">
@@ -22,18 +20,20 @@
                     <div class="area-content">
                         <div class="area-top">
                             <div class="top-section animated lightSpeedIn">
-                                <h5 class="heading-light">UPCOMING EVENT</h5>
-                                <span class="dates text-white text-uppercase"><?=date('F d,Y',strtotime($latestRecords->event_date));?></span>
+                                <h5 class="heading-light" style="color: white;">UPCOMING EVENT</h5>
+                                <span class="dates text-white text-uppercase"><?= date('F d,Y', strtotime($latestEvents->event_date)); ?></span>
                             </div>
-                            <h2 class="heading-bold animated rollIn" style="color: white;"><?=$latestRecords->event_title;?>,<?=$latestRecords->event_type;?></h2>
+                            <h2 class="heading-bold animated rollIn"
+                                style="color: white;"><?= $latestEvents->event_title; ?>
+                                ,<?= $latestEvents->event_type; ?></h2>
                             <span class="animated fadeIn">
                                 <span class="icon map-icon"></span>
-                                <span class="text-place text-white"><?=$latestRecords->event_details;?></span>
+                                <span class="text-place text-white"><?= $latestEvents->event_details; ?></span>
                             </span>
                         </div>
-<!--                        <div class="area-bottom animated zoomInLeft">-->
-<!--                            <a href="./event-single.html" class="bnt bnt-theme join-now">Join Now</a>-->
-<!--                        </div>-->
+                        <!--                        <div class="area-bottom animated zoomInLeft">-->
+                        <!--                            <a href="./event-single.html" class="bnt bnt-theme join-now">Join Now</a>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -49,7 +49,8 @@
                 <div class="col-md-3">
                     <form action="<?php echo base_url() ?>common/events" method="POST" id="searchList">
                         <div class="input-group">
-                            <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                            <input type="text" name="searchText" value="<?php echo $searchText; ?>"
+                                   class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                             <div class="input-group-btn">
                                 <button class="btn btn-sm btn-default searchList"><i class="fa fa-search"></i></button>
                             </div>
@@ -61,9 +62,10 @@
             <div class="event-list-content">
                 <?php if (!empty($eventRecords)): ?>
                     <?php foreach ($eventRecords as $record): ?>
-                        <?php if ($record->event_id != $latestRecords->event_id): ?>
+                        <?php if ($record->event_id != $latestEvents->event_id): ?>
                             <div class="event-list-item">
                                 <div class="date-item">
+                                    <span class="dates text-light"><?= date('D', strtotime($record->event_date)) ?></span>
                                     <span class="day text-bold color-theme"><?= date('d', strtotime($record->event_date)) ?></span>
                                     <span class="dates text-gray text-uppercase"><?= date('F', strtotime($record->event_date)) ?></span>
                                     <span class="text-gray text-uppercase"><?= $record->event_type ?></span>
@@ -89,32 +91,32 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
-<!--                <div class="event-list-item">-->
-<!--                    <div class="date-item">-->
-<!--                        <span class="day text-bold color-theme">08</span>-->
-<!--                        <span class="dates text-gray text-uppercase">SUN</span>-->
-<!--                    </div>-->
-<!--                    <div class="date-desc-wrapper">-->
-<!--                        <div class="date-desc">-->
-<!--                            <div class="date-title"><h4 class="heading-regular"><a href="#">Weekend at Sayidan Sierra-->
-<!--                                        Camp</a></h4></div>-->
-<!--                            <div class="date-excerpt">-->
-<!--                                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velitesse molestie-->
-<!--                                    consequat, vel illum dolore eu feugiat. nulla facilisis at vero eros et accumsan.-->
-<!--                                    molestie consequat, vel illum dolore eu.</p>-->
-<!--                            </div>-->
-<!--                            <div class="place">-->
-<!--                                <span class="icon map-icon"></span>-->
-<!--                                <span class="text-place">Gondomanan Street 209, California </span>-->
-<!--                                <a href="#"> View Map</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="date-links register text-center">-->
-<!--                        <a href="#" class="text-regular">REGISTER</a>-->
-<!--                        <span class="limit">Limited! 1 seat left</span>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                <div class="event-list-item">-->
+                <!--                    <div class="date-item">-->
+                <!--                        <span class="day text-bold color-theme">08</span>-->
+                <!--                        <span class="dates text-gray text-uppercase">SUN</span>-->
+                <!--                    </div>-->
+                <!--                    <div class="date-desc-wrapper">-->
+                <!--                        <div class="date-desc">-->
+                <!--                            <div class="date-title"><h4 class="heading-regular"><a href="#">Weekend at Sayidan Sierra-->
+                <!--                                        Camp</a></h4></div>-->
+                <!--                            <div class="date-excerpt">-->
+                <!--                                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velitesse molestie-->
+                <!--                                    consequat, vel illum dolore eu feugiat. nulla facilisis at vero eros et accumsan.-->
+                <!--                                    molestie consequat, vel illum dolore eu.</p>-->
+                <!--                            </div>-->
+                <!--                            <div class="place">-->
+                <!--                                <span class="icon map-icon"></span>-->
+                <!--                                <span class="text-place">Gondomanan Street 209, California </span>-->
+                <!--                                <a href="#"> View Map</a>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div class="date-links register text-center">-->
+                <!--                        <a href="#" class="text-regular">REGISTER</a>-->
+                <!--                        <span class="limit">Limited! 1 seat left</span>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
             <div class="pagination-wrapper text-center">
                 <?php echo $this->pagination->create_links(); ?>
@@ -122,10 +124,9 @@
         </div>
     </div>
     <!--end event calendar-->
-</div>
 <!--End content wrapper-->
 <script type="text/javascript">
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function () {
         jQuery('ul.pagination li a').click(function (e) {
             e.preventDefault();
             var link = jQuery(this).get(0).href;

@@ -101,20 +101,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li>
                                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ALUMNI CORNER<span class="caret"></span></a>
                                    <ul class="dropdown-menu">
-                                      <li><a href="<?=base_url('users/login');?>">ALUUMNI LOGIN</a></li>
-                                      <li><a href="<?= base_url('users/profile');?>">ALUMNI PROFILE</a></li>
-                                      <li><a href="<?= base_url('users/register');?>">ALUMNI REGISTER</a></li>
-                                      <li><a href="<?=base_url('common/executive_member');?>">EXECUTIVE MEMBER</a></li>
-                                      <li><a href="<?=base_url('common/general_member');?>">GENERAL MEMBER</a></li>
+                                      <li><a href="<?=base_url('users/login');?>" >ALUUMNI LOGIN</a></li>
+                                      <li><a href="<?= base_url('users/profile');?>" >ALUMNI PROFILE</a></li>
+                                      <li><a href="<?= base_url('users/register');?>" >ALUMNI REGISTER</a></li>
+                                      <li><a href="<?=base_url('common/executive_member');?>" >EXECUTIVE MEMBER</a></li>
+                                      <li><a href="<?=base_url('common/general_member');?>" >GENERAL MEMBER</a></li>
                                     </ul>
                                 </li>
 
                                 <li>
                                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROGRAM &amp; EVENTS<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                      <li><a href="<?=base_url('common/news');?>">NEWS</a></li>
-                                      <li><a href="<?=base_url('common/events');?>">EVENTS</a></li>
-                                      <li><a href="#">NOTICE</a></li>
+                                      <li><a href="<?=base_url('common/news');?>" >NEWS</a></li>
+                                      <li><a href="<?=base_url('common/events');?>" >EVENTS</a></li>
+                                      <li><a href="<?=base_url('common/notice');?>" >NOTICE</a></li>
                                     </ul>
                                 </li>
 
