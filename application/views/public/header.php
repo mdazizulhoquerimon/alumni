@@ -92,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <nav>
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US <span class="caret"></span></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT USSSS <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                       <li><a href="<?=base_url('common/about_us');?>">CUELSA</a></li>
                                       <li><a href="<?=base_url('common/contact');?>">CONTACT</a></li>
