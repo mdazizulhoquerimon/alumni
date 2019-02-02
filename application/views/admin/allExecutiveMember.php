@@ -89,7 +89,7 @@
                                         <td><?php echo $record->active_year ?></td>
                                         <td>
                                             <?php if (!is_null($record->image_path)): ?>
-                                                <img src="<?php echo $record->image_path ?>" alt="" width="97"
+                                                <img src="<?=base_url('uploads/executive_member_image/').$record->file_name ?>" alt="" width="97"
                                                      height="60">
                                             <?php else: ?>
                                                 <img src="<?= base_url('static/images/no_image_found.jpg') ?>" alt=""

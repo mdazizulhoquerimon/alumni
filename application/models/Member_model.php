@@ -147,7 +147,7 @@ class Member_model extends CI_Model
      */
     function executiveMemberListing($searchText = '', $page, $segment)
     {
-        $this->db->select('ExMemTbl.ex_mem_id, ExMemTbl.name, ExMemTbl.batchNo, ExMemTbl.mobile, ExMemTbl.active_year, ExMemTbl.image_path, ExMemTbl.createdDtm, Designation.designation');
+        $this->db->select('ExMemTbl.ex_mem_id, ExMemTbl.name, ExMemTbl.batchNo, ExMemTbl.mobile, ExMemTbl.active_year, ExMemTbl.file_name, ExMemTbl.image_path, ExMemTbl.createdDtm, Designation.designation');
         $this->db->from('executive_members as ExMemTbl');
         $this->db->join('executive_designation as Designation', 'Designation.designation_id = ExMemTbl.designation_id');
         if(!empty($searchText)) {
@@ -210,7 +210,7 @@ class Member_model extends CI_Model
      */
     function getAllExecutiveMember()
     {
-        $this->db->select('ExMemTbl.ex_mem_id, ExMemTbl.name, ExMemTbl.batchNo, ExMemTbl.mobile, ExMemTbl.active_year, ExMemTbl.image_path, ExMemTbl.createdDtm, Designation.designation');
+        $this->db->select('ExMemTbl.ex_mem_id, ExMemTbl.name, ExMemTbl.batchNo, ExMemTbl.mobile, ExMemTbl.active_year, ExMemTbl.file_name, ExMemTbl.image_path, ExMemTbl.createdDtm, Designation.designation');
         $this->db->from('executive_members as ExMemTbl');
         $this->db->join('executive_designation as Designation', 'Designation.designation_id = ExMemTbl.designation_id');
 

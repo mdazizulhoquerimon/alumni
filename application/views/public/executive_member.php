@@ -15,7 +15,7 @@
                     <div class="col-md-3" >
                         <div class="single-teacher mb-30">
                             <div class="teacher-img" >
-                                <img src="<?=$records->image_path ?>" alt="teacher" width="300" height="300">
+                                <img src="<?=base_url('uploads/executive_member_image/').$records->file_name ?>" alt="" width="300" height="300">
                             </div>
                             <div class="" style="background-color: #1a265c">
                                 <h4><?=$records->name;?></h4>

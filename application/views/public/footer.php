@@ -70,7 +70,9 @@
 <input type="hidden" value="<?=date('i',strtotime($latestEvents->event_date));?>"id="event_min" />
 </div>
 
-
+<script src="<?php echo base_url(); ?>static/js/libs/jquery-2.2.4.min.js"></script>
+<script src="<?php echo base_url(); ?>static/js/libs/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>static/js/libs/owl.carousel.min.js"></script>
 <script src="<?php echo base_url(); ?>static/js/libs/jquery.meanmenu.js"></script>
 <script src="<?php echo base_url(); ?>static/js/libs/jquery.meanmenu.js"></script>
 <script src="<?php echo base_url(); ?>static/js/libs/jquery.syotimer.js"></script>

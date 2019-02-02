@@ -162,6 +162,8 @@ class Photo_gallery extends BaseController
 
         $data["folder_id"] = $folder_id;
 
+        $data["folder_name"] = $this->photo_gallery_model->anyName('photo_folder', 'folder_id', $folder_id, 'folder_name');
+
         $data['photoRecords'] = $this->photo_gallery_model->folderWiseListing($folder_id,$searchText, $returns["page"], $returns["segment"]);
 
         $this->global['pageTitle'] = 'CUELSA : Photo Gallery';

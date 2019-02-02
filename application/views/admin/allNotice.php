@@ -85,7 +85,7 @@
                                         <td><?php echo $record->notice_title ?></td>
                                         <td>
                                             <?php if (!is_null($record->notice_path)):?>
-                                                <embed src="<?php echo $record->notice_path ?>" alt="" width="300" height="100">
+                                                <embed src="<?=base_url('uploads/notice/').$record->file_name ?>" alt="" width="300" height="100">
                                             <?php else:?>
                                                 <embed src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="100" height="100">
                                             <?php endif; ?>

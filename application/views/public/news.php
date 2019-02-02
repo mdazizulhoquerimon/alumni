@@ -6,7 +6,7 @@
     <div class="latst-article">
         <div class="container">
             <div class="area-img">
-                <img src="<?= $latestNews->image_path; ?>" alt="">
+                <img src="<?=base_url('uploads/news_image/').$latestNews->file_name; ?>" alt="">
             </div>
             <div class="area-content">
                 <div class="category animated fadeIn">
@@ -38,7 +38,7 @@
                                 <?php if ($records->id != $latestNews->id): ?>
                                     <div class="article-item">
                                         <div class="area-img">
-                                            <img src="<?= $records->image_path; ?>" alt="">
+                                            <img src="<?=base_url('uploads/news_image/').$records->file_name; ?>" alt="">
                                         </div>
                                         <div class="area-content">
                                             <div class="article-left col-lg-2 col-md-3 col-sm-3 col-xs-12 pull-left">
@@ -85,7 +85,7 @@
                                         <?php foreach ($popularNews as $records): ?>
                                             <li>
                                                 <div class="area-img">
-                                                    <img src="<?= $records->image_path; ?>" alt="">
+                                                    <img src="<?=base_url('uploads/news_image/').$records->file_name; ?>" alt="">
                                                 </div>
                                                 <div class="area-content">
                                                     <h6><a href="<?=base_url('common/news_view/'.$records->id )?>" ><?= $records->news_title; ?></a></h6>
@@ -102,7 +102,6 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

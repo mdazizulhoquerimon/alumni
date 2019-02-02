@@ -5,16 +5,16 @@
         <div class="slider-hero">
             <div class="owl-carousel" id="image_slider">
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider3.JPG" alt="">
+                    <img src="<?php echo base_url(); ?>static/images/slider3.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider1.JPG" alt="">
+                    <img src="<?php echo base_url(); ?>static/images/slider1.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider2.JPG" alt="">
+                    <img src="<?php echo base_url(); ?>static/images/slider2.jpg" alt="">
                 </div>
                 <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider4.JPG" alt="">
+                    <img src="<?php echo base_url(); ?>static/images/slider4.jpg" alt="">
                 </div>
             </div>
         </div>

@@ -22,12 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/css/styles.css"/>
-
-    <script src="<?php echo base_url(); ?>static/js/libs/jquery-2.2.4.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/libs/bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/libs/owl.carousel.min.js"></script>
-
-
     <title>CUELSA</title>
 </head>
 <style>

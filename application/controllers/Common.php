@@ -48,7 +48,9 @@ class Common extends BaseController
     public function executive_member()
     {
         $data['allRecords'] = $this->member_model->getAllExecutiveMember();
-
+//        echo("<pre>");
+//        print_r($data);
+//        exit;
         $this->load->view('public/header');
         $this->load->view('public/executive_member', $data);
         $this->load->view('public/footer');
@@ -208,6 +210,7 @@ class Common extends BaseController
         $returns = $this->paginationCompress("photo_gallery/photo_gallery_public/" . $folder_id . "/", $count, 12, 4);
 
         $data["folder_id"] = $folder_id;
+        $data["folder_name"] = $this->photo_gallery_model->anyName('photo_folder', 'folder_id', $folder_id, 'folder_name');
 
         $data['photoRecords'] = $this->photo_gallery_model->folderWiseListing($folder_id, $searchText, $returns["page"], $returns["segment"]);
 

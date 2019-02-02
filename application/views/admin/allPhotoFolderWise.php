@@ -90,7 +90,7 @@
                             <?php foreach($photoRecords as $record):?>
                                 <div class=" col-md-2" style="border: 2px solid #0b58a2;border-radius:10px;padding: 5px; margin: 10px;">
                                     <?php if (!is_null($record->image_path)):?>
-                                        <embed src="<?= $record->image_path ?>" alt="" width="260" height="270">
+                                        <embed src="<?= base_url('uploads/photogallery/').$folder_name.'/'.$record->file_name ?>" alt="" width="260" height="270">
                                         <h4 style="text-align: center"><?= $record->file_name ?></h4>
                                     <?php else:?>
                                         <embed src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="100" height="100">

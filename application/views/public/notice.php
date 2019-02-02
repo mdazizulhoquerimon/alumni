@@ -8,8 +8,8 @@
             <?php if (!empty($noticeRecords)): ?>
                 <?php foreach ($noticeRecords as $record): ?>
                     <div class="col-md-4">
-                        <a href="<?=$record->notice_path; ?>" >
-                        <embed src="<?php echo $record->notice_path ?>" alt="" width="300" height="100">
+                        <a href="<?=base_url('uploads/notice/').$record->file_name; ?>" >
+                        <embed src="<?=base_url('uploads/notice/').$record->file_name; ?>" alt="" width="300" height="100">
                         <h2><?= $record->notice_title ?></h2></a>
                         <a class="btn btn-sm btn-info" href="<?php echo base_url().'common/downloadNotice/'.$record->notice_id; ?>" title="Download"><i class="fa fa-download"></i></a>
                     </div>
