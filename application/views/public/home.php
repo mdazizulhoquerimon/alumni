@@ -1,20 +1,22 @@
 <!--Begin content wrapper-->
-<div class="content-wrapper">
+<div class="content-wrapper home_custom">
     <!--begin slider-->
     <div class="container">
         <div class="slider-hero">
-            <div class="owl-carousel" id="image_slider">
-                <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider3.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider1.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider2.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="<?php echo base_url(); ?>static/images/slider4.jpg" alt="">
+            <div class="container">
+                <div class="owl-carousel" id="image_slider">
+                    <div class="item">
+                        <img src="<?php echo base_url(); ?>static/images/slider3.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo base_url(); ?>static/images/slider1.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo base_url(); ?>static/images/slider2.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="<?php echo base_url(); ?>static/images/slider4.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,26 +191,6 @@
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
-<!--                                <div class="view-item">-->
-<!--                                    <div class="date-item">-->
-<!--                                        <span class="dates text-light">MON</span>-->
-<!--                                        <span class="day text-bold color-theme">09</span>-->
-<!--                                        <span class="month text-light">APR</span>-->
-<!--                                    </div>-->
-<!--                                    <div class="date-desc-wrapper">-->
-<!--                                        <div class="date-desc">-->
-<!--                                            <div class="date-title"><h6 class="heading-regular">Weekend at Sayidan-->
-<!--                                                    Sierra Camp</h6></div>-->
-<!--                                            <div class="date-excerpt">-->
-<!--                                                <p>Organizer: Sayidan Black Alumni Association</p>-->
-<!--                                            </div>-->
-<!--                                            <div class="place">-->
-<!--                                                <span class="icon map-icon"></span>-->
-<!--                                                <span class="text-place">Gondomanan Street 209, California</span>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
                             </div>
                         </div>
                         <div class="view-all"><a href="<?= base_url('common/events'); ?>">View All Events</a></div>

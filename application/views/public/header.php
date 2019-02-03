@@ -89,11 +89,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="header-middle">
                 <div class="container">
                     <div class="menu">
-                        <nav>
+                        <nav class="container">
                             <ul class="nav navbar-nav">
                                 <li>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
+                                      <li><a href="<?=base_url('common/constitution');?>">CONSTITUTION</a></li>
                                       <li><a href="<?=base_url('common/about_us');?>">CUELSA</a></li>
                                       <li><a href="<?=base_url('common/contact');?>">CONTACT</a></li>
                                     </ul>
@@ -124,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                                 <li>
-                                    <a href="<?=base_url('common/folder_gallery');?>">PHOTO GALLERY</a>
+                                    <a href="<?=base_url('common/folder_gallery');?>" >PHOTO GALLERY</a>
                                 </li>
                             </ul>
                         </nav>

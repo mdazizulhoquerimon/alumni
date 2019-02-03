@@ -33,9 +33,9 @@
                                     <div class="col-sm-6 col-xs-12">
                                         <h6 class="heading-bold">ABOUT US</h6>
                                         <ul class="list-unstyled no-margin">
-                                            <li><a href="./event-single.html">EVENTS</a></li>
-                                            <li><a href="./event-single.html">NOTICE</a></li>
-                                            <li><a href="./galery.html">GALLERY</a></li>
+                                            <li><a href="<?=base_url('common/events');?>" >EVENTS</a></li>
+                                            <li><a href="<?=base_url('common/notice');?>" >NOTICE</a></li>
+                                            <li><a href="<?=base_url('common/folder_gallery');?>" >GALLERY</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                         <div class="col-md-3 col-sm-12 col-xs-12 animated footer-col">
                             <div class="links-social">
                                 <div class="login-dashboard">
-                                    <a href="./login-page.html" class="bg-color-theme text-center text-regular">Login Dashboard</a>
+                                    <a href="<?=base_url('users/login');?>" class="bg-color-theme text-center text-regular">Login Dashboard</a>
                                 </div>
                                 <ul class="list-inline text-center">
                                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

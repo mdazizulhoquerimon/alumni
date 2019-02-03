@@ -5,19 +5,41 @@
     </div>
     <div class="container">
         <div class="container">
-            <?php if (!empty($noticeRecords)): ?>
-                <?php foreach ($noticeRecords as $record): ?>
-                    <div class="col-md-4">
-                        <a href="<?=base_url('uploads/notice/').$record->file_name; ?>" >
-                        <embed src="<?=base_url('uploads/notice/').$record->file_name; ?>" alt="" width="300" height="100">
-                        <h2><?= $record->notice_title ?></h2></a>
-                        <a class="btn btn-sm btn-info" href="<?php echo base_url().'common/downloadNotice/'.$record->notice_id; ?>" title="Download"><i class="fa fa-download"></i></a>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                        <th>#Sl No</th>
+                        <th>Title</th>
+                        <th>Uploaded On</th>
+                        <th class="text-center">Download</th>
+                    </tr>
+                    <?php
+                    if(!empty($noticeRecords))
+                    {
+                        $sl = $this->uri->segment(3,0);
+                        foreach($noticeRecords as $record)
+                        {
+                            ?>
+                            <tr>
+                                <td><?=++$sl?></td>
+                                <td><a href="<?=base_url('uploads/notice/').$record->file_name; ?>" ><?php echo $record->notice_title ?></a></td>
+                                <td><a href="<?=base_url('uploads/notice/').$record->file_name; ?>" ><?php echo date('d-M-Y h:i a',strtotime($record->uploaded_on)) ?></a></td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" href="<?php echo base_url().'common/downloadNotice/'.$record->notice_id; ?>" title="Download"><i class="fa fa-download"></i>Download</a>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
     </div>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/common.js" charset="utf-8"></script>
+    <div class="pagination-wrapper text-center">
+        <?php echo $this->pagination->create_links(); ?>
+    </div>
+</div>
 <script type="text/javascript">
     jQuery(document).ready(function(){
         jQuery('ul.pagination li a').click(function (e) {

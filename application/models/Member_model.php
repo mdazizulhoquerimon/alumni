@@ -204,21 +204,5 @@ class Member_model extends CI_Model
 
         return $this->db->affected_rows();
     }
-    /**
-     * This function is used to get all the executive member
-     * @return array $result : This is result
-     */
-    function getAllExecutiveMember()
-    {
-        $this->db->select('ExMemTbl.ex_mem_id, ExMemTbl.name, ExMemTbl.batchNo, ExMemTbl.mobile, ExMemTbl.active_year, ExMemTbl.file_name, ExMemTbl.image_path, ExMemTbl.createdDtm, Designation.designation');
-        $this->db->from('executive_members as ExMemTbl');
-        $this->db->join('executive_designation as Designation', 'Designation.designation_id = ExMemTbl.designation_id');
-
-        $this->db->order_by('Designation.designation_id', 'asc');
-        $query = $this->db->get();
-
-        $result = $query->result();
-        return $result;
-    }
 }
 ?>

@@ -627,9 +627,20 @@ a:hover, a:active, a:focus {
 /*************************************
    Main Content
 *************************************/
+
 .content-wrapper {
   width: 100%;
   float: left;
+}
+@media (min-width: 991px) and (max-width: 2300px) {
+  .home_custom {
+    padding-top: 300px;
+  }
+}
+@media (max-width: 990px){
+  .home_custom {
+    padding-top: 0px;
+  }
 }
 /*************************************
    7. Footer
@@ -1609,30 +1620,30 @@ a:hover, a:active, a:focus {
    16. About Us Page
 *************************************/
 .about-us .about-us-title {
-  background: url("../images/cover-image.jpg");
-  background-size: cover;
-  padding: 330px 0 200px;
+  /*background: url("../images/cover-image.jpg");*/
+  /*background-size: cover;*/
+  /*padding: 330px 0 200px;*/
 }
 .about-us .about-us-title h1 {
   color: #fff;
   letter-spacing: 1px;
 }
 .about-us .about-us-content {
-  padding: 55px 0 25px;
+  padding: 0px 0 25px;
 }
-.about-us .about-us-content .content-wrapper {
+.about-us .about-us-content .content {
   line-height: 2;
   float: none;
 }
-.about-us .about-us-content .content-wrapper p {
+.about-us .about-us-content .content p {
   font-size: 14px;
   margin-bottom: 30px;
 }
 @media (min-width: 992px) {
   .about-us .about-us-title {
-    padding: 330px 0 200px;
+    /*padding: 330px 0 200px;*/
   }
-  .about-us .about-us-content .content-wrapper {
+  .about-us .about-us-content .content {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
@@ -1640,7 +1651,7 @@ a:hover, a:active, a:focus {
 }
 @media (max-width: 991px) {
   .about-us .about-us-title {
-    padding: 70px 0 70px;
+    /*padding: 70px 0 70px;*/
   }
 }
 

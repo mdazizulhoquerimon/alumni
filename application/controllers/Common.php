@@ -33,24 +33,55 @@ class Common extends BaseController
 //................................................................................About Functionality START...........................................................................................//
     public function about_us()
     {
+        $this->load->view('public/header');
         $this->load->view('public/about_us');
+        $this->load->view('public/footer');
     }
 //................................................................................About Functionality END...........................................................................................//
-
+//................................................................................About Functionality START...........................................................................................//
+    public function constitution()
+    {
+        $this->load->view('public/header');
+        $this->load->view('public/constitution');
+        $this->load->view('public/footer');
+    }
+//................................................................................About Functionality END...........................................................................................//
 //................................................................................General Member Functionality START...........................................................................................//
     public function general_member()
     {
-        $this->load->view('public/general_member');
+        $searchText = $this->security->xss_clean($this->input->post('searchText'));
+        $data['searchText'] = $searchText;
+
+        $this->load->library('pagination');
+
+        $count = $this->member_model->memberListingCount($searchText);
+
+        $returns = $this->paginationCompress("common/general_member/", $count, 30, 3);
+
+        $data['memberRecords'] = $this->member_model->memberListing($searchText, '', $returns["page"], $returns["segment"]);
+
+
+        $this->load->view('public/header');
+        $this->load->view('public/general_member',$data);
+        $this->load->view('public/footer');
     }
 //................................................................................General Member Functionality END...........................................................................................//
 
 //................................................................................Executive Member Functionality START...........................................................................................//
     public function executive_member()
     {
-        $data['allRecords'] = $this->member_model->getAllExecutiveMember();
-//        echo("<pre>");
-//        print_r($data);
-//        exit;
+
+        $searchText = $this->security->xss_clean($this->input->post('searchText'));
+        $data['searchText'] = $searchText;
+
+        $this->load->library('pagination');
+
+        $count = $this->member_model->executiveMemberListingCount($searchText);
+
+        $returns = $this->paginationCompress ( "member/executiveMemberListing/", $count, 30,3 );
+
+        $data['exMemRecords'] = $this->member_model->executiveMemberListing($searchText, $returns["page"], $returns["segment"]);
+
         $this->load->view('public/header');
         $this->load->view('public/executive_member', $data);
         $this->load->view('public/footer');
@@ -75,6 +106,7 @@ class Common extends BaseController
         $this->load->view('public/news', $data);
         $this->load->view('public/footer');
     }
+
     public function news_view($newsId)
     {
         if(!empty($newsId)){
@@ -121,8 +153,19 @@ class Common extends BaseController
 //................................................................................Career Functionality START...........................................................................................//
     public function career()
     {
+        $searchText = $this->security->xss_clean($this->input->post('searchText'));
+        $data['searchText'] = $searchText;
+
+        $this->load->library('pagination');
+
+        $count = $this->career_model->circularListingCount($searchText);
+
+        $returns = $this->paginationCompress("career/career/", $count, 10, 3);
+
+        $data['cicularRecords'] = $this->career_model->circularListing($searchText, $returns["page"], $returns["segment"]);
+
         $this->load->view('public/header');
-        $this->load->view('public/career_opportunity');
+        $this->load->view('public/career_opportunity',$data);
         $this->load->view('public/footer');
     }
 //................................................................................Career Functionality END...........................................................................................//
@@ -185,7 +228,7 @@ class Common extends BaseController
 
         $count = $this->photo_gallery_model->folderListingCount($searchText);
 
-        $returns = $this->paginationCompress("photo_gallery/folder_gallery/", $count, 10, 3);
+        $returns = $this->paginationCompress("common/folder_gallery/", $count, 10, 3);
 
         $data['folderRecords'] = $this->photo_gallery_model->folderListing($searchText, $returns["page"], $returns["segment"]);
 
@@ -207,7 +250,7 @@ class Common extends BaseController
 
         $count = $this->photo_gallery_model->folderWiseListingCount($folder_id, $searchText);
 
-        $returns = $this->paginationCompress("photo_gallery/photo_gallery_public/" . $folder_id . "/", $count, 12, 4);
+        $returns = $this->paginationCompress("common/photo_gallery_public/" . $folder_id . "/", $count, 12, 4);
 
         $data["folder_id"] = $folder_id;
         $data["folder_name"] = $this->photo_gallery_model->anyName('photo_folder', 'folder_id', $folder_id, 'folder_name');

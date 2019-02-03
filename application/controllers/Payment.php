@@ -147,9 +147,9 @@ class Payment extends CI_Controller{
 					//error_log(print_r($paymentdata, true));
 					$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
 					//error_log(print_r($fetched_user_data['fetched_user_data'], true));
-					$this->load->view('public/header_profile', $fetched_user_data);
+					$this->load->view('public/header', $fetched_user_data);
 					$this->load->view('public/payment_info', $fetched_user_data);
-					$this->load->view('public/footer_profile');
+					$this->load->view('public/footer');
 				}
 				else
 				{
@@ -166,9 +166,9 @@ class Payment extends CI_Controller{
 					$paymentdata['isPaid'] = '0';
 					$paymentdata['monthname'] = $monthname;
 					$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
-					$this->load->view('public/header_profile', $fetched_user_data);
+					$this->load->view('public/header', $fetched_user_data);
 					$this->load->view('public/payment_details', $fetched_user_data);
-					$this->load->view('public/footer_profile');
+					$this->load->view('public/footer');
 				}
 			}
 		}
@@ -194,9 +194,9 @@ class Payment extends CI_Controller{
 			$paymentdata['isPaid'] = '0';
 			$paymentdata['monthname'] = $monthname;
 			$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
-			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/header', $fetched_user_data);
 			$this->load->view('public/payment_details', $fetched_user_data);
-			$this->load->view('public/footer_profile');
+			$this->load->view('public/footer');
 		}
 		else
 		{
@@ -221,9 +221,9 @@ class Payment extends CI_Controller{
 			$paymentdata['isPaid'] = '0';
 			$paymentdata['monthname'] = $monthname;
 			$fetched_user_data['fetched_user_data'] = array_merge($user_data, $paymentdata);
-			$this->load->view('public/header_profile', $fetched_user_data);
+			$this->load->view('public/header', $fetched_user_data);
 			$this->load->view('public/payment_details', $fetched_user_data);
-			$this->load->view('public/footer_profile');
+			$this->load->view('public/footer');
 		}
 		else
 		{

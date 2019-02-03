@@ -74,33 +74,28 @@
                                 <th>Created On</th>
                                 <th class="text-center">Actions</th>
                             </tr>
-                            <?php
-                            if(!empty($cicularRecords))
-                            {
+                            <?php if(!empty($cicularRecords)) {
                                 $sl = $this->uri->segment(3,0);
                                 foreach($cicularRecords as $record)
-                                {
-                                    ?>
+                                { ?>
                                     <tr>
                                         <td><?=++$sl?></td>
-                                        <td><?php echo $record->career_title ?></td>
-                                        <td><?php echo $record->company_name ?></td>
-                                        <td><?php echo $record->location ?></td>
-                                        <td><?php echo $record->education_requirement ?></td>
-                                        <td><?php echo $record->experience ?></td>
-                                        <td><?php echo date('d-M-Y',strtotime($record->deadline_date)) ?></td>
-                                        <td><?php echo $record->job_link ?></td>
-                                        <td><?php echo $record->job_description ?></td>
-                                        <td><?php echo date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
+                                        <td><?=$record->career_title ?></td>
+                                        <td><?=$record->company_name ?></td>
+                                        <td><?=$record->location ?></td>
+                                        <td><?=$record->education_requirement ?></td>
+                                        <td><?=$record->experience ?></td>
+                                        <td><?=date('d-M-Y',strtotime($record->deadline_date)) ?></td>
+                                        <td><?=$record->job_link ?></td>
+                                        <td><?=$record->job_description ?></td>
+                                        <td><?=date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-info" href="<?= base_url().'career/editCircular/'.$record->career_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                                             <a onclick="return confirm('Are You Sure To Delete??')" class="btn btn-sm btn-danger" href="<?= base_url().'career/deleteCircular/'.$record->career_id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
-                                    <?php
-                                }
-                            }
-                            ?>
+                            <?php }
+                            } ?>
                         </table>
 
                     </div><!-- /.box-body -->
