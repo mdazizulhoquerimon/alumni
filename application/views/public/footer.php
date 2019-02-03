@@ -7,7 +7,7 @@
                         <div class="col-md-4 col-sm-12 col-xs-12 animated footer-col">
                             <div class="contact-footer">
                                 <div class="logo-footer ">
-                                    <a href="./homepage-1.html"><img src="<?php echo base_url(); ?>static/images/logo.png" alt=""></a>
+                                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>static/images/logo.png" alt=""></a>
                                 </div>
                                 <div class="contact-desc">
                                     <p class="text-light">CUELSA A Alumni Assoication To build a self-motivated, self-directed and self-sustaining alumni association in Bangladesh</p>
