@@ -1,11 +1,10 @@
-
 <!--Begin content wrapper-->
 <div class="content-wrapper">
     <div class="account-page login text-center">
         <div class="container">
             <div class="account-title col-md-12">
                 <h4 class="heading-light">
-                    EXECUTIVE MEMBER
+                    EXECUTIVE COMMITTEE
                 </h4>
 
                 <div class="box-tools">
@@ -36,26 +35,49 @@
         </div>
         <div class="container ">
             <div class="row">
-                <?php foreach ($exMemRecords as $records):?>
-                    <div class="col-md-3" >
-                        <div class="single-teacher mb-30">
-                            <div class="teacher-img" >
-                                <img src="<?=base_url('uploads/executive_member_image/').$records->file_name ?>" alt="" width="300" height="300">
-                            </div>
-                            <div class="" style="background-color: #1a265c">
-                                <h4><?=$records->name;?></h4>
-                                <h5><?=$records->designation;?></h5>
-                                <div class="teacher-hover">
-                                    <ul class="list-inline text-center">
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    </ul>
+                <?php foreach ($exMemRecords as $records): ?>
+                    <?php if ($records->designation == "President"): ?>
+                        <div class="row text-center">
+                            <div class="">
+                                <div class="single-teacher mb-30" >
+                                    <div class="teacher-img">
+                                        <?php if (!empty($records->file_name)): ?>
+                                            <img class="img-rounded" src="<?= base_url('uploads/executive_member_image/') . $records->file_name ?>"
+                                                 alt="" width="300" height="300">
+                                        <?php else: ?>
+                                            <img class="img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt=""
+                                                 width="300"
+                                                 height="300">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="">
+                                        <h5 style="font-weight: bold;color: #0b3e6f;"><?= $records->designation; ?></h5>
+                                        <h5 style="font-weight: bold;color: #0b3e6f;"><?= $records->name;?><span style="font-size: 14px;">(Batch-<?= $records->batchNo; ?>)</span></h5>
+                                        <h6 style="font-weight: bold;color: #0b3e6f;">(Contact-<?= $records->mobile;?>)</h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach;?>
+                    <?php else: ?>
+                        <div class="col-md-3" style="border:1px solid #0b58a2;border-radius: 10px;margin-bottom: 5px;padding: 5px; height: 370px;">
+                            <div class="single-teacher mb-30">
+                                <div class="teacher-img">
+                                    <?php if (!empty($records->file_name)): ?>
+                                        <img class="img-rounded" src="<?= base_url('uploads/executive_member_image/') . $records->file_name ?>"
+                                             alt="" width="300" height="300">
+                                    <?php else: ?>
+                                        <img class="img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt="" width="300" height="300">
+                                    <?php endif; ?>
+                                </div>
+                                <div class="">
+                                    <h5 style="font-weight: bold;color: #0b3e6f;"><?= $records->designation; ?></h5>
+                                    <h5 style="font-weight: bold;color: #0b3e6f;"><?= $records->name;?></h5>
+                                    <h6 style="font-weight: bold;color: #0b3e6f;"><span style="font-size: 14px;">Batch-<?= $records->batchNo; ?></span>,<?= $records->mobile;?></h6>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
