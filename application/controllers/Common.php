@@ -78,7 +78,7 @@ class Common extends BaseController
 
         $count = $this->member_model->executiveMemberListingCount($searchText);
 
-        $returns = $this->paginationCompress ( "member/executiveMemberListing/", $count, 30,3 );
+        $returns = $this->paginationCompress ( "common/executive_member/", $count, 29,3 );
 
         $data['exMemRecords'] = $this->member_model->executiveMemberListing($searchText, $returns["page"], $returns["segment"]);
 
