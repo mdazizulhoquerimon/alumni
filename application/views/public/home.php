@@ -135,7 +135,7 @@
                                 <?php foreach ($latestNews as $records): ?>
                                         <div class="post-item clearfix ">
                                             <div class="image-frame post-photo-wrapper">
-                                                <a href="<?=base_url('common/news_view/'.$records->id )?>" > <img src="<?= $records->image_path; ?>" alt=""></a>
+                                                <a href="<?=base_url('common/news_view/'.$records->id )?>" > <img src="<?=base_url('uploads/news_image/').$records->file_name; ?>" alt=""></a>
                                             </div>
                                             <div class="post-desc-wrapper">
                                                 <div class="post-desc">
