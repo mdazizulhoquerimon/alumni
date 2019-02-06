@@ -77,15 +77,15 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'cuelsa',
-
-//    'hostname' => 'localhost',
-//    'username' => 'okkhoritcom_cuelsa',
-//    'password' => 'okkhor@$cuelsa',
-//    'database' => 'okkhoritcom_cuelsa',
+//	'hostname' => 'localhost',
+//	'username' => 'root',
+//	'password' => '',
+//	'database' => 'cuelsa',
+//
+    'hostname' => 'localhost',
+    'username' => 'okkhoritcom_cuelsa',
+    'password' => 'okkhor@$cuelsa',
+    'database' => 'okkhoritcom_cuelsa',
 
     'dbdriver' => 'mysqli',
 	'dbprefix' => '',
