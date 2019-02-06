@@ -9,7 +9,7 @@
                 <!--Blog Post-->
                 <div class="blog-post">
                     <div class="area-img">
-                        <img class="img-responsive" src="<?=$newsDetails->image_path?>" alt="">
+                        <img class="img-responsive img-rounded" src="<?=$newsDetails->image_path?>" alt="">
                         <div class="blog-text">
                             <div class="category">
 <!--                                <a href="#" class="bnt text-regular">Community</a>-->

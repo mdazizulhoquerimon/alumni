@@ -60,7 +60,7 @@
                         <div class="col-md-3" >
                             <div class="single-teacher mb-30">
                                 <div class="teacher-img" >
-                                    <img src="<?= base_url('static/images/no_image_found.jpg') ?>" alt=""
+                                    <img class="img-responsive img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt=""
                                          width="300" height="300">
                                 </div>
                                 <div class="" style="background-color: #1a265c">

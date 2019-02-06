@@ -107,7 +107,7 @@ class Photo_gallery_model extends CI_Model
     }
 
     /**
-     * This function is used to get the folder listing count
+     * This function is used to get the folderWiseListing
      * @param string $searchText : This is optional search text
      * @param number $page : This is pagination offset
      * @param number $segment : This is pagination limit
@@ -130,23 +130,56 @@ class Photo_gallery_model extends CI_Model
         $result = $query->result();
         return $result;
     }
-
+    /**
+     * This function is used to get the any column from any table
+     * @return the colmnu name against id or anothe column
+     */
     public function anyName($table,$col,$id,$name,$col2=null,$id2=null,$col3=null,$id3=null){
-        $w = $this->session->userdata('wire');
         if(!empty($col2)){
             $this->db->where($col2,$id2);
         }
         if(!empty($col3)){
             $this->db->where($col3,$id3);
         }
-        if(!empty($w))
-        {
-            $this->db->where("(ware='".$w."' OR ware='0')");
-        }
         $this->db->where($col,$id);
         $info=$this->db->get($table);
         foreach($info->result_array() as $val){
             return $val[$name];
         }
+    }
+
+
+
+    /**
+     * This function used to get latest event information
+     *
+     * @return array $result : This is event information
+     */
+    function getLatestFolder()
+    {
+        $this->db->select();
+        $this->db->from('photo_folder');
+        $this->db->order_by('photo_folder.createdDtm', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+    /**
+     * This function is used to getLatestFolderData
+     * @return array $result : This is result
+     */
+    function getLatestFolderData($folder_id)
+    {
+        $this->db->select();
+        $this->db->from('photo_gallery');
+        if(!empty($folder_id)) {
+            $this->db->where('folder_id', $folder_id);
+        }
+        $this->db->order_by('photo_gallery.uploaded_on', 'DESC');
+        $this->db->limit(5);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;
     }
 }

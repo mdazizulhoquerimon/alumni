@@ -1038,7 +1038,7 @@ a:hover, a:active, a:focus {
     margin-bottom: 30px;
   }
   .upcoming-event .area-img img {
-    width: 100%;
+    width: 95%;
   }
 }
 @media (min-width: 768px) {

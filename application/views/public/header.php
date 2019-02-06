@@ -68,10 +68,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="top-right col-sm-6 col-xs-12">
                             <ul class="list-inline">
                                 <li class="top-search">
-                                    <form class="navbar-form search no-margin no-padding">
-                                        <input type="text" name="q" class="form-control input-search" placeholder="search..." autocomplete="off">
-                                        <button type="submit" class="lnr lnr-magnifier"></button>
-                                    </form>
+<!--                                    <form class="navbar-form search no-margin no-padding">-->
+<!--                                        <input type="text" name="q" class="form-control input-search" placeholder="search..." autocomplete="off">-->
+<!--                                        <button type="submit" class="lnr lnr-magnifier"></button>-->
+<!--                                    </form>-->
                                 </li>
                                 <li class="login">
                                     <a href="login/userlogin">Log In</a>
@@ -132,7 +132,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="area-mobile-content visible-sm visible-xs">
                         <div class="logo-mobile">
-                            <a href="#"> <h5>CUELSA</h5></a>
+                            <a href="<?= base_url();?>"><h3 class="heading-bold">CUELSA</h3></a>
                         </div>
                         <div class="mobile-menu ">
                         </div>

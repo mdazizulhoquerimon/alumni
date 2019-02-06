@@ -42,10 +42,10 @@
                                 <div class="single-teacher mb-30" >
                                     <div class="teacher-img">
                                         <?php if (!empty($records->file_name)): ?>
-                                            <img class="img-rounded" src="<?= base_url('uploads/executive_member_image/') . $records->file_name ?>"
+                                            <img class="img-responsive img-rounded" src="<?= base_url('uploads/executive_member_image/') . $records->file_name ?>"
                                                  alt="" width="300" height="300">
                                         <?php else: ?>
-                                            <img class="img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt=""
+                                            <img class="img-responsive img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt=""
                                                  width="300"
                                                  height="300">
                                         <?php endif; ?>
@@ -63,10 +63,10 @@
                             <div class="single-teacher mb-30">
                                 <div class="teacher-img">
                                     <?php if (!empty($records->file_name)): ?>
-                                        <img class="img-rounded" src="<?= base_url('uploads/executive_member_image/') . $records->file_name ?>"
+                                        <img class="img-responsive img-rounded" src="<?= base_url('uploads/executive_member_image/') . $records->file_name ?>"
                                              alt="" width="300" height="300">
                                     <?php else: ?>
-                                        <img class="img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt="" width="300" height="300">
+                                        <img class="img-responsive img-rounded" src="<?= base_url('static/images/no_image_found.jpg') ?>" alt="" width="300" height="300">
                                     <?php endif; ?>
                                 </div>
                                 <div class="">

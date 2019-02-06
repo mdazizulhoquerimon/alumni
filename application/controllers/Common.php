@@ -17,28 +17,32 @@ class Common extends BaseController
         $this->load->model('career_model');
         $this->load->model('photo_gallery_model');
     }
-//................................................................................Home Page Functionality START..........................................................................................//
+//................................................................................Home Page Functionality START...................................................................................//
     public function index()
     {
         $data['latestEvents'] = $this->event_model->getLatestEvent();
         $data['eventRecords'] = $this->event_model->getAllEvents();
         $data['latestNews'] = $this->news_model->getAllNews();
 
+        $folder = $this->photo_gallery_model->getLatestFolder();
+        $data["folder_name"] = $folder->folder_name;
+        $data['photoRecords'] = $this->photo_gallery_model->getLatestFolderData($folder->folder_id);
+
         $this->load->view('public/header');
         $this->load->view('public/home',$data);
         $this->load->view('public/footer');
     }
-//................................................................................Home Page Functionality END...........................................................................................//
+//................................................................................Home Page Functionality END..................................................................................//
 
-//................................................................................About Functionality START...........................................................................................//
+//................................................................................About Functionality START.......................................................................................//
     public function about_us()
     {
         $this->load->view('public/header');
         $this->load->view('public/about_us');
         $this->load->view('public/footer');
     }
-//................................................................................About Functionality END...........................................................................................//
-//................................................................................About Functionality START...........................................................................................//
+//................................................................................About Functionality END......................................................................................//
+//................................................................................About Functionality START...................................................................................//
     public function constitution()
     {
         $this->load->view('public/header');
@@ -46,7 +50,7 @@ class Common extends BaseController
         $this->load->view('public/footer');
     }
 //................................................................................About Functionality END...........................................................................................//
-//................................................................................General Member Functionality START...........................................................................................//
+//................................................................................General Member Functionality START...........................................................................//
     public function general_member()
     {
         $searchText = $this->security->xss_clean($this->input->post('searchText'));
@@ -65,9 +69,9 @@ class Common extends BaseController
         $this->load->view('public/general_member',$data);
         $this->load->view('public/footer');
     }
-//................................................................................General Member Functionality END...........................................................................................//
+//................................................................................General Member Functionality END...........................................................................//
 
-//................................................................................Executive Member Functionality START...........................................................................................//
+//................................................................................Executive Member Functionality START.......................................................................//
     public function executive_member()
     {
 
@@ -86,9 +90,9 @@ class Common extends BaseController
         $this->load->view('public/executive_member', $data);
         $this->load->view('public/footer');
     }
-//................................................................................Executive Member Functionality END...........................................................................................//
+//................................................................................Executive Member Functionality END............................................................................//
 
-//................................................................................News Functionality START...........................................................................................//
+//................................................................................News Functionality START......................................................................................//
     public function news()
     {
         $searchText = $this->security->xss_clean($this->input->post('searchText'));
@@ -119,9 +123,9 @@ class Common extends BaseController
         $this->load->view('public/footer');
     }
 
-//...............................................................................News Functionality END...........................................................................................//
+//...............................................................................News Functionality END.........................................................................................//
 
-//................................................................................Event Functionality START...........................................................................................//
+//................................................................................Event Functionality START....................................................................................//
     public function events()
     {
 
@@ -150,7 +154,7 @@ class Common extends BaseController
 
 //................................................................................Event Functionality END...........................................................................................//
 
-//................................................................................Career Functionality START...........................................................................................//
+//................................................................................Career Functionality START.......................................................................................//
     public function career()
     {
         $searchText = $this->security->xss_clean($this->input->post('searchText'));
@@ -168,9 +172,9 @@ class Common extends BaseController
         $this->load->view('public/career_opportunity',$data);
         $this->load->view('public/footer');
     }
-//................................................................................Career Functionality END...........................................................................................//
+//................................................................................Career Functionality END.........................................................................................//
 
-//................................................................................Career Functionality START...........................................................................................//
+//................................................................................Career Functionality START......................................................................................//
     public function notice()
     {
         $searchText = $this->security->xss_clean($this->input->post('searchText'));
@@ -196,25 +200,20 @@ class Common extends BaseController
      */
     function downloadNotice($noticeId = NULL)
     {
-
-
-
+        if($noticeId == null)
         {
-            if($noticeId == null)
-            {
-                redirect('notice/noticeListing');
-            }
-            $this->load->helper('download');
-            $data['noticeInfo'] = $this->notice_model->getNoticeInfo($noticeId);
-            //file path
-            $file = 'uploads/notice/'.$data['noticeInfo']->file_name;
-            //download file from directory
-            force_download($file, NULL);
+            redirect('notice/noticeListing');
         }
+        $this->load->helper('download');
+        $data['noticeInfo'] = $this->notice_model->getNoticeInfo($noticeId);
+        //file path
+        $file = 'uploads/notice/'.$data['noticeInfo']->file_name;
+        //download file from directory
+        force_download($file, NULL);
     }
-//................................................................................Career Functionality END...........................................................................................//
+//................................................................................Career Functionality END........................................................................................//
 
-//................................................................................Photo Gallery Functionality START...........................................................................................//
+//................................................................................Photo Gallery Functionality START..............................................................................//
 
     /**
      * This function is used to load the folder list in Public Views
@@ -253,8 +252,8 @@ class Common extends BaseController
         $returns = $this->paginationCompress("common/photo_gallery_public/" . $folder_id . "/", $count, 12, 4);
 
         $data["folder_id"] = $folder_id;
-        $data["folder_name"] = $this->photo_gallery_model->anyName('photo_folder', 'folder_id', $folder_id, 'folder_name');
 
+        $data["folder_name"] = $this->photo_gallery_model->anyName('photo_folder', 'folder_id', $folder_id, 'folder_name');
         $data['photoRecords'] = $this->photo_gallery_model->folderWiseListing($folder_id, $searchText, $returns["page"], $returns["segment"]);
 
         $this->load->view('public/header');
@@ -262,7 +261,7 @@ class Common extends BaseController
         $this->load->view('public/footer');
 
     }
-//................................................................................Photo Galleryt Functionality END................................................................................................//
+//................................................................................Photo Galleryt Functionality END...............................................................................//
 
 
 }
