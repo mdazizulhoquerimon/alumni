@@ -83,9 +83,9 @@ $db['default'] = array(
 //	'database' => 'cuelsa',
 //
     'hostname' => 'localhost',
-    'username' => 'okkhoritcom_cuelsa',
-    'password' => 'okkhor@$cuelsa',
-    'database' => 'okkhoritcom_cuelsa',
+    'username' => 'cuelsaor_dbuser',
+    'password' => 'Cuelsadbpassword',
+    'database' => 'cuelsaor_db',
 
     'dbdriver' => 'mysqli',
 	'dbprefix' => '',
