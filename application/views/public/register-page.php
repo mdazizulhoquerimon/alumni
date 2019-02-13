@@ -24,6 +24,25 @@
                                 <option style="font-size: 15px;" value="04">Batch 04</option>
                                 <option style="font-size: 15px;" value="05">Batch 05</option>
                                 <option style="font-size: 15px;" value="06">Batch 06</option>
+                                <option style="font-size: 15px;" value="07">Batch 07</option>
+                                <option style="font-size: 15px;" value="08">Batch 08</option>
+                                <option style="font-size: 15px;" value="09">Batch 09</option>
+                                <option style="font-size: 15px;" value="10">Batch 10</option>
+                                <option style="font-size: 15px;" value="11">Batch 11</option>
+                                <option style="font-size: 15px;" value="12">Batch 12</option>
+                                <option style="font-size: 15px;" value="13">Batch 13</option>
+                                <option style="font-size: 15px;" value="14">Batch 14</option>
+                                <option style="font-size: 15px;" value="15">Batch 15</option>
+                                <option style="font-size: 15px;" value="16">Batch 16</option>
+                                <option style="font-size: 15px;" value="17">Batch 17</option>
+                                <option style="font-size: 15px;" value="18">Batch 18</option>
+                                <option style="font-size: 15px;" value="19">Batch 19</option>
+                                <option style="font-size: 15px;" value="20">Batch 20</option>
+                                <option style="font-size: 15px;" value="21">Batch 21</option>
+                                <option style="font-size: 15px;" value="22">Batch 22</option>
+                                <option style="font-size: 15px;" value="23">Batch 23</option>
+                                <option style="font-size: 15px;" value="24">Batch 24</option>
+                                <option style="font-size: 15px;" value="25">Batch 25</option>
                             </select>
                         </div>
                         <div class="input-box StudentID">
