@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/alumni';
-$config['base_url'] = 'http://www.cuelsa.org/demo/';
+$config['base_url'] = 'http://www.cuelsa.org/';
 
 date_default_timezone_set('Asia/Dhaka');
 /*
