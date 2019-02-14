@@ -51,12 +51,7 @@ class Career extends BaseController
         else
         {
             $this->form_validation->set_rules('career_title','Career Title','required');
-            $this->form_validation->set_rules('company_name','Company Name','required');
-            $this->form_validation->set_rules('location','Location','required');
-            $this->form_validation->set_rules('education_requirement','Education Rquirement','required');
-            $this->form_validation->set_rules('experience','Experience','required');
             $this->form_validation->set_rules('deadline_date','Deadline Date','required');
-            $this->form_validation->set_rules('job_link','Job Link','required');
 
             if($this->form_validation->run() == FALSE)
             {

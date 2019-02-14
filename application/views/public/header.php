@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li>
                                     <a href="mailto:alumni@cuelsa.com">
                                         <span class="icon mail-icon"></span>
-                                        <span class="text">alumni@cuelsa.com</span>
+                                        <span class="text">info@cuelsa.org</span>
                                     </a>
                                 </li>
                                 <li>
@@ -73,15 +73,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--                                        <button type="submit" class="lnr lnr-magnifier"></button>-->
 <!--                                    </form>-->
                                 </li>
-                                <li class="login">
-                                    <a href="login/userlogin">Log In</a>
-                                </li>
+<!--                                <li class="login">-->
+<!--                                    <a href="login/userlogin">Log In</a>-->
+<!--                                </li>-->
                             </ul>
                         </div>
                     </div>
                     <div class="row hidden-sm hidden-xs" style="text-align: center;">
                         <a href="<?= base_url();?>"><img  src="<?php echo base_url(); ?>static/images/logo.png" alt="logo"></a>
-                        <a href="<?= base_url();?>"><h3 style="color: #1A265C">Chittagong University Ex-LAW Student Association</h3></a>
+                        <a href="<?= base_url();?>"><h3 style="color: #1A265C">Chittagong University Ex-LAW Student's Association</h3></a>
                     </div>
                 </div>
             </div>
@@ -132,9 +132,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="area-mobile-content visible-sm visible-xs">
                         <div class="logo-mobile">
-                            <a href="<?= base_url();?>"><h3 class="heading-bold">CUELSA</h3></a>
+                            <div class="row">
+                                <div style="padding-top: 30px;">
+                                    <a href="<?= base_url();?>"><h4 class="heading-bold">CUELSA</h4></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mobile-menu ">
+                        <div class="mobile-menu " >
                         </div>
                     </div>
                 </div>

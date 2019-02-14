@@ -1,7 +1,7 @@
 <!--Begin content wrapper-->
 <div class="content-wrapper">
 
-    <div class="account-title text-center" style="padding-top: 130px; padding-bottom: 20px;">
+    <div class="account-title text-center" style="padding-bottom: 20px;">
         <h4 class="heading-light">EVENTS</h4>
     </div>
 
@@ -11,8 +11,11 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="area-img">
-                        <img class="img-responsive animate zoomIn"
-                             src="<?php echo base_url(); ?>static/images/programs-events-img.jpg" alt="">
+                        <?php if($latestEvents->file_name): ?>
+                            <img class="img-rounded animated zoomIn" src="<?=base_url('uploads/event_image/').$latestEvents->file_name; ?>" alt="">
+                        <?php else:?>
+                            <img class="img-responsive animate zoomIn" src="<?php echo base_url(); ?>static/images/programs-events-img.jpg" alt="">
+                        <?php endif;?>
                         <div id="time-event" class="animated fadeIn"></div>
                     </div>
                 </div>

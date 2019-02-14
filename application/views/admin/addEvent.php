@@ -18,7 +18,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" id="addEvent" action="<?php echo base_url() ?>event/addNewEvent" method="post">
+                    <form role="form" id="addEvent" action="<?php echo base_url() ?>event/addNewEvent" enctype="multipart/form-data" method="post">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -55,6 +55,15 @@
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group col-md-5">
+                                        <label for="image" style="font-size: 16px;">Select Images(If Any)</label>
+                                        <input class="form-control" type="file" name="eventimage" id="eventimage" />
+                                    </div>
+                                    <div class="col-md-3" id="image-holder"></div>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@
                 <!--Blog Post-->
                 <div class="blog-post">
                     <div class="area-img">
-                        <img class="img-responsive img-rounded" src="<?=$newsDetails->image_path?>" alt="">
+                        <img class="img-responsive img-rounded" src="<?=base_url('uploads/news_image/').$newsDetails->file_name; ?>" alt="">
                         <div class="blog-text">
                             <div class="category">
 <!--                                <a href="#" class="bnt text-regular">Community</a>-->
@@ -40,17 +40,17 @@
                         </div>
                     </div>
                     <!--Share-->
-                    <div class="share">
-                        <div class="box-share">
-                            <h4>SHARE THIS STORY</h4>
-                            <ul>
-                                <li class="facebook"><a href="#"><span class="hidden">facebook</span></a></li>
-                                <li class="twitter"><a href="#"><span class="hidden">twitter</span></a></li>
-                                <li class="google"><a href="#"><span class="hidden">google</span></a></li>
-
-                            </ul>
-                        </div>
-                    </div>
+<!--                    <div class="share">-->
+<!--                        <div class="box-share">-->
+<!--                            <h4>SHARE THIS STORY</h4>-->
+<!--                            <ul>-->
+<!--                                <li class="facebook"><a href="#"><span class="hidden">facebook</span></a></li>-->
+<!--                                <li class="twitter"><a href="#"><span class="hidden">twitter</span></a></li>-->
+<!--                                <li class="google"><a href="#"><span class="hidden">google</span></a></li>-->
+<!---->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!--comments-->
 <!--                    <div class="comments">-->
 <!--                        <div class="box-comments">-->

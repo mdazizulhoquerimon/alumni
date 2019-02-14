@@ -86,22 +86,12 @@ $(document).ready(function(){
     var validator = addCircularForm.validate({
         rules:{
             career_title :{ required : true },
-            company_name :{ required : true },
-            location :{ required : true },
-            education_requirement :{ required : true },
-            experience :{ required : true },
             deadline_date :{ required : true },
-            job_link :{ required : true },
 
         },
         messages:{
             career_title :{ required : "This field is required" },
-            company_name :{ required : "This field is required" },
-            location :{ required : "This field is required" },
-            education_requirement :{ required : "This field is required" },
-            experience :{ required : "This field is required" },
             deadline_date :{ required : "This field is required" },
-            job_link :{ required : "This field is required" },
         }
     });
 

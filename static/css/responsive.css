@@ -65,7 +65,7 @@
     .about-owl .owl-controls .owl-prev {left: -20px}
 	.about-owl .owl-controls .owl-next {right: -20px}
     .slide-content h3, .slide-content h2 {font-size: 40px}
-    .mean-container a.meanmenu-reveal {margin-top: -68px;}
+    /*.mean-container a.meanmenu-reveal {margin-top: -68px;}*/
 }
 
 /* small mobile :320px. */
@@ -162,7 +162,7 @@
     .footer-bottom p.pull-left{text-align: center; float: none}
     .footer-icons, .footer-bottom p.pull-left{float: none !important ; text-align: center; margin-top: 10px}
     .footer-bottom {padding-bottom: 25px}
-    .mean-container a.meanmenu-reveal {margin-top: -33px;}
+    /*.mean-container a.meanmenu-reveal {margin-top: -33px;}*/
     .mean-container .mean-nav {margin-top: 40px}
 }
 

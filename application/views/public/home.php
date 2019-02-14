@@ -28,13 +28,17 @@
             <div class="container">
                 <div class="row">
                     <div class="area-img col-md-5 col-sm-12 col-xs-12">
-                        <img class="img-responsive img-rounded animated zoomIn" src="<?php echo base_url(); ?>static/images/even-img.jpg" alt="">
+                        <?php if($latestEvents->file_name): ?>
+                            <img class="img-rounded animated zoomIn" src="<?=base_url('uploads/event_image/').$latestEvents->file_name; ?>" alt="" height="300">
+                        <?php else:?>
+                            <img class="img-responsive img-rounded animated zoomIn" src="<?php echo base_url(); ?>static/images/even-img.jpg" alt="">
+                        <?php endif;?>
                     </div>
                     <div class="area-content col-md-7 col-sm-12 col-xs-12">
                         <div class="area-top">
                             <div class="row">
-                                <div class="col-sm-10 col-xs-9">
-                                    <h5 class="heading-light no-margin animated fadeInRight">UPCOMING EVENT</h5>
+                                <div class="col-sm-9 col-xs-7">
+                                    <h5 class="heading-light no-margin animated fadeInRight">LATEST EVENT</h5>
                                     <h2 class="heading-bold animated fadeInLeft"><?= $latestEvents->event_title; ?>
                                         ,<?= $latestEvents->event_type; ?></h2>
                                     <span>
@@ -67,7 +71,7 @@
     <div class="alumni-dashboard">
         <div class="container">
             <div class="title title-dashboard type1">
-                <h3 class="heading-light no-margin"> My Dashboard </h3>
+                <h3 class="heading-light no-margin"> Alumni Dashboard </h3>
             </div>
             <div class="area-content">
                 <div class="row">
@@ -76,18 +80,16 @@
                         <div class="box-content">
                             <h4 class="heading-regular"> Checking Message </h4>
                             <p class="text-content text-margin text-light ">
-                                Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
-                                Mirum est notare quam.
+                                Log in to check messages.
                             </p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="icon account-icon"></div>
                         <div class="box-content">
-                            <h4 class="heading-regular"> Update My Information </h4>
+                            <h4 class="heading-regular"> Update Your Information </h4>
                             <p class="text-content text-margin text-light">
-                                Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
-                                Mirum est notare quam.
+                                To update you personal information log in to alumni dashboard
                             </p>
                         </div>
                     </div>
@@ -96,8 +98,7 @@
                         <div class="box-content">
                             <h4 class="heading-regular"> Join with Alumni Forum </h4>
                             <p class="text-content text-margin text-light">
-                                Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
-                                Mirum est notare quam.
+                               Join with us.
                             </p>
                         </div>
                     </div>
@@ -106,8 +107,7 @@
                         <div class="box-content">
                             <h4 class="heading-regular"> Search Alumni Directory </h4>
                             <p class="text-content text-margin text-light">
-                                Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
-                                Mirum est notare quam.
+                                Search alumni directory.
                             </p>
                         </div>
                     </div>
@@ -228,7 +228,7 @@
                 <div class="instagram-feed-user text-center">
                     <div class="user-wrapper">
                         <span class="icon-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></span>
-                        <span class="name-user">@CUELSA</span>
+                        <span class="name-user"><a href="<?=base_url('common/folder_gallery');?>" >GO TO PHOTO</a></span>
                     </div>
                 </div>
             </div>

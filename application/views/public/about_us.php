@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <!--begin about us-->
     <div class="about-us">
-        <div class="account-title text-center" style="padding-top: 130px;padding-bottom: 20px;">
+        <div class="account-title text-center" style="padding-bottom: 20px;">
             <h4 class="heading-light">ABOUT US</h4>
         </div>
         <div class="about-us-content">

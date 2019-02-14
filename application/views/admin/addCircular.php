@@ -23,14 +23,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="career_title" style="font-size: 16px;">Career Title</label>
+                                        <label for="career_title" style="font-size: 16px;"><span style="color: red">*</span>Career Title</label>
                                         <input type="text" class="form-control required" value="<?php echo set_value('career_title'); ?>" id="career_title" name="career_title" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="company_name" style="font-size: 16px;">Company Name</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('company_name'); ?>" id="company_name" name="company_name" >
+                                        <input type="text" class="form-control " value="<?php echo set_value('company_name'); ?>" id="company_name" name="company_name" >
                                     </div>
                                 </div>
                             </div>
@@ -38,13 +38,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="location" style="font-size: 16px;">Location</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('location'); ?>" id="location" name="location" >
+                                        <input type="text" class="form-control " value="<?php echo set_value('location'); ?>" id="location" name="location" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="education_requirement" style="font-size: 16px;">Education Requirement</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('education_requirement'); ?>" id="education_requirement" name="education_requirement">
+                                        <input type="text" class="form-control " value="<?php echo set_value('education_requirement'); ?>" id="education_requirement" name="education_requirement">
                                     </div>
                                 </div>
                             </div>
@@ -52,12 +52,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="experience" style="font-size: 16px;">Experience</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('experience'); ?>" id="experience" name="experience">
+                                        <input type="text" class="form-control " value="<?php echo set_value('experience'); ?>" id="experience" name="experience">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="deadline_date" style="font-size: 16px;">Deadline</label>
+                                        <label for="deadline_date" style="font-size: 16px;"><span style="color: red">*</span>Deadline</label>
                                             <input type="text" class="form-control required" value="<?php echo set_value('deadline_date'); ?>" id="deadline_date" name="deadline_date">
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="job_link" style="font-size: 16px;">Job Link</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('job_link'); ?>" id="job_link" name="job_link" placeholder="If Any">
+                                        <input type="text" class="form-control " value="<?php echo set_value('job_link'); ?>" id="job_link" name="job_link" placeholder="If Any">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

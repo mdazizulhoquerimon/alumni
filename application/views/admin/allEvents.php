@@ -67,6 +67,7 @@
                                 <th>Details</th>
                                 <th>Type</th>
                                 <th>Event Date</th>
+                                <th>Event Image</th>
                                 <th>Created On</th>
                                 <th class="text-center">Actions</th>
                             </tr>
@@ -82,6 +83,13 @@
                                         <td><?php echo $record->event_details ?></td>
                                         <td><?php echo $record->event_type ?></td>
                                         <td><?=date('d-M-Y h:i a',strtotime($record->event_date)) ?></td>
+                                        <td>
+                                            <?php if($record->file_name):?>
+                                                <img src="<?=base_url('uploads/event_image/').$record->file_name; ?>" alt="" width="97" height="60">
+                                            <?php else:?>
+                                                <img src="<?=base_url('static/images/no_image_found.jpg')?>" alt="" width="97" height="60">
+                                            <?php endif;?>
+                                        </td>
                                         <td><?= date('d-M-Y h:i a',strtotime($record->createdDtm)) ?></td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-info" href="<?php echo base_url().'event/editEvent/'.$record->event_id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>

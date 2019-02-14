@@ -3,7 +3,7 @@
 
     <div class="galery-wrapper">
         <div class="container">
-            <div class="account-title text-center" style="padding-top: 130px; padding-bottom: 20px;">
+            <div class="account-title text-center" style="padding-bottom: 20px;">
                 <h4 class="heading-light">PHOTO GALLERY</h4>
             </div>
             <div class="galery-content">

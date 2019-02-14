@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <!--begin about us-->
     <div class="about-us">
-        <div class="account-title text-center" style="padding-top: 130px;padding-bottom: 20px;">
+        <div class="account-title text-center" style="padding-bottom: 20px;">
             <h4 class="heading-light" style="padding-bottom: 5px;">CONSTITUTION </h4>
             <h5 class="heading-light" style="padding-bottom: 6px;">Chittagong University X-Law Students'
                 Association </h5>

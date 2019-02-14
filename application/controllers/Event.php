@@ -21,6 +21,8 @@ class Event extends BaseController
         $this->isLoggedIn();
         $this->load->library('form_validation');
         $this->load->helper('date');
+        $this->load->library('upload');
+        $this->load->library('image_lib');
     }
     /**
      * This function is used to load the add event form
@@ -65,6 +67,19 @@ class Event extends BaseController
                 $eventInfo["event_type"] = $this->security->xss_clean($this->input->post('event_type'));
                 $eventInfo["event_date"] = date('Y-m-d H:i:s',strtotime($this->security->xss_clean($this->input->post('event_date'))));
                 $eventInfo["createdDtm"] = date('Y-m-d H:i:s');
+
+                if ($_FILES['eventimage']['name'] !== '') {
+                    $config_image = array();
+                    $config_image['upload_path'] = './uploads/event_image/';
+                    $config_image['allowed_types'] = 'jpeg|jpg|png|gif|JPG';
+                    $config_image['max_size'] = '2048000';
+                    $this->upload->initialize($config_image);
+                    $this->upload->do_upload('eventimage');
+                    $imgData = array('upload_data' => $this->upload->data());
+                    $eventInfo["file_name"] = $imgData['upload_data']['file_name'];
+                } else {
+                    unset($eventInfo["file_name"]);
+                }
 
                 $result = $this->event_model->addNewEvent($eventInfo);
                 if($result > 0)
@@ -151,6 +166,33 @@ class Event extends BaseController
                 $eventInfo["event_details"] = $this->security->xss_clean($this->input->post('event_details'));
                 $eventInfo["event_type"] = $this->security->xss_clean($this->input->post('event_type'));
                 $eventInfo["event_date"] = date('Y-m-d H:i:s',strtotime($this->security->xss_clean($this->input->post('event_date'))));
+
+                if ($_FILES['eventimage']['name'] !== '') {
+
+                    $config_image = array();
+                    $config_image['upload_path'] = './uploads/event_image/';
+                    $config_image['allowed_types'] = 'jpeg|jpg|png|gif';
+                    $config_image['max_size'] = '100000000000000000';
+                    $config_image['width'] = 470;
+                    $config_image['height'] = 300;
+                    $this->upload->initialize($config_image);
+                    $this->upload->do_upload('eventimage');
+                    $imgData = array('upload_data' => $this->upload->data());
+                    $eventInfo["file_name"] = $imgData['upload_data']['file_name'];
+
+//                    $config['image_library'] = 'gd2';
+//                    $config['source_image'] = $imgData['upload_data']['full_path'];
+//                    $config['new_image'] = './uploads/event_image/resized/';
+//                    $config['create_thumb'] = TRUE;
+//                    $config['maintain_ratio'] = TRUE;
+//                    $config['width']         = 470;
+//                    $config['height']       = 300;
+//                    $this->load->library('image_lib', $config);
+//                    $this->image_lib->resize();
+
+                } else {
+                    unset($eventInfo["file_name"]);
+                }
 
                 $result = $this->event_model->updateEvent($eventInfo,$eventId);
                 if($result > 0)

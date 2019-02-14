@@ -3,7 +3,7 @@
     <div class="career-opportunity">
         <div class="container">
             <div class="top-section">
-                <div class="account-title text-center" style="padding-top: 70px;">
+                <div class="account-title text-center">
                     <h4 class="heading-light">CAREER OPPORTUNITY</h4>
                 </div>
                 <div class="sellect-career-opportunity">
@@ -37,11 +37,28 @@
                         foreach($cicularRecords as $record)
                         { ?>
                             <li class="box-content">
-                                <span class="location"><?=$record->company_name ?></span>
+                                <?php if($record->company_name): ?>
+                                    <span class="location"><?=$record->company_name ?></span>
+                                <?php else: ?>
+                                    <span class="location">N/A</span>
+                                <?php endif; ?>
                                 <span class="position"><?=$record->career_title ?></span>
-                                <span class="location"><?=$record->location ?></span>
-                                <span class="rate"><?=$record->education_requirement ?></span>
-                                <span class="role"><?=$record->experience ?></span>
+                                <?php if($record->location): ?>
+                                    <span class="location"><?=$record->location ?></span>
+                                <?php else: ?>
+                                    <span class="location">N/A</span>
+                                <?php endif; ?>
+                                <?php if($record->education_requirement): ?>
+                                    <span class="rate"><?=$record->education_requirement ?></span>
+                                <?php else: ?>
+                                    <span class="location">N/A</span>
+                                <?php endif; ?>
+                                <?php if($record->experience): ?>
+                                    <span class="role"><?=$record->experience ?></span>
+                                <?php else: ?>
+                                    <span class="location">N/A</span>
+                                <?php endif; ?>
+
                                 <span class="applicant"><?=date('d-M-Y',strtotime($record->deadline_date)) ?></span>
                                 <span class="apply"><a href="<?=$record->job_link ?>" class="bnt bnt-theme">Apply</a></span>
                             </li>

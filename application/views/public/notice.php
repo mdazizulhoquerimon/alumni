@@ -1,6 +1,6 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="account-title text-center" style="padding-top: 130px; padding-bottom: 20px;">
+    <div class="account-title text-center" style="padding-bottom: 20px;">
         <h4 class="heading-light">NOTICE</h4>
     </div>
     <div class="container">

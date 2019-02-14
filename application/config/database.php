@@ -81,7 +81,7 @@ $db['default'] = array(
 //	'username' => 'root',
 //	'password' => '',
 //	'database' => 'cuelsa',
-//
+
     'hostname' => 'localhost',
     'username' => 'cuelsaor_dbuser',
     'password' => 'Cuelsadbpassword',

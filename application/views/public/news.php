@@ -1,6 +1,6 @@
 <!--Begin content wrapper-->
 <div class="content-wrapper">
-    <div class="account-title text-center" style="padding-top: 130px; padding-bottom: 20px;">
+    <div class="account-title text-center" style="padding-bottom: 20px;">
         <h4 class="heading-light">NEWS</h4>
     </div>
     <div class="latst-article">
